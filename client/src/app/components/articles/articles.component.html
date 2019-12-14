@@ -1,0 +1,46 @@
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/admin-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="admin-heading">
+                    <span class="subheading px-4">
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/admin']">Dashboard</button>
+                        <button class="btn btn-primary btn-sm">Articles</button>
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/editor']">New Article</button>
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/users']">Users</button>
+                        <button class="btn btn-dark btn-sm" (click)="auth.logout()">Logout</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <h3>Articles</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Created</th>
+                <th>Draft</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let article of page.rows">
+                <td>{{article.title}}</td>
+                <td>{{article.author.name}}</td>
+                <td>{{article.createdAt|date:'short'}}</td>
+                <td>{{article.draft}}</td>
+                <td><a [routerLink]="['/editor']" [queryParams]="{id: article._id}">Edit</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<hr>

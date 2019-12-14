@@ -1,0 +1,51 @@
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/admin-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="admin-heading">
+                    <span class="subheading px-4">
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/admin']">Dashboard</button>
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/articles']">Articles</button>
+                        <button class="btn btn-primary btn-sm">New Article</button>
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/users']">Users</button>
+                        <button class="btn btn-dark btn-sm" (click)="auth.logout()">Logout</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <h3>Editor</h3>
+    <form class="form">
+        <div class="row">
+            <div class="form-group col">
+                <input type="text" name="title" class="form-control" placeholder="Title" [(ngModel)]="article.title">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col">
+                <ckeditor [editor]="editor" [(ngModel)]="article.content" name="content"></ckeditor>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col">
+                <input type="text" name="tags" class="form-control" placeholder="Tagas" [(ngModel)]="article.tags">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col">
+                <input type="text" name="author" readonly class="form-control-plaintext" [value]="auth.getUsername()">
+            </div>
+        </div>
+        <button class="btn btn-primary" (click)="post()">Publish</button>
+        <button class="btn btn-secondary" (click)="saveAsDraft()">Save as Draft</button>
+        <button class="btn btn-danger" (click)="deletePost()" *ngIf="article._id">Delete</button>
+    </form>
+
+</div>
+<hr>

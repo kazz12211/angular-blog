@@ -1,0 +1,62 @@
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/admin-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="admin-heading">
+                    <span class="subheading px-4">
+                        <button class="btn btn-primary btn-sm">Dashboard</button>
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/articles']">Articles</button>
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/editor']">New Article</button>
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/users']">Users</button>
+                        <button class="btn btn-dark btn-sm" (click)="auth.logout()">Logout</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center"># of Articles</h5>
+                    <h1 class="text-center text-muted">{{articles}}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Top Articles</h5>
+                        <ul>
+                            <li>AAAAA</li>
+                            <li>BBBBB</li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Users</h5>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th># of Posts</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    <a href="#" class="card-link">Card link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>

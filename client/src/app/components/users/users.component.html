@@ -1,0 +1,40 @@
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/admin-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="admin-heading">
+                    <span class="subheading px-4">
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/admin']">Dashboard</button>
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/articles']">Articles</button>
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/editor']">New Article</button>
+                        <button class="btn btn-primary btn-sm">Users</button>
+                        <button class="btn btn-dark btn-sm" (click)="auth.logout()">Logout</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <h3>Users</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of page.rows">
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<hr>
