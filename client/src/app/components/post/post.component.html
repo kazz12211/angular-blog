@@ -1,0 +1,26 @@
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>椿工藝舎ブログ</h1>
+                    <span class="subheading">ギター・革製品・帆布製品・木工・自転車</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10">
+            <div class="post-preview">
+                <h2 class="post-title">{{article.title}}</h2>
+                <p [innerHTML]="sanitizedContent(article)"></p>
+                <p class="post-meta">{{article.tags.join(', ')}}</p>
+                <p class="post-meta">Posted by {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>
+            </div>
+        </div>
+    </div>
+</div>

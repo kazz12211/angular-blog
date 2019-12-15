@@ -23,6 +23,10 @@ const ArticleSchema = new mongoose.Schema({
     },
     publishedAt: {
         type: Date
+    },
+    viewCount: {
+        type: Number,
+        default: 0
     }
 });
 

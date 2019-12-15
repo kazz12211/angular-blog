@@ -22,27 +22,32 @@
     <form class="form">
         <div class="row">
             <div class="form-group col">
-                <input type="text" name="title" class="form-control" placeholder="Title" [(ngModel)]="article.title">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control" placeholder="Name" [(ngModel)]="user.name">
             </div>
         </div>
         <div class="row">
             <div class="form-group col">
-                <ckeditor [editor]="editor" [(ngModel)]="article.content" name="content"></ckeditor>
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="user.email">
             </div>
         </div>
         <div class="row">
             <div class="form-group col">
-                <input type="text" name="tags" class="form-control" placeholder="Comma separated tags" [(ngModel)]="article.tags">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="user.password">
             </div>
         </div>
         <div class="row">
             <div class="form-group col">
-                <input type="text" name="author" readonly class="form-control-plaintext" [value]="auth.getUsername()">
+                <label for="role">Role</label>
+                <select name="role" id="role" class="form-control">
+                    <option value="{{role.name}}" *ngFor="let role of roles">{{role.label}}</option>
+                </select>
             </div>
         </div>
-        <button class="btn btn-primary" (click)="post()">Publish</button>
-        <button class="btn btn-secondary" (click)="saveAsDraft()">Save as Draft</button>
-        <button class="btn btn-danger" (click)="deletePost()" *ngIf="article._id">Delete</button>
+        <button class="btn btn-primary" (click)="save()">Save</button>
+        <button class="btn btn-danger" (click)="deleteUser()" *ngIf="user._id">Delete</button>
     </form>
 
 </div>

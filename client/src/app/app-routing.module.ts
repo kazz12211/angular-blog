@@ -9,6 +9,8 @@ import { EditorComponent } from './components/editor/editor.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { UsersComponent } from './components/users/users.component';
+import { PostComponent } from './components/post/post.component';
+import { UsereditorComponent } from './components/usereditor/usereditor.component';
 
 
 const routes: Routes = [
@@ -35,7 +37,13 @@ const routes: Routes = [
   },
   {
     path: 'users', component: UsersComponent, canActivate: [AuthGuard]
-  }
+  },
+  {
+    path: 'post', component: PostComponent
+  },
+  {
+    path: 'usereditor', component: UsereditorComponent, canActivate: [AuthGuard]
+  },
 ];
 
 @NgModule({

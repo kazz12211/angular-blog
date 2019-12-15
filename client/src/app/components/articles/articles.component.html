@@ -8,7 +8,6 @@
                     <span class="subheading px-4">
                         <button class="btn btn-primary btn-sm" [routerLink]="['/admin']">Dashboard</button>
                         <button class="btn btn-primary btn-sm">Articles</button>
-                        <button class="btn btn-primary btn-sm" [routerLink]="['/editor']">New Article</button>
                         <button class="btn btn-primary btn-sm" [routerLink]="['/users']">Users</button>
                         <button class="btn btn-dark btn-sm" (click)="auth.logout()">Logout</button>
                     </span>
@@ -21,7 +20,10 @@
 <!-- Main Content -->
 <div class="container">
     <h3>Articles</h3>
-
+    <div class="clearfix">
+        <a class="btn btn-primary float-right" href="#" [routerLink]="['/editor']">New Article</a>
+    </div>
+    <div class="py-4"></div>
     <table class="table">
         <thead>
             <tr>

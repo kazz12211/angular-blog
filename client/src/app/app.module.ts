@@ -18,6 +18,9 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { UsersComponent } from './components/users/users.component';
+import { PostComponent } from './components/post/post.component';
+import { AsideComponent } from './components/aside/aside.component';
+import { UsereditorComponent } from './components/usereditor/usereditor.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { UsersComponent } from './components/users/users.component';
     EditorComponent,
     AboutComponent,
     ContactComponent,
-    UsersComponent
+    UsersComponent,
+    PostComponent,
+    AsideComponent,
+    UsereditorComponent
   ],
   imports: [
     BrowserModule,

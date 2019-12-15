@@ -41,7 +41,7 @@ module.exports = "<!-- Navigation -->\n<nav class=\"navbar navbar-expand-lg navb
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/about-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"page-heading\">\n                    <h2>椿工藝舎について</h2>\n                    <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10 mx-auto\">\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates\n                odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus\n                consectetur?</p>\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque\n                architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in\n                officia voluptas voluptatibus, minus!</p>\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex\n                itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!\n            </p>\n        </div>\n    </div>\n</div>\n\n<hr>"
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/about-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"page-heading\">\n                    <h2>椿工藝舎について</h2>\n                    <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <h5>椿工藝舎について</h5>\n                <p>\n                椿工藝舎は神奈川県の横浜市と鎌倉市の境目にある工房で、ギター工房、革製品工房、帆布製品工房、ソフトウェア開発室を持っています。\n            </p>\n            <p>\n                ギターと皮革製品・帆布製品の製作を中心にモノづくりをしています。主力製品の製作以外にもWebアプリケーションやマイクロコントローラーを使ったシステム作りも手がけ、伝統工芸から最新技術までを融合したモノづくりを目指しています。休日でも工房を開けていることがありますので、事前にメール連絡・確認の上、気軽にお立ち寄りください。\n               </p>\n\n                <h5>業務内容</h5>\n                <ul>\n                <li>ギターの製作・販売</li>\n                <li>木工品の製作・販売</li>\n                <li>革工芸品の製作・販売</li>\n                <li>帆布製品の製作・販売</li>\n                <li>ギター製作指導</li>\n                <li>マイコンシステムの設計・開発</li>\n                <li>Webシステムの設計・開発</li>\n                </ul>\n            </div>\n    </div>\n</div>\n\n<hr>"
 
 /***/ }),
 
@@ -52,7 +52,7 @@ module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"backg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/admin-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/editor']\">New Article</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-4 col-sm-6\">\n            <div class=\"card\" style=\"width: 18rem;\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title text-center\"># of Articles</h5>\n                    <h1 class=\"text-center text-muted\">{{articles}}</h1>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-md-4 col-sm-6\">\n            <div class=\"card\" style=\"width: 18rem;\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title text-center\">Top Articles</h5>\n                        <ul>\n                            <li>AAAAA</li>\n                            <li>BBBBB</li>\n                        </ul>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-md-4 col-sm-6\">\n            <div class=\"card\" style=\"width: 18rem;\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title text-center\">Users</h5>\n                        <table class=\"table table-striped\">\n                            <thead>\n                                <tr>\n                                    <th>Name</th>\n                                    <th># of Posts</th>\n                                </tr>\n                            </thead>\n                        </table>\n                    <a href=\"#\" class=\"card-link\">Card link</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<hr>"
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/admin-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-4 col-sm-6\">\n            <div class=\"card\" style=\"width: 18rem;\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title text-center\"># of Articles</h5>\n                    <h1 class=\"text-center text-muted\">{{articles}}</h1>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-md-4 col-sm-6\">\n            <div class=\"card\" style=\"width: 18rem;\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title text-center\">Top Articles</h5>\n                    <ul>\n                        <li *ngFor=\"let post of topPosts\">{{post.title}}</li>\n                    </ul>\n                    <div class=\"clearfix\">\n                        <button class=\"btn btn-primary btn-sm float-right\" [routerLink]=\"['/editor']\">New\n                            Article</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-md-4 col-sm-6\">\n            <div class=\"card\" style=\"width: 18rem;\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title text-center\">Users</h5>\n                    <ul>\n                        <li *ngFor=\"let user of users\">{{user.name}}</li>\n                    </ul>\n                    <div class=\"clearfix\">\n                        <button class=\"btn btn-primary btn-sm float-right\" [routerLink]=\"['/newUser']\">New User</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<hr>"
 
 /***/ }),
 
@@ -63,7 +63,18 @@ module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"backg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/admin-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/editor']\">New Article</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Articles</h3>\n\n    <table class=\"table\">\n        <thead>\n            <tr>\n                <th>Title</th>\n                <th>Author</th>\n                <th>Created</th>\n                <th>Draft</th>\n                <th></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor=\"let article of page.rows\">\n                <td>{{article.title}}</td>\n                <td>{{article.author.name}}</td>\n                <td>{{article.createdAt|date:'short'}}</td>\n                <td>{{article.draft}}</td>\n                <td><a [routerLink]=\"['/editor']\" [queryParams]=\"{id: article._id}\">Edit</a></td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n<hr>"
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/admin-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Articles</h3>\n    <div class=\"clearfix\">\n        <a class=\"btn btn-primary float-right\" href=\"#\" [routerLink]=\"['/editor']\">New Article</a>\n    </div>\n    <div class=\"py-4\"></div>\n    <table class=\"table\">\n        <thead>\n            <tr>\n                <th>Title</th>\n                <th>Author</th>\n                <th>Created</th>\n                <th>Draft</th>\n                <th></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor=\"let article of page.rows\">\n                <td>{{article.title}}</td>\n                <td>{{article.author.name}}</td>\n                <td>{{article.createdAt|date:'short'}}</td>\n                <td>{{article.draft}}</td>\n                <td><a [routerLink]=\"['/editor']\" [queryParams]=\"{id: article._id}\">Edit</a></td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n<hr>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/components/aside/aside.component.html":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/components/aside/aside.component.html ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h5>Top Posts</h5>\n<ul>\n    <li *ngFor=\"let post of topPosts\"><a [routerLink]=\"['/post']\" [queryParams]=\"{id: post._id}\">{{post.title}}</a></li>\n</ul>\n"
 
 /***/ }),
 
@@ -85,7 +96,7 @@ module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"backg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/admin-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\">New Article</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Editor</h3>\n    <form class=\"form\">\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"title\" class=\"form-control\" placeholder=\"Title\" [(ngModel)]=\"article.title\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <ckeditor [editor]=\"editor\" [(ngModel)]=\"article.content\" name=\"content\"></ckeditor>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"tags\" class=\"form-control\" placeholder=\"Tagas\" [(ngModel)]=\"article.tags\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"author\" readonly class=\"form-control-plaintext\" [value]=\"auth.getUsername()\">\n            </div>\n        </div>\n        <button class=\"btn btn-primary\" (click)=\"post()\">Publish</button>\n        <button class=\"btn btn-secondary\" (click)=\"saveAsDraft()\">Save as Draft</button>\n        <button class=\"btn btn-danger\" (click)=\"deletePost()\" *ngIf=\"article._id\">Delete</button>\n    </form>\n\n</div>\n<hr>\n"
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/admin-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Editor</h3>\n    <form class=\"form\">\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"title\" class=\"form-control\" placeholder=\"Title\" [(ngModel)]=\"article.title\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <ckeditor [editor]=\"editor\" [(ngModel)]=\"article.content\" name=\"content\"></ckeditor>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"tags\" class=\"form-control\" placeholder=\"Comma separated tags\" [(ngModel)]=\"article.tags\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"author\" readonly class=\"form-control-plaintext\" [value]=\"auth.getUsername()\">\n            </div>\n        </div>\n        <button class=\"btn btn-primary\" (click)=\"post()\">Publish</button>\n        <button class=\"btn btn-secondary\" (click)=\"saveAsDraft()\">Save as Draft</button>\n        <button class=\"btn btn-danger\" (click)=\"deletePost()\" *ngIf=\"article._id\">Delete</button>\n    </form>\n\n</div>\n<hr>\n"
 
 /***/ }),
 
@@ -96,7 +107,7 @@ module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"backg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "   <!-- Page Header -->\n  <header class=\"masthead\" style=\"background-image: url('img/home-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10 mx-auto\">\n          <div class=\"site-heading\">\n            <h1>椿工藝舎ブログ</h1>\n            <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n          </div>\n        </div>\n      </div>\n    </div>\n  </header>\n\n  <!-- Main Content -->\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 col-md-10 mx-auto\">\n        <div class=\"post-preview\" *ngFor=\"let article of page.rows\">\n          <a href=\"#\">\n            <h2 class=\"post-title\">\n              {{article.title}}\n            </h2>\n            <p [innerHTML]=\"sanitizedContent(article)\"></p>\n          </a>\n          <p class=\"post-meta\">{{article.tags.join(', ')}}</p>\n          <p class=\"post-meta\">Posted by\n            {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>\n        </div>\n        <hr>\n \n        <!-- Pager -->\n        <div class=\"clearfix\">\n          <a class=\"btn btn-primary float-left\" href=\"#\" (click)=\"prevPage()\" *ngIf=\"page.prev\">&larr; Newer Posts</a>\n          <a class=\"btn btn-primary float-right\" href=\"#\" (click)=\"nextPage()\" *ngIf=\"page.next\">Older Posts &rarr;</a>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <hr>\n\n\n"
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/home-bg.jpg')\">\n  <div class=\"overlay\"></div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 col-md-10 mx-auto\">\n        <div class=\"site-heading\">\n          <h1>椿工藝舎ブログ</h1>\n          <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n        </div>\n      </div>\n    </div>\n  </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-lg-9 col-md-9\">\n      <div class=\"row\">\n        <div class=\"col-lg-12 col-md-12 mx-auto\">\n          <div class=\"post-preview\" *ngFor=\"let article of page.rows\">\n            <a [routerLink]=\"['/post']\" [queryParams]=\"{id: article._id}\">\n              <h2 class=\"post-title\">\n                {{article.title}}\n              </h2>\n              <p [innerHTML]=\"sanitizedContent(article)\"></p>\n            </a>\n            <p class=\"post-meta\">{{article.tags.join(', ')}}</p>\n            <p class=\"post-meta\">Posted by\n              {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>\n          </div>\n          <hr>\n\n          <!-- Pager -->\n          <div class=\"clearfix\">\n            <a class=\"btn btn-primary float-left\" href=\"#\" (click)=\"prevPage()\" *ngIf=\"page.prev\">&larr; Newer Posts</a>\n            <a class=\"btn btn-primary float-right\" href=\"#\" (click)=\"nextPage()\" *ngIf=\"page.next\">Older Posts\n              &rarr;</a>\n          </div>\n        </div>\n      </div>\n\n    </div>\n    <div class=\"col-lg-3 col-md-3\">\n      <div class=\"aside\">\n        <app-aside></app-aside>\n      </div>\n    </div>\n  </div>\n</div>\n\n<hr>"
 
 /***/ }),
 
@@ -111,6 +122,28 @@ module.exports = "<div class=\"row\">\n<form class=\"form login-form col-md-6 co
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/components/post/post.component.html":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/components/post/post.component.html ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/home-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"site-heading\">\n                    <h1>椿工藝舎ブログ</h1>\n                    <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10\">\n            <div class=\"post-preview\">\n                <h2 class=\"post-title\">{{article.title}}</h2>\n                <p [innerHTML]=\"sanitizedContent(article)\"></p>\n                <p class=\"post-meta\">{{article.tags.join(', ')}}</p>\n                <p class=\"post-meta\">Posted by {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>\n            </div>\n        </div>\n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/components/usereditor/usereditor.component.html":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/components/usereditor/usereditor.component.html ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/admin-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Editor</h3>\n    <form class=\"form\">\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <label for=\"name\">Name</label>\n                <input type=\"text\" name=\"name\" class=\"form-control\" placeholder=\"Name\" [(ngModel)]=\"user.name\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <label for=\"email\">Email</label>\n                <input type=\"email\" name=\"email\" class=\"form-control\" placeholder=\"Email\" [(ngModel)]=\"user.email\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <label for=\"password\">Password</label>\n                <input type=\"password\" name=\"password\" class=\"form-control\" placeholder=\"Password\" [(ngModel)]=\"user.password\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <label for=\"role\">Role</label>\n                <select name=\"role\" id=\"role\" class=\"form-control\">\n                    <option value=\"{{role.name}}\" *ngFor=\"let role of roles\">{{role.label}}</option>\n                </select>\n            </div>\n        </div>\n        <button class=\"btn btn-primary\" (click)=\"save()\">Save</button>\n        <button class=\"btn btn-danger\" (click)=\"deleteUser()\" *ngIf=\"user._id\">Delete</button>\n    </form>\n\n</div>\n<hr>\n"
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/index.js!./src/app/components/users/users.component.html":
 /*!*********************************************************************************!*\
   !*** ./node_modules/raw-loader!./src/app/components/users/users.component.html ***!
@@ -118,7 +151,7 @@ module.exports = "<div class=\"row\">\n<form class=\"form login-form col-md-6 co
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/admin-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/editor']\">New Article</button>\n                        <button class=\"btn btn-primary btn-sm\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Users</h3>\n\n    <table class=\"table\">\n        <thead>\n            <tr>\n                <th>Name</th>\n                <th>Email</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor=\"let user of page.rows\">\n                <td>{{user.name}}</td>\n                <td>{{user.email}}</td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n<hr>"
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/admin-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Users</h3>\n    <div class=\"clearfix\">\n        <a class=\"btn btn-primary float-right\" href=\"#\" [routerLink]=\"['/usereditor']\">New User</a>\n    </div>\n    <div class=\"py-4\"></div>\n\n    <table class=\"table\">\n        <thead>\n            <tr>\n                <th>Name</th>\n                <th>Email</th>\n                <th></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor=\"let user of page.rows\">\n                <td>{{user.name}}</td>\n                <td>{{user.email}}</td>\n                <td><a [routerLink]=\"['/usereditor']\" [queryParams]=\"{id: user._id}\">Edit</a></td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n<hr>"
 
 /***/ }),
 
@@ -168,6 +201,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_about_about_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/about/about.component */ "./src/app/components/about/about.component.ts");
 /* harmony import */ var _components_contact_contact_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/contact/contact.component */ "./src/app/components/contact/contact.component.ts");
 /* harmony import */ var _components_users_users_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/users/users.component */ "./src/app/components/users/users.component.ts");
+/* harmony import */ var _components_post_post_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/post/post.component */ "./src/app/components/post/post.component.ts");
+/* harmony import */ var _components_usereditor_usereditor_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/usereditor/usereditor.component */ "./src/app/components/usereditor/usereditor.component.ts");
+
+
 
 
 
@@ -204,7 +241,13 @@ const routes = [
     },
     {
         path: 'users', component: _components_users_users_component__WEBPACK_IMPORTED_MODULE_11__["UsersComponent"], canActivate: [_auth_guard__WEBPACK_IMPORTED_MODULE_6__["AuthGuard"]]
-    }
+    },
+    {
+        path: 'post', component: _components_post_post_component__WEBPACK_IMPORTED_MODULE_12__["PostComponent"]
+    },
+    {
+        path: 'usereditor', component: _components_usereditor_usereditor_component__WEBPACK_IMPORTED_MODULE_13__["UsereditorComponent"], canActivate: [_auth_guard__WEBPACK_IMPORTED_MODULE_6__["AuthGuard"]]
+    },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -291,6 +334,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_about_about_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/about/about.component */ "./src/app/components/about/about.component.ts");
 /* harmony import */ var _components_contact_contact_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/contact/contact.component */ "./src/app/components/contact/contact.component.ts");
 /* harmony import */ var _components_users_users_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/users/users.component */ "./src/app/components/users/users.component.ts");
+/* harmony import */ var _components_post_post_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/post/post.component */ "./src/app/components/post/post.component.ts");
+/* harmony import */ var _components_aside_aside_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/aside/aside.component */ "./src/app/components/aside/aside.component.ts");
+/* harmony import */ var _components_usereditor_usereditor_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/usereditor/usereditor.component */ "./src/app/components/usereditor/usereditor.component.ts");
+
+
+
 
 
 
@@ -330,7 +379,10 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _components_editor_editor_component__WEBPACK_IMPORTED_MODULE_15__["EditorComponent"],
             _components_about_about_component__WEBPACK_IMPORTED_MODULE_17__["AboutComponent"],
             _components_contact_contact_component__WEBPACK_IMPORTED_MODULE_18__["ContactComponent"],
-            _components_users_users_component__WEBPACK_IMPORTED_MODULE_19__["UsersComponent"]
+            _components_users_users_component__WEBPACK_IMPORTED_MODULE_19__["UsersComponent"],
+            _components_post_post_component__WEBPACK_IMPORTED_MODULE_20__["PostComponent"],
+            _components_aside_aside_component__WEBPACK_IMPORTED_MODULE_21__["AsideComponent"],
+            _components_usereditor_usereditor_component__WEBPACK_IMPORTED_MODULE_22__["UsereditorComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -442,7 +494,7 @@ AboutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYWRtaW4vYWRtaW4uY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "ul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n}\n\nli {\n    padding-bottom: 1rem;\n    font-size: 80%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9hZG1pbi9hZG1pbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLFNBQVM7SUFDVCxVQUFVO0FBQ2Q7O0FBRUE7SUFDSSxvQkFBb0I7SUFDcEIsY0FBYztBQUNsQiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYWRtaW4vYWRtaW4uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInVsIHtcbiAgICBsaXN0LXN0eWxlOiBub25lO1xuICAgIG1hcmdpbjogMDtcbiAgICBwYWRkaW5nOiAwO1xufVxuXG5saSB7XG4gICAgcGFkZGluZy1ib3R0b206IDFyZW07XG4gICAgZm9udC1zaXplOiA4MCU7XG59Il19 */"
 
 /***/ }),
 
@@ -458,27 +510,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminComponent", function() { return AdminComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
-/* harmony import */ var src_app_services_article_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/article.service */ "./src/app/services/article.service.ts");
+/* harmony import */ var src_app_services_article_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/article.service */ "./src/app/services/article.service.ts");
+/* harmony import */ var src_app_services_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
+
 
 
 
 
 let AdminComponent = class AdminComponent {
-    constructor(auth, articleService) {
-        this.auth = auth;
+    constructor(articleService, userService, auth) {
         this.articleService = articleService;
+        this.userService = userService;
+        this.auth = auth;
         this.articles = 0;
+        this.topPosts = [];
+        this.users = [];
     }
     ngOnInit() {
         this.articleService.countPost().subscribe(resp => {
             this.articles = resp.count;
         });
+        this.articleService.topPosts(10).subscribe(resp => {
+            this.topPosts = resp;
+        });
+        this.userService.getUsers(0, 50).subscribe(resp => {
+            this.users = resp.rows;
+        });
     }
 };
 AdminComponent.ctorParameters = () => [
-    { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] },
-    { type: src_app_services_article_service__WEBPACK_IMPORTED_MODULE_3__["ArticleService"] }
+    { type: src_app_services_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"] },
+    { type: src_app_services_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"] },
+    { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] }
 ];
 AdminComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -516,12 +580,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_services_article_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/article.service */ "./src/app/services/article.service.ts");
+/* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
+
 
 
 
 let ArticlesComponent = class ArticlesComponent {
-    constructor(articleService) {
+    constructor(articleService, auth) {
         this.articleService = articleService;
+        this.auth = auth;
         this.page = {};
     }
     ngOnInit() {
@@ -534,7 +601,8 @@ let ArticlesComponent = class ArticlesComponent {
     }
 };
 ArticlesComponent.ctorParameters = () => [
-    { type: src_app_services_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"] }
+    { type: src_app_services_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"] },
+    { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] }
 ];
 ArticlesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -543,6 +611,57 @@ ArticlesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [__webpack_require__(/*! ./articles.component.css */ "./src/app/components/articles/articles.component.css")]
     })
 ], ArticlesComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/aside/aside.component.css":
+/*!******************************************************!*\
+  !*** ./src/app/components/aside/aside.component.css ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "ul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n}\n\nli {\n    font-size: 80%;\n    padding-bottom: 1rem;\n}\n\nh5 {\n    border-bottom: 2px solid #065a8b;\n    padding-bottom: 0.5rem;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9hc2lkZS9hc2lkZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLFNBQVM7SUFDVCxVQUFVO0FBQ2Q7O0FBRUE7SUFDSSxjQUFjO0lBQ2Qsb0JBQW9CO0FBQ3hCOztBQUVBO0lBQ0ksZ0NBQWdDO0lBQ2hDLHNCQUFzQjtBQUMxQiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYXNpZGUvYXNpZGUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInVsIHtcbiAgICBsaXN0LXN0eWxlOiBub25lO1xuICAgIG1hcmdpbjogMDtcbiAgICBwYWRkaW5nOiAwO1xufVxuXG5saSB7XG4gICAgZm9udC1zaXplOiA4MCU7XG4gICAgcGFkZGluZy1ib3R0b206IDFyZW07XG59XG5cbmg1IHtcbiAgICBib3JkZXItYm90dG9tOiAycHggc29saWQgIzA2NWE4YjtcbiAgICBwYWRkaW5nLWJvdHRvbTogMC41cmVtO1xufSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/aside/aside.component.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/components/aside/aside.component.ts ***!
+  \*****************************************************/
+/*! exports provided: AsideComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AsideComponent", function() { return AsideComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_services_article_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/article.service */ "./src/app/services/article.service.ts");
+
+
+
+let AsideComponent = class AsideComponent {
+    constructor(articleService) {
+        this.articleService = articleService;
+        this.topPosts = [];
+    }
+    ngOnInit() {
+        this.articleService.topPosts(5).subscribe(resp => { this.topPosts = resp; });
+    }
+};
+AsideComponent.ctorParameters = () => [
+    { type: src_app_services_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"] }
+];
+AsideComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-aside',
+        template: __webpack_require__(/*! raw-loader!./aside.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/aside/aside.component.html"),
+        styles: [__webpack_require__(/*! ./aside.component.css */ "./src/app/components/aside/aside.component.css")]
+    })
+], AsideComponent);
 
 
 
@@ -639,13 +758,11 @@ let EditorComponent = class EditorComponent {
                 const articleId = p.id;
                 this.articleService.getArticle(articleId).subscribe(resp => {
                     this.article = resp;
-                    console.log(this.article);
                 });
             }
         });
     }
     saveAsDraft() {
-        console.log(this.article);
         this.articleService.saveAsDraft(this.article).subscribe(resp => {
             this.router.navigate(['/articles']);
         }, err => {
@@ -653,7 +770,6 @@ let EditorComponent = class EditorComponent {
         });
     }
     post() {
-        console.log(this.article);
         this.articleService.post(this.article).subscribe(resp => {
             this.router.navigate(['/articles']);
         }, err => {
@@ -820,6 +936,169 @@ LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/components/post/post.component.css":
+/*!****************************************************!*\
+  !*** ./src/app/components/post/post.component.css ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcG9zdC9wb3N0LmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/post/post.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/components/post/post.component.ts ***!
+  \***************************************************/
+/*! exports provided: PostComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostComponent", function() { return PostComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_services_article_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/article.service */ "./src/app/services/article.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
+
+
+
+
+
+let PostComponent = class PostComponent {
+    constructor(articleService, route, sanitizer) {
+        this.articleService = articleService;
+        this.route = route;
+        this.sanitizer = sanitizer;
+        this.article = { title: '', content: '', tags: [], author: {} };
+    }
+    ngOnInit() {
+        this.route.queryParams.subscribe(p => {
+            if (p.id) {
+                this.articleService.getPost(p.id).subscribe(resp => {
+                    this.article = resp;
+                });
+            }
+        });
+    }
+    sanitizedContent(article) {
+        return this.sanitizer.bypassSecurityTrustHtml(article.content);
+    }
+};
+PostComponent.ctorParameters = () => [
+    { type: src_app_services_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
+    { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["DomSanitizer"] }
+];
+PostComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-post',
+        template: __webpack_require__(/*! raw-loader!./post.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/post/post.component.html"),
+        styles: [__webpack_require__(/*! ./post.component.css */ "./src/app/components/post/post.component.css")]
+    })
+], PostComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/usereditor/usereditor.component.css":
+/*!****************************************************************!*\
+  !*** ./src/app/components/usereditor/usereditor.component.css ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdXNlcmVkaXRvci91c2VyZWRpdG9yLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/usereditor/usereditor.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/components/usereditor/usereditor.component.ts ***!
+  \***************************************************************/
+/*! exports provided: UsereditorComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsereditorComponent", function() { return UsereditorComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_services_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+let UsereditorComponent = class UsereditorComponent {
+    constructor(userService, router, route) {
+        this.userService = userService;
+        this.router = router;
+        this.route = route;
+        this.user = { name: '', email: '', password: '', role: '' };
+        this.roles = [{ name: 'admin', label: '管理者' }, { name: 'user', label: '一般ユーザー' }];
+    }
+    ngOnInit() {
+        this.route.queryParams.subscribe(p => {
+            if (p.id) {
+                const userId = p.id;
+                this.userService.getUser(userId).subscribe(resp => {
+                    this.user = resp;
+                    this.user.password = '';
+                });
+            }
+        });
+    }
+    save() {
+        if (this.user._id) {
+            this.updateUser();
+        }
+        else {
+            this.registerUser();
+        }
+    }
+    registerUser() {
+        this.userService.register(this.user).subscribe(resp => {
+            this.router.navigate(['/users']);
+        }, err => {
+            console.log(err);
+        });
+    }
+    updateUser() {
+        this.userService.update(this.user).subscribe(resp => {
+            this.router.navigate(['/users']);
+        }, err => {
+            console.log(err);
+        });
+    }
+    deleteUser() {
+        this.userService.delete(this.user._id).subscribe(resp => {
+            this.router.navigate(['/users']);
+        }, err => {
+            console.log(err);
+        });
+    }
+};
+UsereditorComponent.ctorParameters = () => [
+    { type: src_app_services_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
+];
+UsereditorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-usereditor',
+        template: __webpack_require__(/*! raw-loader!./usereditor.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/usereditor/usereditor.component.html"),
+        styles: [__webpack_require__(/*! ./usereditor.component.css */ "./src/app/components/usereditor/usereditor.component.css")]
+    })
+], UsereditorComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/users/users.component.css":
 /*!******************************************************!*\
   !*** ./src/app/components/users/users.component.css ***!
@@ -843,13 +1122,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsersComponent", function() { return UsersComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_services_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
+
+
 
 
 let UsersComponent = class UsersComponent {
-    constructor() { }
+    constructor(userService, auth) {
+        this.userService = userService;
+        this.auth = auth;
+        this.page = {};
+    }
     ngOnInit() {
+        this.userService.getUsers(0, 10).subscribe(resp => { this.page = resp; });
     }
 };
+UsersComponent.ctorParameters = () => [
+    { type: src_app_services_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"] },
+    { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] }
+];
 UsersComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-users',
@@ -890,43 +1182,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config */ "./src/app/config.ts");
-
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config */ "./src/app/config.ts");
 
 
 
 
 let ArticleService = class ArticleService {
-    constructor(http, router) {
+    constructor(http) {
         this.http = http;
-        this.router = router;
     }
     getArticles(page, limit, query, order) {
-        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_4__["SERVER_URL"]}/external/articles?page=${page}&limit=${limit}`);
+        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/articles?page=${page}&limit=${limit}`);
     }
     getPublishedArticles(page, limit, query, order) {
-        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_4__["SERVER_URL"]}/external/articles?page=${page}&limit=${limit}&draft=false`);
+        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/posts?page=${page}&limit=${limit}`);
     }
     getArticle(id) {
-        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_4__["SERVER_URL"]}/external/article/${id}`);
+        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/article/${id}`);
+    }
+    getPost(id) {
+        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/post/${id}`);
     }
     post(article) {
-        return this.http.post(`${_config__WEBPACK_IMPORTED_MODULE_4__["SERVER_URL"]}/external/articles`, article);
+        return this.http.post(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/articles`, article);
     }
     saveAsDraft(article) {
-        return this.http.post(`${_config__WEBPACK_IMPORTED_MODULE_4__["SERVER_URL"]}/external/articles/save`, article);
+        return this.http.post(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/articles/save`, article);
     }
     deletePost(id) {
-        return this.http.delete(`${_config__WEBPACK_IMPORTED_MODULE_4__["SERVER_URL"]}/external/articles/${id}`);
+        return this.http.delete(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/articles/${id}`);
     }
     countPost() {
-        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_4__["SERVER_URL"]}/external/articles/count`);
+        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/articles/count`);
+    }
+    topPosts(limit) {
+        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/posts/top?limit=${limit}`);
     }
 };
 ArticleService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
 ArticleService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -1036,6 +1330,57 @@ TokenInterceptorService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providedIn: 'root'
     })
 ], TokenInterceptorService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/user.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/user.service.ts ***!
+  \******************************************/
+/*! exports provided: UserService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config */ "./src/app/config.ts");
+
+
+
+
+let UserService = class UserService {
+    constructor(http) {
+        this.http = http;
+    }
+    getUsers(page, limit) {
+        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/users?page=${page}&limit=${limit}`);
+    }
+    getUser(userId) {
+        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/user/${userId}`);
+    }
+    register(user) {
+        return this.http.post(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/register`, user);
+    }
+    update(user) {
+        return this.http.put(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/users`, user);
+    }
+    delete(user) {
+        return this.http.delete(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/users/${user._id}`);
+    }
+};
+UserService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], UserService);
 
 
 

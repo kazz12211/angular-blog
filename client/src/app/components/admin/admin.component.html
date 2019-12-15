@@ -8,7 +8,6 @@
                     <span class="subheading px-4">
                         <button class="btn btn-primary btn-sm">Dashboard</button>
                         <button class="btn btn-primary btn-sm" [routerLink]="['/articles']">Articles</button>
-                        <button class="btn btn-primary btn-sm" [routerLink]="['/editor']">New Article</button>
                         <button class="btn btn-primary btn-sm" [routerLink]="['/users']">Users</button>
                         <button class="btn btn-dark btn-sm" (click)="auth.logout()">Logout</button>
                     </span>
@@ -33,10 +32,13 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title text-center">Top Articles</h5>
-                        <ul>
-                            <li>AAAAA</li>
-                            <li>BBBBB</li>
-                        </ul>
+                    <ul>
+                        <li *ngFor="let post of topPosts">{{post.title}}</li>
+                    </ul>
+                    <div class="clearfix">
+                        <button class="btn btn-primary btn-sm float-right" [routerLink]="['/editor']">New
+                            Article</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -44,15 +46,12 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title text-center">Users</h5>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th># of Posts</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    <a href="#" class="card-link">Card link</a>
+                    <ul>
+                        <li *ngFor="let user of users">{{user.name}}</li>
+                    </ul>
+                    <div class="clearfix">
+                        <button class="btn btn-primary btn-sm float-right" [routerLink]="['/newUser']">New User</button>
+                    </div>
                 </div>
             </div>
         </div>

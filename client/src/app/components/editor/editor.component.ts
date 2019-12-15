@@ -15,7 +15,7 @@ export class EditorComponent implements OnInit {
   editor = ClassicEditor;
 
   constructor(
-    private auth: AuthService, 
+    private auth: AuthService,
     private articleService: ArticleService,
     private router: Router,
     private route: ActivatedRoute) { }
@@ -26,14 +26,12 @@ export class EditorComponent implements OnInit {
         const articleId = p.id;
         this.articleService.getArticle(articleId).subscribe(resp => {
           this.article = resp;
-          console.log(this.article);
         });
       }
     });
   }
 
   saveAsDraft() {
-    console.log(this.article);
     this.articleService.saveAsDraft(this.article).subscribe(resp => {
       this.router.navigate(['/articles']);
     }, err => {
@@ -42,7 +40,6 @@ export class EditorComponent implements OnInit {
   }
 
   post() {
-    console.log(this.article);
     this.articleService.post(this.article).subscribe(resp => {
       this.router.navigate(['/articles']);
     }, err => {
