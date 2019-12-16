@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const verifyToken = require('../security');
+const verifyToken = require('../security').verifyToken;
+const getUserId = require('../security').getUserId;
 const User = require('../model/User');
 const Article = require('../model/Article');
 const bcrypt = require('bcryptjs');
@@ -8,7 +9,7 @@ const jwt = require('jsonwebtoken');
 const config = require('../config');
 const Page = require('../model/page');
 
-router.post('/register', (req, res) => {
+router.post('/register', getUserId, (req, res) => {
     const {name, email, password, role} = req.body;
     if(!name || !email || !password) {
         return res.status(500).send('Name, email and password are required');
@@ -58,7 +59,7 @@ router.get('/articles/count', verifyToken, (req, res) => {
     });
 });
 
-router.get('/posts', (req, res) => {
+router.get('/posts', getUserId, (req, res) => {
     const page = req.query.page ? parseInt(req.query.page) : 0;
     const limit = req.query.limit ? parseInt(req.query.limit) : 10;
     let count = 0;
@@ -164,16 +165,26 @@ router.get('/article/:id', verifyToken, (req, res) => {
     });
 });
 
-router.get('/post/:id', (req, res) => {
+router.get('/post/:id', getUserId, (req, res) => {
     const id = req.params.id;
-    Article.findByIdAndUpdate(id, {
-        $inc: {viewCount: 1}
-    }).populate('author').exec().then(resp => {
-        res.send(resp);
-    }).catch(err => {
-        console.error(err);
-        res.status(500).send({error: err});
-    });
+    const userId = req.userId;
+    if (userId) {
+        Article.findById(id).populate('author').exec().then(resp => {
+            res.send(resp);
+        }).catch(err => {
+            console.error(err);
+            res.status(500).send({ error: err });
+        });
+    } else {
+        Article.findByIdAndUpdate(id, {
+            $inc: { viewCount: 1 }
+        }).populate('author').exec().then(resp => {
+            res.send(resp);
+        }).catch(err => {
+            console.error(err);
+            res.status(500).send({ error: err });
+        });
+    }
 });
 
 router.post('/articles/save', verifyToken, (req, res) => {
@@ -227,7 +238,7 @@ router.delete('/articles/:id', verifyToken, (req, res) => {
     });
 });
 
-router.get('/posts/top', (req, res) => {
+router.get('/posts/top', getUserId, (req, res) => {
     const limit = parseInt(req.query.limit);
     const cond = { draft: false };
     const query = Article.find(cond)
@@ -296,6 +307,17 @@ router.delete('/users/:id', verifyToken, (req, res) => {
     const userId = req.params.id;
     User.deleteOne({_id: userId}).exec().then(result => {
         res.send(result);
+    }).catch(err => {
+        res.status(500).send({error: err});
+    });
+});
+
+router.get('/post/like/:id', getUserId, (req, res) => {
+    const articleId = req.params.id;
+    Article.findByIdAndUpdate(articleId, {
+        $inc: { likeCount: 1 }
+    }).populate('author').exec().then(resp => {
+        res.send(resp);
     }).catch(err => {
         res.status(500).send({error: err});
     });

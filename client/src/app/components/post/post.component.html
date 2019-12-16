@@ -20,6 +20,9 @@
                 <p [innerHTML]="sanitizedContent(article)"></p>
                 <p class="post-meta">{{article.tags.join(', ')}}</p>
                 <p class="post-meta">Posted by {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>
+                <span class="like">
+                <a (click)="like(article)"><i class="far fa-thumbs-up"></i></a>
+                </span>
             </div>
         </div>
     </div>

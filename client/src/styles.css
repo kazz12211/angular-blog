@@ -430,3 +430,10 @@ footer .copyright {
   color: #343a40;
 }
 
+.like > a {
+  cursor: pointer;
+}
+
+.like {
+  color: #0085A1;
+}

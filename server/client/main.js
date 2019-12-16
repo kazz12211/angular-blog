@@ -129,7 +129,7 @@ module.exports = "<div class=\"row\">\n<form class=\"form login-form col-md-6 co
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/home-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"site-heading\">\n                    <h1>椿工藝舎ブログ</h1>\n                    <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10\">\n            <div class=\"post-preview\">\n                <h2 class=\"post-title\">{{article.title}}</h2>\n                <p [innerHTML]=\"sanitizedContent(article)\"></p>\n                <p class=\"post-meta\">{{article.tags.join(', ')}}</p>\n                <p class=\"post-meta\">Posted by {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/home-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"site-heading\">\n                    <h1>椿工藝舎ブログ</h1>\n                    <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10\">\n            <div class=\"post-preview\">\n                <h2 class=\"post-title\">{{article.title}}</h2>\n                <p [innerHTML]=\"sanitizedContent(article)\"></p>\n                <p class=\"post-meta\">{{article.tags.join(', ')}}</p>\n                <p class=\"post-meta\">Posted by {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>\n                <span class=\"like\">\n                <a (click)=\"like(article)\"><i class=\"far fa-thumbs-up\"></i></a>\n                </span>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -986,6 +986,11 @@ let PostComponent = class PostComponent {
     sanitizedContent(article) {
         return this.sanitizer.bypassSecurityTrustHtml(article.content);
     }
+    like(article) {
+        /*
+        this.articleService.likePost(article._id).subscribe(resp => {});
+        */
+    }
 };
 PostComponent.ctorParameters = () => [
     { type: src_app_services_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"] },
@@ -1217,6 +1222,9 @@ let ArticleService = class ArticleService {
     }
     topPosts(limit) {
         return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/posts/top?limit=${limit}`);
+    }
+    likePost(id) {
+        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/post/like/${id}`);
     }
 };
 ArticleService.ctorParameters = () => [

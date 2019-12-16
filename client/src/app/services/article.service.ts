@@ -46,6 +46,10 @@ export class ArticleService {
   topPosts(limit: number): Observable<any[]> {
     return this.http.get<any[]>(`${SERVER_URL}/external/posts/top?limit=${limit}`);
   }
+
+  likePost(id: any): Observable<any> {
+    return this.http.get(`${SERVER_URL}/external/post/like/${id}`);
+  }
 }
 
 

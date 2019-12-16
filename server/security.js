@@ -21,4 +21,19 @@ function verifyToken(req, res, next) {
     }
 }
 
-module.exports = verifyToken;    
+function getUserId(req, res, next) {
+    if (req.headers.authorization) {
+        const token = req.headers.authorization.split(' ')[1];
+        if (token !== null) {
+            try {
+                const payload = jwt.verify(token, config.jwt.secretKey);
+                if (payload) {
+                    req.userId = payload.subject;
+                }
+            } catch (err) { }
+        }
+    }
+    next();
+}
+
+module.exports = {verifyToken, getUserId};

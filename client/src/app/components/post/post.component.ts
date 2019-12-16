@@ -30,4 +30,9 @@ export class PostComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustHtml(article.content);
   }
 
+  like(article: any) {
+    /*
+    this.articleService.likePost(article._id).subscribe(resp => {});
+    */
+  }
 }

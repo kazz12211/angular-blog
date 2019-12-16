@@ -27,6 +27,10 @@ const ArticleSchema = new mongoose.Schema({
     viewCount: {
         type: Number,
         default: 0
+    },
+    likeCount: {
+        type: Number,
+        default: 0
     }
 });
 
