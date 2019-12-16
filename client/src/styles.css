@@ -418,7 +418,17 @@ footer .copyright {
 }
 
 .btn-sm {
-  font-size: 14px;
+  font-size: 14px;.post-preview > p {
+    color: #212529;
+  }
+    
+  .post-preview > .post-meta {
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 0;
+    color: #868e96;
+  }
+    
   font-weight: 600;
   padding: 10px 12px;
 }
@@ -437,3 +447,20 @@ footer .copyright {
 .like {
   color: #0085A1;
 }
+
+.comment {
+  padding: 1rem;
+}
+
+.post-comment > p {
+  font-size: 16px;
+  color: #212529;
+}
+  
+.post-comment > .post-comment-meta {
+  font-size: 16px;
+  font-style: italic;
+  margin-top: 0;
+  color: #868e96;
+}
+  

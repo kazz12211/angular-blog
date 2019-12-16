@@ -9,8 +9,8 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  article: any = {title:'', content:'', tags:[], author:{}};
-
+  article: any = {title: '', content: '', tags: [], author: {}};
+  comment: any = {writer: '', email: '', content: ''};
   constructor(
     private articleService: ArticleService,
     private route: ActivatedRoute,
@@ -26,13 +26,19 @@ export class PostComponent implements OnInit {
     });
   }
 
-  sanitizedContent(article): SafeHtml {
-    return this.sanitizer.bypassSecurityTrustHtml(article.content);
+  sanitizedContent(content): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(content);
   }
 
   like(article: any) {
     /*
     this.articleService.likePost(article._id).subscribe(resp => {});
     */
+  }
+
+  postComment() {
+    this.articleService.addComment(this.article._id, this.comment).subscribe(resp => {
+      this.article = resp;
+    });
   }
 }

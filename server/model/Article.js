@@ -1,6 +1,27 @@
 const mongoose = require('mongoose');
 const timestamp = require('mongoose-timestamp');
 
+const CommentSchema = new mongoose.Schema({
+    writer: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    email: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    content: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    postedAt: {
+        type: Date
+    }
+});
+
 const ArticleSchema = new mongoose.Schema({
     author: {
         type: mongoose.Schema.Types.ObjectId,
@@ -31,6 +52,9 @@ const ArticleSchema = new mongoose.Schema({
     likeCount: {
         type: Number,
         default: 0
+    },
+    comments: {
+        type: [ { type: mongoose.Schema.Types.ObjectId, ref: 'Comment' } ]
     }
 });
 
@@ -38,5 +62,6 @@ const ArticleSchema = new mongoose.Schema({
 ArticleSchema.plugin(timestamp);
 
 const Article = mongoose.model('Article', ArticleSchema);
+const Comment = mongoose.model('Comment', CommentSchema);
 
-module.exports = Article;
+module.exports = {Article, Comment};

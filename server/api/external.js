@@ -3,7 +3,8 @@ const router = express.Router();
 const verifyToken = require('../security').verifyToken;
 const getUserId = require('../security').getUserId;
 const User = require('../model/User');
-const Article = require('../model/Article');
+const Article = require('../model/Article').Article;
+const Comment = require('../model/Article').Comment;
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('../config');
@@ -144,7 +145,8 @@ router.post('/articles', verifyToken, (req, res) => {
             author: req.userId,
             tags: tagList,
             draft: false,
-            publishedAt: new Date()
+            publishedAt: new Date(),
+            comments: []
         });
         article.save().then(saved => {
             res.send(saved);
@@ -169,7 +171,10 @@ router.get('/post/:id', getUserId, (req, res) => {
     const id = req.params.id;
     const userId = req.userId;
     if (userId) {
-        Article.findById(id).populate('author').exec().then(resp => {
+        Article.findById(id)
+        .populate('author')
+        .populate('comments')
+        .exec().then(resp => {
             res.send(resp);
         }).catch(err => {
             console.error(err);
@@ -178,7 +183,10 @@ router.get('/post/:id', getUserId, (req, res) => {
     } else {
         Article.findByIdAndUpdate(id, {
             $inc: { viewCount: 1 }
-        }).populate('author').exec().then(resp => {
+        })
+        .populate('author')
+        .populate('comments')
+        .exec().then(resp => {
             res.send(resp);
         }).catch(err => {
             console.error(err);
@@ -189,7 +197,6 @@ router.get('/post/:id', getUserId, (req, res) => {
 
 router.post('/articles/save', verifyToken, (req, res) => {
     let tagList = [];
-    console.log(req.body);
     if(req.body.tags) {
         if (req.body.tags instanceof String) {
             tagList = req.body.tags.split(',').map(s => s.trim());
@@ -218,7 +225,8 @@ router.post('/articles/save', verifyToken, (req, res) => {
             author: req.userId,
             tags: tagList,
             draft: true,
-            publishedAt: null
+            publishedAt: null,
+            comments: []
         });
         article.save().then(saved => {
             res.send(saved);
@@ -312,12 +320,40 @@ router.delete('/users/:id', verifyToken, (req, res) => {
     });
 });
 
-router.get('/post/like/:id', getUserId, (req, res) => {
+router.get('/post/:id/like', getUserId, (req, res) => {
     const articleId = req.params.id;
     Article.findByIdAndUpdate(articleId, {
         $inc: { likeCount: 1 }
     }).populate('author').exec().then(resp => {
         res.send(resp);
+    }).catch(err => {
+        res.status(500).send({error: err});
+    });
+});
+
+router.post('/post/:id/comment', getUserId, (req, res) => {
+    const articleId = req.params.id;
+    const {writer, email, content} = req.body;
+
+    const comment = new Comment({
+        writer, 
+        email, 
+        content});
+    comment.postedAt = new Date();
+    Article.findById(articleId)
+    .populate('author')
+    .populate({path: 'comments', model: Comment})
+    .exec().then(article => {
+        article.comments.push(comment);
+        article.save().then(resp => {
+            comment.save().then(comment => {
+                res.send(resp);
+            }).catch(err => {
+                res.status(500).send({error: err});
+            });
+        }).catch(err => {
+            res.status(500).send({error: err});
+        });
     }).catch(err => {
         res.status(500).send({error: err});
     });

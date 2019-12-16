@@ -48,7 +48,11 @@ export class ArticleService {
   }
 
   likePost(id: any): Observable<any> {
-    return this.http.get(`${SERVER_URL}/external/post/like/${id}`);
+    return this.http.get(`${SERVER_URL}/external/post/${id}/like`);
+  }
+
+  addComment(id: any, comment: any): Observable<any> {
+    return this.http.post(`${SERVER_URL}/external/post/${id}/comment`, comment);
   }
 }
 

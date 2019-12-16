@@ -129,7 +129,7 @@ module.exports = "<div class=\"row\">\n<form class=\"form login-form col-md-6 co
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/home-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"site-heading\">\n                    <h1>椿工藝舎ブログ</h1>\n                    <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10\">\n            <div class=\"post-preview\">\n                <h2 class=\"post-title\">{{article.title}}</h2>\n                <p [innerHTML]=\"sanitizedContent(article)\"></p>\n                <p class=\"post-meta\">{{article.tags.join(', ')}}</p>\n                <p class=\"post-meta\">Posted by {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>\n                <span class=\"like\">\n                <a (click)=\"like(article)\"><i class=\"far fa-thumbs-up\"></i></a>\n                </span>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/home-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"site-heading\">\n                    <h1>椿工藝舎ブログ</h1>\n                    <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10\">\n            <div class=\"post-preview\">\n                <h2 class=\"post-title\">{{article.title}}</h2>\n                <p [innerHTML]=\"sanitizedContent(article.content)\"></p>\n                <p class=\"post-meta\">{{article.tags.join(', ')}}</p>\n                <p class=\"post-meta\">Posted by {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>\n                <span class=\"like\">\n                <a (click)=\"like(article)\"><i class=\"far fa-thumbs-up\"></i></a>\n                </span>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10\">\n                <div class=\"py-4\">\n                        <h5>Comments</h5>\n                    </div>\n            <form class=\"form comment-form\">\n                <div class=\"form-group\">\n                    <input type=\"text\" name=\"name\" [(ngModel)]=\"comment.writer\" class=\"form-control\" placeholder=\"Your name\" required>\n                </div>\n                <div class=\"form-group\">\n                    <input type=\"email\" name=\"email\" [(ngModel)]=\"comment.email\" class=\"form-control\" placeholder=\"Your email\" required>\n                </div>\n                <div class=\"form-group\">\n                    <textarea name=\"comment\" id=\"comment\" [(ngModel)]=\"comment.content\" class=\"form-control\" placeholder=\"Your comment\" required></textarea>\n                </div>\n                <div class=\"clearfix\">\n                    <button class=\"btn btn-default btn-sm float-right\" (click)=\"postComment()\">Post</button>\n                </div>\n    \n            </form>\n            <div class=\"comment\">\n            <div class=\"post-comment\" *ngFor=\"let comment of article.comments\">\n                <p [innerHTML]=\"sanitizedContent(comment.content)\"></p>\n                 <p class=\"post-comment-meta\">by {{comment.writer}} on {{comment.postedAt|date:'short'}}</p>\n            </div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -973,6 +973,7 @@ let PostComponent = class PostComponent {
         this.route = route;
         this.sanitizer = sanitizer;
         this.article = { title: '', content: '', tags: [], author: {} };
+        this.comment = { writer: '', email: '', content: '' };
     }
     ngOnInit() {
         this.route.queryParams.subscribe(p => {
@@ -983,13 +984,18 @@ let PostComponent = class PostComponent {
             }
         });
     }
-    sanitizedContent(article) {
-        return this.sanitizer.bypassSecurityTrustHtml(article.content);
+    sanitizedContent(content) {
+        return this.sanitizer.bypassSecurityTrustHtml(content);
     }
     like(article) {
         /*
         this.articleService.likePost(article._id).subscribe(resp => {});
         */
+    }
+    postComment() {
+        this.articleService.addComment(this.article._id, this.comment).subscribe(resp => {
+            this.article = resp;
+        });
     }
 };
 PostComponent.ctorParameters = () => [
@@ -1224,7 +1230,10 @@ let ArticleService = class ArticleService {
         return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/posts/top?limit=${limit}`);
     }
     likePost(id) {
-        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/post/like/${id}`);
+        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/post/${id}/like`);
+    }
+    addComment(id, comment) {
+        return this.http.post(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/post/${id}/comment`, comment);
     }
 };
 ArticleService.ctorParameters = () => [
