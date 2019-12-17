@@ -1,5 +1,5 @@
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('img/admin-bg.jpg')">
+<header class="masthead" style="background-image: url('assets/img/post-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
@@ -27,7 +27,11 @@
         </div>
         <div class="row">
             <div class="form-group col">
-                <ckeditor [editor]="editor" [(ngModel)]="article.content" name="content"></ckeditor>
+                <ckeditor
+                    [editor]="editor"
+                    [config]="editorConfig"
+                    [(ngModel)]="article.content" 
+                    name="content"></ckeditor>
             </div>
         </div>
         <div class="row">
@@ -37,7 +41,8 @@
         </div>
         <div class="row">
             <div class="form-group col">
-                <input type="text" name="author" readonly class="form-control-plaintext" [value]="auth.getUsername()">
+                <label for="author">Author</label>
+                <input type="text" name="author" id="author" readonly class="form-control-plaintext" [value]="auth.getUsername()">
             </div>
         </div>
         <button class="btn btn-primary" (click)="post()">Publish</button>
@@ -45,6 +50,7 @@
         <button class="btn btn-danger" (click)="deletePost()" *ngIf="article._id">Delete</button>
     </form>
 
+    <!--
     <form class="form">
         <div class="row">
             <div class="input-group col-md-8 m-auto">
@@ -63,5 +69,6 @@
             </div>
         </div>
     </form>
+    -->
 </div>
 <hr>

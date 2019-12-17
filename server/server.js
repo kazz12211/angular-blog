@@ -8,6 +8,7 @@ const multer = require('multer');
 const GridFsStorage = require('multer-gridfs-storage');
 const crypto = require('crypto');
 const path = require('path');
+const fs = require('fs');
 
 mongoose.connect(config.db.uri, {
     useNewUrlParser: true,
@@ -75,10 +76,35 @@ app.use( (req, res, next) => {
 app.use('/auth', require('./api/auth'));
 app.use('/external', require('./api/external'));
 
-app.post('/upload', upload.single('file'), (req, res) => {
-    console.log(req.body);
-    res.json({ok: true});
+
+
+app.post('/upload', upload.single('upload'), (req, res) => {
+    const file = req.file;
+    res.json({url: `/image/${file.filename}`});
 });
+
+
+/*
+app.post('/upload', (req, res) => {
+    let body = '';
+    req.on('data', (chunk) => {
+        body += chunk;
+    });
+    req.on('end', () => {
+        crypto.randomBytes(16, (err, buf) => {
+            const filename = buf.toString('hex') + '.jpg';
+            fs.writeFile(__dirname+ '/' + filename, body, (err, data) => {
+                if(err) {
+                    console.error(err);
+                } else {
+                    console.log('File written', filename);
+                }
+            });
+        });
+    res.json({url: 'http://localhost:3000/home-bg.jpg'});
+    });
+});
+*/
 
 app.get('/image/:filename', (req, res) => {
     //gfs.find({

@@ -3,8 +3,8 @@ import { AuthService } from 'src/app/services/auth.service';
 import { ArticleService } from 'src/app/services/article.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { FileService } from 'src/app/services/file.service';
 import { forkJoin } from 'rxjs';
+import { SERVER_URL } from 'src/app/config';
 
 @Component({
   selector: 'app-editor',
@@ -15,20 +15,27 @@ export class EditorComponent implements OnInit {
 
   article: any = {title: '', content: ''};
   editor = ClassicEditor;
+  editorConfig = {};
+  /*
   @ViewChild('file', {static: false}) fileInput: ElementRef;
   @ViewChild('fileLabel', {static: false}) fileLabel: ElementRef;
   file: File;
   uploading: boolean;
   progress: any;
   canBeFinished: boolean;
+  */
 
   constructor(
     private auth: AuthService,
     private articleService: ArticleService,
     private router: Router,
-    private route: ActivatedRoute,
-    private fileService: FileService) {
+    private route: ActivatedRoute) {
 
+    this.editorConfig = {
+      simpleUpload: {
+        uploadUrl: `${SERVER_URL}/upload`
+      }
+    };
   }
 
   ngOnInit() {
@@ -64,6 +71,7 @@ export class EditorComponent implements OnInit {
     });
   }
 
+  /*
   onFileChange(list: any) {
     if(list.length <= 0) {
       return;
@@ -73,7 +81,9 @@ export class EditorComponent implements OnInit {
     this.fileLabel.nativeElement.innerHTML = this.file.name;
     console.log(this.fileLabel);
   }
+  */
 
+  /*
   uploadFile() {
     console.log('Upload', this.file);
     this.uploading = true;
@@ -90,4 +100,5 @@ export class EditorComponent implements OnInit {
       this.uploading = false;
     });
   }
+  */
 }
