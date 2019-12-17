@@ -27,7 +27,9 @@ export class EditorComponent implements OnInit {
     private articleService: ArticleService,
     private router: Router,
     private route: ActivatedRoute,
-    private fileService: FileService) { }
+    private fileService: FileService) {
+
+  }
 
   ngOnInit() {
     this.route.queryParams.subscribe(p => {

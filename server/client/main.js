@@ -96,7 +96,7 @@ module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"backg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/admin-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Editor</h3>\n    <form class=\"form\">\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"title\" class=\"form-control\" placeholder=\"Title\" [(ngModel)]=\"article.title\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <ckeditor [editor]=\"editor\" [(ngModel)]=\"article.content\" name=\"content\"></ckeditor>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"tags\" class=\"form-control\" placeholder=\"Comma separated tags\" [(ngModel)]=\"article.tags\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"author\" readonly class=\"form-control-plaintext\" [value]=\"auth.getUsername()\">\n            </div>\n        </div>\n        <button class=\"btn btn-primary\" (click)=\"post()\">Publish</button>\n        <button class=\"btn btn-secondary\" (click)=\"saveAsDraft()\">Save as Draft</button>\n        <button class=\"btn btn-danger\" (click)=\"deletePost()\" *ngIf=\"article._id\">Delete</button>\n    </form>\n\n    <form class=\"form\">\n        <div class=\"row\">\n            <div class=\"input-group col-md-8 m-auto\">\n                <div class=\"custom-file\">\n                    <input type=\"file\" class=\"custom-file-input\" id=\"file\" #file (change)=\"onFileChange($event.target.files)\">\n                    <label for=\"file\" class=\"custom-file-label\" #fileLabel>Choose File</label>\n                </div>\n                <div class=\"input-group-append\">\n                    <span class=\"input-group-text\" (click)=\"uploadFile()\">Upload</span>\n                </div>\n            </div>\n        </div>\n    </form>\n</div>\n<hr>\n"
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/admin-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Editor</h3>\n    <form class=\"form\">\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"title\" class=\"form-control\" placeholder=\"Title\" [(ngModel)]=\"article.title\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <ckeditor [editor]=\"editor\" [(ngModel)]=\"article.content\" name=\"content\"></ckeditor>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"tags\" class=\"form-control\" placeholder=\"Comma separated tags\" [(ngModel)]=\"article.tags\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"author\" readonly class=\"form-control-plaintext\" [value]=\"auth.getUsername()\">\n            </div>\n        </div>\n        <button class=\"btn btn-primary\" (click)=\"post()\">Publish</button>\n        <button class=\"btn btn-secondary\" (click)=\"saveAsDraft()\">Save as Draft</button>\n        <button class=\"btn btn-danger\" (click)=\"deletePost()\" *ngIf=\"article._id\">Delete</button>\n    </form>\n\n    <form class=\"form\">\n        <div class=\"row\">\n            <div class=\"input-group col-md-8 m-auto\">\n\n                <div class=\"progress\" *ngIf=\"uploading\">\n                    <div class=\"progress-bar progress-bar-striped bg-danger\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                </div>\n                          \n                <div class=\"custom-file\">\n                    <input type=\"file\" class=\"custom-file-input\" id=\"file\" #file (change)=\"onFileChange($event.target.files)\">\n                    <label for=\"file\" class=\"custom-file-label\" #fileLabel>Choose File</label>\n                </div>\n                <div class=\"input-group-append\">\n                    <span class=\"input-group-text\" (click)=\"uploadFile()\">Upload</span>\n                </div>\n            </div>\n        </div>\n    </form>\n</div>\n<hr>\n"
 
 /***/ }),
 
@@ -737,6 +737,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ckeditor/ckeditor5-build-classic */ "./node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js");
 /* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var src_app_services_file_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/services/file.service */ "./src/app/services/file.service.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+
+
 
 
 
@@ -744,11 +748,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let EditorComponent = class EditorComponent {
-    constructor(auth, articleService, router, route) {
+    constructor(auth, articleService, router, route, fileService) {
         this.auth = auth;
         this.articleService = articleService;
         this.router = router;
         this.route = route;
+        this.fileService = fileService;
         this.article = { title: '', content: '' };
         this.editor = _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_5__;
     }
@@ -792,13 +797,26 @@ let EditorComponent = class EditorComponent {
     }
     uploadFile() {
         console.log('Upload', this.file);
+        this.uploading = true;
+        this.progress = this.fileService.upload(this.file);
+        let progressObservables = [];
+        for (let key in this.progress) {
+            console.log(this.progress);
+            progressObservables.push(this.progress[key].progress);
+        }
+        this.canBeFinished = false;
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["forkJoin"])(progressObservables).subscribe(end => {
+            this.canBeFinished = true;
+            this.uploading = false;
+        });
     }
 };
 EditorComponent.ctorParameters = () => [
     { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] },
     { type: src_app_services_article_service__WEBPACK_IMPORTED_MODULE_3__["ArticleService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] },
+    { type: src_app_services_file_service__WEBPACK_IMPORTED_MODULE_6__["FileService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('file', { static: false })
@@ -1322,6 +1340,68 @@ AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providedIn: 'root'
     })
 ], AuthService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/file.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/file.service.ts ***!
+  \******************************************/
+/*! exports provided: FileService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileService", function() { return FileService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config */ "./src/app/config.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+
+
+
+
+
+let FileService = class FileService {
+    constructor(http) {
+        this.http = http;
+    }
+    upload(file) {
+        const status = {};
+        const formData = new FormData();
+        formData.append('file', file, file.name);
+        formData.set('enctype', 'multipart/form-data');
+        const req = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpRequest"]('POST', `${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/upload`, formData, {
+            reportProgress: true
+        });
+        const progress = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
+        this.http.request(req).subscribe(event => {
+            if (event.type === _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpEventType"].UploadProgress) {
+                const percentDone = Math.round(100 * event.loaded / event.total);
+                progress.next();
+            }
+            else if (event instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpResponse"]) {
+                progress.complete();
+            }
+            status[file.name] = {
+                progress: progress.asObservable()
+            };
+        });
+        return status;
+    }
+    getFile(filename) { }
+};
+FileService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+FileService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], FileService);
 
 
 

@@ -8,7 +8,6 @@ const multer = require('multer');
 const GridFsStorage = require('multer-gridfs-storage');
 const crypto = require('crypto');
 const path = require('path');
-const verifyToken = require('./security');
 
 mongoose.connect(config.db.uri, {
     useNewUrlParser: true,
@@ -82,14 +81,14 @@ app.post('/upload', upload.single('file'), (req, res) => {
 });
 
 app.get('/image/:filename', (req, res) => {
-    gfs.findOne({
-        filename: req.params.filename
-    }, (err, f) => {
-        if(!f) {
-            return res.status(404).json({error: 'File not found'});
-        }
+    //gfs.find({
+        //filename: req.params.filename
+    //}, (err, f) => {
+        //if(!f) {
+            //return res.status(404).json({error: 'File not found'});
+        //}
         gfs.openDownloadStreamByName(req.params.filename).pipe(res);
-    });
+    //});
 });
 
 app.listen(port, () => {
