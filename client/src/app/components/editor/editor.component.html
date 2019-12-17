@@ -45,5 +45,23 @@
         <button class="btn btn-danger" (click)="deletePost()" *ngIf="article._id">Delete</button>
     </form>
 
+    <form class="form">
+        <div class="row">
+            <div class="input-group col-md-8 m-auto">
+
+                <div class="progress" *ngIf="uploading">
+                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                          
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="file" #file (change)="onFileChange($event.target.files)">
+                    <label for="file" class="custom-file-label" #fileLabel>Choose File</label>
+                </div>
+                <div class="input-group-append">
+                    <span class="input-group-text" (click)="uploadFile()">Upload</span>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 <hr>

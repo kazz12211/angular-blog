@@ -21,7 +21,7 @@ router.post('/signin', (req, res) => {
                     subject: userId
                 };
                 const token = jwt.sign(payload, config.jwt.secretKey);
-                res.send({token: token, username: user.name});
+                res.json({token: token, username: user.name});
             } else {
                 res.status(401).send('Authentication failed');
             }

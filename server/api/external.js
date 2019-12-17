@@ -18,9 +18,9 @@ router.post('/register', getUserId, (req, res) => {
     User.findOne({email: email}, (err, user) => {
         if(err) {
             console.error(err);
-            res.status(500).send({error: err});
+            res.status(500).send(err);
         } else if(user) {
-            res.status(500).send({error: 'The user has already been registered'});
+            res.status(500).send(new Error('The user has already been registered'));
         } else {
             const salt = bcrypt.genSaltSync(10);
             const hash = bcrypt.hashSync(password, salt);
@@ -35,10 +35,10 @@ router.post('/register', getUserId, (req, res) => {
                     subject: user._id
                 };
                 const token = jwt.sign(payload, config.jwt.secretKey);
-                res.send({token: token, username: user.name});
+                res.json({token: token, username: user.name});
             }).catch(err => {
                 console.error(err);
-                res.status(500).send({error: err});
+                res.status(500).send(err);
             });
         }
     });
@@ -53,9 +53,9 @@ router.get('/articles/count', verifyToken, (req, res) => {
     }
     Article.where(cond).countDocuments((err, c) => {
         if(err) {
-            res.status(500).send({error: err});
+            res.status(500).send(err);
         } else {
-            res.send({count: c});
+            res.json({count: c});
         }
     });
 });
@@ -67,7 +67,7 @@ router.get('/posts', getUserId, (req, res) => {
     const cond = { draft: false };
     Article.where(cond).countDocuments((err, c) => {
         if(err) {
-            res.status(500).send({error: err});
+            res.status(500).send(err);
         } else {
             count = c;
             const query = Article.find(cond)
@@ -77,9 +77,9 @@ router.get('/posts', getUserId, (req, res) => {
                 .sort({'publishedAt': 'desc'});
             query.exec().then(articles => {
                 const result = new Page(page, count, limit, articles, {}, []);
-                res.send(result);
+                res.json(result);
             }).catch(err => {
-                res.status(500).send({error: err});
+                res.status(500).send(err);
             });
         }
     }); 
@@ -96,7 +96,7 @@ router.get('/articles', verifyToken, (req, res) => {
     }
     Article.where(cond).countDocuments((err, c) => {
         if(err) {
-            res.status(500).send({error: err});
+            res.status(500).send(err);
         } else {
             count = c;
             const query = Article.find(cond)
@@ -106,9 +106,9 @@ router.get('/articles', verifyToken, (req, res) => {
                 .sort({'createdAt': 'desc'});
             query.exec().then(articles => {
                 const result = new Page(page, count, limit, articles, {}, []);
-                res.send(result);
+                res.json(result);
             }).catch(err => {
-                res.status(500).send({error: err});
+                res.status(500).send(err);
             });
         }
     }); 
@@ -133,10 +133,10 @@ router.post('/articles', verifyToken, (req, res) => {
             draft: false, 
             publishedAt: new Date()
         }).exec().then(resp => {
-            res.send(resp);
+            res.json(resp);
         }).catch(err => {
             console.error(err);
-            res.status(500).send({error: err});
+            res.status(500).send(err);
         });
     } else {
         const article = new Article({
@@ -149,10 +149,10 @@ router.post('/articles', verifyToken, (req, res) => {
             comments: []
         });
         article.save().then(saved => {
-            res.send(saved);
+            res.json(saved);
         }).catch(err => {
             console.error(err);
-            res.status(500).send({error: err});
+            res.status(500).send(err);
         });
     }
 });
@@ -160,10 +160,10 @@ router.post('/articles', verifyToken, (req, res) => {
 router.get('/article/:id', verifyToken, (req, res) => {
     const id = req.params.id;
     Article.findById(id).populate('author').exec().then(resp => {
-        res.send(resp);
+        res.json(resp);
     }).catch(err => {
         console.error(err);
-        res.status(500).send({error: err});
+        res.status(500).send(err);
     });
 });
 
@@ -175,7 +175,7 @@ router.get('/post/:id', getUserId, (req, res) => {
         .populate('author')
         .populate('comments')
         .exec().then(resp => {
-            res.send(resp);
+            res.json(resp);
         }).catch(err => {
             console.error(err);
             res.status(500).send({ error: err });
@@ -187,7 +187,7 @@ router.get('/post/:id', getUserId, (req, res) => {
         .populate('author')
         .populate('comments')
         .exec().then(resp => {
-            res.send(resp);
+            res.json(resp);
         }).catch(err => {
             console.error(err);
             res.status(500).send({ error: err });
@@ -213,10 +213,10 @@ router.post('/articles/save', verifyToken, (req, res) => {
             draft: true, 
             publishedAt: null
         }).exec().then(resp => {
-            res.send(resp);
+            res.json(resp);
         }).catch(err => {
             console.error(err);
-            res.status(500).send({error: err});
+            res.status(500).send(err);
         });
     } else {
         const article = new Article({
@@ -229,20 +229,20 @@ router.post('/articles/save', verifyToken, (req, res) => {
             comments: []
         });
         article.save().then(saved => {
-            res.send(saved);
+            res.json(saved);
         }).catch(err => {
             console.error(err);
-            res.status(500).send({error: err});
+            res.status(500).send(err);
         });
     }
 });
 
 router.delete('/articles/:id', verifyToken, (req, res) => {
     Article.deleteOne({_id: req.params.id}).exec().then(resp => {
-        res.send(resp);
+        res.json(resp);
     }).catch(err => {
         console.error(err);
-        res.status(500).send({error: err});
+        res.status(500).send(err);
     });
 });
 
@@ -254,19 +254,19 @@ router.get('/posts/top', getUserId, (req, res) => {
         .limit(limit)
         .sort({'viewCount': 'desc'});
     query.exec().then(articles => {
-        res.send(articles);
+        res.json(articles);
     }).catch(err => {
         console.error(err);
-        res.status(500).send({error: err});
+        res.status(500).send(err);
     });
 });
 
 router.get('/user/:id', verifyToken, (req, res) => {
     const userId = req.params.id;
     User.findById(userId).exec().then(user => {
-        res.send(user);
+        res.json(user);
     }).catch(err => {
-        res.status(500).send({error: err});
+        res.status(500).send(err);
     });
 });
 
@@ -276,7 +276,7 @@ router.get('/users', verifyToken, (req, res) => {
     let count = 0;
     User.where({}).countDocuments((err, c) => {
         if(err) {
-            res.status(500).send({error: err});
+            res.status(500).send(err);
         } else {
             count = c;
             const query = User.find({})
@@ -285,9 +285,9 @@ router.get('/users', verifyToken, (req, res) => {
                 .sort({'createdAt': 'desc'});
             query.exec().then(users => {
                 const result = new Page(page, count, limit, users, {}, []);
-                res.send(result);
+                res.json(result);
             }).catch(err => {
-                res.status(500).send({error: err});
+                res.status(500).send(err);
             });
         }
     }); 
@@ -304,9 +304,9 @@ router.put('/users', verifyToken, (req, res) => {
         password: hash,
         role: req.body.role
     }).exec().then(user => {
-        res.send(user);
+        res.json(user);
     }).catch(err => {
-        res.status(500).send({error: err});
+        res.status(500).send(err);
     });
 
 });
@@ -314,9 +314,9 @@ router.put('/users', verifyToken, (req, res) => {
 router.delete('/users/:id', verifyToken, (req, res) => {
     const userId = req.params.id;
     User.deleteOne({_id: userId}).exec().then(result => {
-        res.send(result);
+        res.json(result);
     }).catch(err => {
-        res.status(500).send({error: err});
+        res.status(500).send(err);
     });
 });
 
@@ -325,9 +325,9 @@ router.get('/post/:id/like', getUserId, (req, res) => {
     Article.findByIdAndUpdate(articleId, {
         $inc: { likeCount: 1 }
     }).populate('author').exec().then(resp => {
-        res.send(resp);
+        res.json(resp);
     }).catch(err => {
-        res.status(500).send({error: err});
+        res.status(500).send(err);
     });
 });
 
@@ -347,15 +347,15 @@ router.post('/post/:id/comment', getUserId, (req, res) => {
         article.comments.push(comment);
         article.save().then(resp => {
             comment.save().then(comment => {
-                res.send(resp);
+                res.json(resp);
             }).catch(err => {
-                res.status(500).send({error: err});
+                res.status(500).send(err);
             });
         }).catch(err => {
-            res.status(500).send({error: err});
+            res.status(500).send(err);
         });
     }).catch(err => {
-        res.status(500).send({error: err});
+        res.status(500).send(err);
     });
 });
 

@@ -96,7 +96,7 @@ module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"backg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/admin-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Editor</h3>\n    <form class=\"form\">\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"title\" class=\"form-control\" placeholder=\"Title\" [(ngModel)]=\"article.title\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <ckeditor [editor]=\"editor\" [(ngModel)]=\"article.content\" name=\"content\"></ckeditor>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"tags\" class=\"form-control\" placeholder=\"Comma separated tags\" [(ngModel)]=\"article.tags\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"author\" readonly class=\"form-control-plaintext\" [value]=\"auth.getUsername()\">\n            </div>\n        </div>\n        <button class=\"btn btn-primary\" (click)=\"post()\">Publish</button>\n        <button class=\"btn btn-secondary\" (click)=\"saveAsDraft()\">Save as Draft</button>\n        <button class=\"btn btn-danger\" (click)=\"deletePost()\" *ngIf=\"article._id\">Delete</button>\n    </form>\n\n</div>\n<hr>\n"
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('img/admin-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Editor</h3>\n    <form class=\"form\">\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"title\" class=\"form-control\" placeholder=\"Title\" [(ngModel)]=\"article.title\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <ckeditor [editor]=\"editor\" [(ngModel)]=\"article.content\" name=\"content\"></ckeditor>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"tags\" class=\"form-control\" placeholder=\"Comma separated tags\" [(ngModel)]=\"article.tags\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <input type=\"text\" name=\"author\" readonly class=\"form-control-plaintext\" [value]=\"auth.getUsername()\">\n            </div>\n        </div>\n        <button class=\"btn btn-primary\" (click)=\"post()\">Publish</button>\n        <button class=\"btn btn-secondary\" (click)=\"saveAsDraft()\">Save as Draft</button>\n        <button class=\"btn btn-danger\" (click)=\"deletePost()\" *ngIf=\"article._id\">Delete</button>\n    </form>\n\n    <form class=\"form\">\n        <div class=\"row\">\n            <div class=\"input-group col-md-8 m-auto\">\n                <div class=\"custom-file\">\n                    <input type=\"file\" class=\"custom-file-input\" id=\"file\" #file (change)=\"onFileChange($event.target.files)\">\n                    <label for=\"file\" class=\"custom-file-label\" #fileLabel>Choose File</label>\n                </div>\n                <div class=\"input-group-append\">\n                    <span class=\"input-group-text\" (click)=\"uploadFile()\">Upload</span>\n                </div>\n            </div>\n        </div>\n    </form>\n</div>\n<hr>\n"
 
 /***/ }),
 
@@ -781,6 +781,18 @@ let EditorComponent = class EditorComponent {
             this.router.navigate(['/articles']);
         });
     }
+    onFileChange(list) {
+        if (list.length <= 0) {
+            return;
+        }
+        console.log(this.fileInput);
+        this.file = list[0];
+        this.fileLabel.nativeElement.innerHTML = this.file.name;
+        console.log(this.fileLabel);
+    }
+    uploadFile() {
+        console.log('Upload', this.file);
+    }
 };
 EditorComponent.ctorParameters = () => [
     { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] },
@@ -788,6 +800,12 @@ EditorComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('file', { static: false })
+], EditorComponent.prototype, "fileInput", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('fileLabel', { static: false })
+], EditorComponent.prototype, "fileLabel", void 0);
 EditorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-editor',
