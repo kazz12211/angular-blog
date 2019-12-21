@@ -54,6 +54,15 @@ export class ArticleService {
   addComment(id: any, comment: any): Observable<any> {
     return this.http.post(`${SERVER_URL}/external/post/${id}/comment`, comment);
   }
+
+  getComments(page: number, limit: number, query?: any, order?: any): Observable<any> {
+    return this.http.get(`${SERVER_URL}/external/comments?page=${page}&limit=${limit}`);
+  }
+
+  recentComments(limit: number): Observable<any[]> {
+    return this.http.get<any[]>(`${SERVER_URL}/external/comments/recent?limit=${limit}`);
+  }
+
 }
 
 

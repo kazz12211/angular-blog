@@ -361,4 +361,43 @@ router.post('/post/:id/comment', getUserId, (req, res) => {
     });
 });
 
+router.get('/comments', verifyToken, (req, res) => {
+    const page = req.query.page ? parseInt(req.query.page) : 0;
+    const limit = req.query.limit ? parseInt(req.query.limit) : 10;
+    let count = 0;
+    const cond = {};
+    Comment.where(cond).countDocuments((err, c) => {
+        if(err) {
+            res.status(500).send(err);
+        } else {
+            count = c;
+            const query = Comment.find(cond)
+                .skip(page * limit)
+                .limit(limit)
+                .sort({'postedAt': 'desc'});
+            query.exec().then(comments => {
+                const result = new Page(page, count, limit, comments, {}, []);
+                res.json(result);
+            }).catch(err => {
+                res.status(500).send(err);
+            });
+        }
+    }); 
+});
+
+
+router.get('/comments/recent', verifyToken, (req, res) => {
+    const limit = parseInt(req.query.limit);
+    const query = Comment.find({})
+        .limit(limit)
+        .sort({'postedAt': 'desc'});
+    query.exec().then(comments => {
+        res.json(comments);
+    }).catch(err => {
+        console.error(err);
+        res.status(500).send(err);
+    });
+});
+
+
 module.exports = router;

@@ -52,7 +52,7 @@ module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"backg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-4 col-sm-6\">\n            <div class=\"card\" style=\"width: 18rem;\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title text-center\"># of Articles</h5>\n                    <h1 class=\"text-center text-muted\">{{articles}}</h1>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-md-4 col-sm-6\">\n            <div class=\"card\" style=\"width: 18rem;\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title text-center\">Top Articles</h5>\n                    <ul>\n                        <li *ngFor=\"let post of topPosts\">{{post.title}}</li>\n                    </ul>\n                    <div class=\"clearfix\">\n                        <button class=\"btn btn-primary btn-sm float-right\" [routerLink]=\"['/editor']\">New\n                            Article</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-md-4 col-sm-6\">\n            <div class=\"card\" style=\"width: 18rem;\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title text-center\">Users</h5>\n                    <ul>\n                        <li *ngFor=\"let user of users\">{{user.name}}</li>\n                    </ul>\n                    <div class=\"clearfix\">\n                        <button class=\"btn btn-primary btn-sm float-right\" [routerLink]=\"['/newUser']\">New User</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<hr>"
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-secondary btn-sm\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/comments']\">Comments</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-3 col-sm-6\">\n            <div class=\"card\" style=\"width: 14rem;\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title text-center\"># of Articles</h5>\n                    <h1 class=\"text-center text-muted\">{{articles}}</h1>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-md-3 col-sm-6\">\n            <div class=\"card\" style=\"width: 14rem;\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title text-center\">Top Articles</h5>\n                    <ul>\n                        <li *ngFor=\"let post of topPosts\"><a [routerLink]=\"['/editor']\" [queryParams]=\"{id: post._id}\">{{post.title}}</a></li>\n                    </ul>\n                    <div class=\"clearfix\">\n                        <button class=\"btn btn-primary btn-sm float-right\" [routerLink]=\"['/editor']\">New\n                            Article</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-md-3 col-sm-6\">\n            <div class=\"card\" style=\"width: 14rem;\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title text-center\">Comments</h5>\n                    <ul>\n                        <li *ngFor=\"let comment of recentComments\">{{comment.content}}</li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"col-md-3 col-sm-6\">\n            <div class=\"card\" style=\"width: 14rem;\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title text-center\">Users</h5>\n                    <ul>\n                        <li *ngFor=\"let user of users\"><a [routerLink]=\"['/usereditor']\" [queryParams]=\"{id: user._id}\">{{user.name}}</a></li>\n                    </ul>\n                    <div class=\"clearfix\">\n                        <button class=\"btn btn-primary btn-sm float-right\" [routerLink]=\"['/usereditor']\">New User</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<hr>"
 
 /***/ }),
 
@@ -63,7 +63,7 @@ module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"backg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Articles</h3>\n    <div class=\"clearfix\">\n        <a class=\"btn btn-primary float-right\" href=\"#\" [routerLink]=\"['/editor']\">New Article</a>\n    </div>\n    <div class=\"py-4\"></div>\n    <table class=\"table\">\n        <thead>\n            <tr>\n                <th>Title</th>\n                <th>Author</th>\n                <th>Created</th>\n                <th>Draft</th>\n                <th></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor=\"let article of page.rows\">\n                <td>{{article.title}}</td>\n                <td>{{article.author.name}}</td>\n                <td>{{article.createdAt|date:'short'}}</td>\n                <td>{{article.draft}}</td>\n                <td><a [routerLink]=\"['/editor']\" [queryParams]=\"{id: article._id}\">Edit</a></td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n<hr>"
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-secondary btn-sm\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/comments']\">Comments</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Articles</h3>\n    <div class=\"clearfix\">\n        <a class=\"btn btn-primary float-right\" href=\"#\" [routerLink]=\"['/editor']\">New Article</a>\n    </div>\n    <div class=\"py-4\"></div>\n    <table class=\"table\">\n        <thead>\n            <tr>\n                <th>Title</th>\n                <th>Author</th>\n                <th>Created</th>\n                <th>Draft</th>\n                <th></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor=\"let article of page.rows\">\n                <td>{{article.title}}</td>\n                <td>{{article.author.name}}</td>\n                <td>{{article.createdAt|date:'short'}}</td>\n                <td>{{article.draft}}</td>\n                <td><a [routerLink]=\"['/editor']\" [queryParams]=\"{id: article._id}\">Edit</a></td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n<hr>"
 
 /***/ }),
 
@@ -74,7 +74,18 @@ module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"backg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h5>Top Posts</h5>\n<ul>\n    <li *ngFor=\"let post of topPosts\"><a [routerLink]=\"['/post']\" [queryParams]=\"{id: post._id}\">{{post.title}}</a></li>\n</ul>\n"
+module.exports = "<h5>Top Posts</h5>\n<ul>\n    <li *ngFor=\"let post of topPosts\"><a [routerLink]=\"['/post']\" [queryParams]=\"{id: post._id}\">{{post.title}} <span *ngIf=\"post.comments.length\">({{post.comments.length}})</span></a></li>\n</ul>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/components/comments/comments.component.html":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/components/comments/comments.component.html ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-secondary btn-sm\">Comments</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Comments</h3>\n    <div class=\"py-4\"></div>\n    <table class=\"table\">\n        <thead>\n            <tr>\n                <th>Writer</th>\n                <th>Email</th>\n                <th>Content</th>\n                <th>Date</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor=\"let comment of page.rows\">\n                <td>{{comment.writer}}</td>\n                <td>{{comment.email}}</td>\n                <td>{{comment.content}}</td>\n                <td>{{comment.postedAt|date:'short'}}</td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n<hr>"
 
 /***/ }),
 
@@ -107,7 +118,7 @@ module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"backg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/home-bg.jpg')\">\n  <div class=\"overlay\"></div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 col-md-10 mx-auto\">\n        <div class=\"site-heading\">\n          <h1>椿工藝舎ブログ</h1>\n          <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n        </div>\n      </div>\n    </div>\n  </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-lg-9 col-md-9\">\n      <div class=\"row\">\n        <div class=\"col-lg-12 col-md-12 mx-auto\">\n          <div class=\"post-preview\" *ngFor=\"let article of page.rows\">\n            <a [routerLink]=\"['/post']\" [queryParams]=\"{id: article._id}\">\n              <h2 class=\"post-title\">\n                {{article.title}}\n              </h2>\n              <p [innerHTML]=\"sanitizedContent(article)\"></p>\n            </a>\n            <p class=\"post-meta\">{{article.tags.join(', ')}}</p>\n            <p class=\"post-meta\">Posted by\n              {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>\n          </div>\n          <hr>\n\n          <!-- Pager -->\n          <div class=\"clearfix\">\n            <a class=\"btn btn-primary float-left\" href=\"#\" (click)=\"prevPage()\" *ngIf=\"page.prev\">&larr; Newer Posts</a>\n            <a class=\"btn btn-primary float-right\" href=\"#\" (click)=\"nextPage()\" *ngIf=\"page.next\">Older Posts\n              &rarr;</a>\n          </div>\n        </div>\n      </div>\n\n    </div>\n    <div class=\"col-lg-3 col-md-3\">\n      <div class=\"aside\">\n        <app-aside></app-aside>\n      </div>\n    </div>\n  </div>\n</div>\n\n<hr>"
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/home-bg.jpg')\">\n  <div class=\"overlay\"></div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 col-md-10 mx-auto\">\n        <div class=\"site-heading\">\n          <h1>椿工藝舎ブログ</h1>\n          <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n        </div>\n      </div>\n    </div>\n  </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-lg-9 col-md-9\">\n      <div class=\"row\">\n        <div class=\"col-lg-12 col-md-12 mx-auto\">\n          <div class=\"post-preview\" *ngFor=\"let article of page.rows\">\n            <h2 class=\"post-title\">\n              <a [routerLink]=\"['/post']\" [queryParams]=\"{id: article._id}\">\n                {{article.title}}\n              </a>\n            </h2>\n            <p class=\"content\" [innerHTML]=\"sanitizedContent(article)\"></p>\n            <p class=\"post-meta\">{{article.tags.join(', ')}}</p>\n            <p class=\"post-meta\">Posted by\n              {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>\n            <p *ngIf=\"article.comments.length > 0\">{{article.comments.length}} コメント</p>\n          </div>\n          <hr>\n\n          <!-- Pager -->\n          <div class=\"clearfix\">\n            <a class=\"btn btn-primary float-left\" href=\"#\" (click)=\"prevPage()\" *ngIf=\"page.prev\">&larr; Newer Posts</a>\n            <a class=\"btn btn-primary float-right\" href=\"#\" (click)=\"nextPage()\" *ngIf=\"page.next\">Older Posts\n              &rarr;</a>\n          </div>\n        </div>\n      </div>\n\n    </div>\n    <div class=\"col-lg-3 col-md-3\">\n      <div class=\"aside\">\n        <app-aside></app-aside>\n      </div>\n    </div>\n  </div>\n</div>\n\n<hr>"
 
 /***/ }),
 
@@ -129,7 +140,7 @@ module.exports = "<div class=\"row\">\n<form class=\"form login-form col-md-6 co
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"site-heading\">\n                    <h1>椿工藝舎ブログ</h1>\n                    <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10\">\n            <div class=\"post-preview\">\n                <h2 class=\"post-title\">{{article.title}}</h2>\n                <p [innerHTML]=\"sanitizedContent(article.content)\"></p>\n                <p class=\"post-meta\">{{article.tags.join(', ')}}</p>\n                <p class=\"post-meta\">Posted by {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>\n                <span class=\"like\">\n                <a (click)=\"like(article)\"><i class=\"far fa-thumbs-up\"></i></a>\n                </span>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10\">\n                <div class=\"py-4\">\n                        <h5>Comments</h5>\n                    </div>\n            <form class=\"form comment-form\">\n                <div class=\"form-group\">\n                    <input type=\"text\" name=\"name\" [(ngModel)]=\"comment.writer\" class=\"form-control\" placeholder=\"Your name\" required>\n                </div>\n                <div class=\"form-group\">\n                    <input type=\"email\" name=\"email\" [(ngModel)]=\"comment.email\" class=\"form-control\" placeholder=\"Your email\" required>\n                </div>\n                <div class=\"form-group\">\n                    <textarea name=\"comment\" id=\"comment\" [(ngModel)]=\"comment.content\" class=\"form-control\" placeholder=\"Your comment\" required></textarea>\n                </div>\n                <div class=\"clearfix\">\n                    <button class=\"btn btn-default btn-sm float-right\" (click)=\"postComment()\">Post</button>\n                </div>\n    \n            </form>\n            <div class=\"comment\">\n            <div class=\"post-comment\" *ngFor=\"let comment of article.comments\">\n                <p [innerHTML]=\"sanitizedContent(comment.content)\"></p>\n                 <p class=\"post-comment-meta\">by {{comment.writer}} on {{comment.postedAt|date:'short'}}</p>\n            </div>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"site-heading\">\n                    <h1>椿工藝舎ブログ</h1>\n                    <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10 d-flex justify-content-end\">\n            <a [routerLink]=\"['/']\">ホーム</a>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10\">\n            <div class=\"post-preview\">\n                <h2 class=\"post-title\">{{article.title}}</h2>\n                <p [innerHTML]=\"sanitizedContent(article.content)\"></p>\n                <p class=\"post-meta\">{{article.tags.join(', ')}}</p>\n                <p class=\"post-meta\">Posted by {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>\n                <span class=\"like\">\n                <a (click)=\"like(article)\"><i class=\"far fa-thumbs-up\"></i></a>\n                </span>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10\">\n                <div class=\"py-4\">\n                        <h5>Comments</h5>\n                    </div>\n            <form class=\"form comment-form\">\n                <div class=\"form-group\">\n                    <input type=\"text\" name=\"name\" [(ngModel)]=\"comment.writer\" class=\"form-control\" placeholder=\"Your name\" required>\n                </div>\n                <div class=\"form-group\">\n                    <input type=\"email\" name=\"email\" [(ngModel)]=\"comment.email\" class=\"form-control\" placeholder=\"Your email\" required>\n                </div>\n                <div class=\"form-group\">\n                    <textarea name=\"comment\" id=\"comment\" [(ngModel)]=\"comment.content\" class=\"form-control\" placeholder=\"Your comment\" required></textarea>\n                </div>\n                <div class=\"clearfix\">\n                    <button class=\"btn btn-default btn-sm float-right\" (click)=\"postComment()\">Post</button>\n                </div>\n    \n            </form>\n            <div class=\"comment\">\n            <div class=\"post-comment\" *ngFor=\"let comment of article.comments\">\n                <p [innerHTML]=\"sanitizedContent(comment.content)\"></p>\n                 <p class=\"post-comment-meta\">by {{comment.writer}} on {{comment.postedAt|date:'short'}}</p>\n            </div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -140,7 +151,7 @@ module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"backg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Editor</h3>\n    <form class=\"form\">\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <label for=\"name\">Name</label>\n                <input type=\"text\" name=\"name\" class=\"form-control\" placeholder=\"Name\" [(ngModel)]=\"user.name\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <label for=\"email\">Email</label>\n                <input type=\"email\" name=\"email\" class=\"form-control\" placeholder=\"Email\" [(ngModel)]=\"user.email\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <label for=\"password\">Password</label>\n                <input type=\"password\" name=\"password\" class=\"form-control\" placeholder=\"Password\" [(ngModel)]=\"user.password\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <label for=\"role\">Role</label>\n                <select name=\"role\" id=\"role\" class=\"form-control\">\n                    <option value=\"{{role.name}}\" *ngFor=\"let role of roles\">{{role.label}}</option>\n                </select>\n            </div>\n        </div>\n        <button class=\"btn btn-primary\" (click)=\"save()\">Save</button>\n        <button class=\"btn btn-danger\" (click)=\"deleteUser()\" *ngIf=\"user._id\">Delete</button>\n    </form>\n\n</div>\n<hr>\n"
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Editor</h3>\n    <form class=\"form\">\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <label for=\"name\">Name</label>\n                <input type=\"text\" name=\"name\" class=\"form-control\" placeholder=\"Name\" [(ngModel)]=\"user.name\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <label for=\"email\">Email</label>\n                <input type=\"email\" name=\"email\" class=\"form-control\" placeholder=\"Email\" [(ngModel)]=\"user.email\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <label for=\"password\">Password</label>\n                <input type=\"password\" name=\"password\" class=\"form-control\" placeholder=\"Password\" [(ngModel)]=\"user.password\">\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"form-group col\">\n                <label for=\"role\">Role</label>\n                <select name=\"role\" id=\"role\" class=\"form-control\" [(ngModel)]=\"user.role\">\n                    <option value=\"{{role.name}}\" *ngFor=\"let role of roles\">{{role.label}}</option>\n                </select>\n            </div>\n        </div>\n        <button class=\"btn btn-primary\" (click)=\"save()\">Save</button>\n        <button class=\"btn btn-danger\" (click)=\"deleteUser()\" *ngIf=\"user._id\">Delete</button>\n    </form>\n\n</div>\n<hr>\n"
 
 /***/ }),
 
@@ -151,7 +162,7 @@ module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"backg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Users</h3>\n    <div class=\"clearfix\">\n        <a class=\"btn btn-primary float-right\" href=\"#\" [routerLink]=\"['/usereditor']\">New User</a>\n    </div>\n    <div class=\"py-4\"></div>\n\n    <table class=\"table\">\n        <thead>\n            <tr>\n                <th>Name</th>\n                <th>Email</th>\n                <th></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor=\"let user of page.rows\">\n                <td>{{user.name}}</td>\n                <td>{{user.email}}</td>\n                <td><a [routerLink]=\"['/usereditor']\" [queryParams]=\"{id: user._id}\">Edit</a></td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n<hr>"
+module.exports = "<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/comments']\">Comments</button>\n                        <button class=\"btn btn-secondary btn-sm\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Users</h3>\n    <div class=\"clearfix\">\n        <a class=\"btn btn-primary float-right\" href=\"#\" [routerLink]=\"['/usereditor']\">New User</a>\n    </div>\n    <div class=\"py-4\"></div>\n\n    <table class=\"table\">\n        <thead>\n            <tr>\n                <th>Name</th>\n                <th>Email</th>\n                <th></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor=\"let user of page.rows\">\n                <td>{{user.name}}</td>\n                <td>{{user.email}}</td>\n                <td><a [routerLink]=\"['/usereditor']\" [queryParams]=\"{id: user._id}\">Edit</a></td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n<hr>"
 
 /***/ }),
 
@@ -203,6 +214,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_users_users_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/users/users.component */ "./src/app/components/users/users.component.ts");
 /* harmony import */ var _components_post_post_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/post/post.component */ "./src/app/components/post/post.component.ts");
 /* harmony import */ var _components_usereditor_usereditor_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/usereditor/usereditor.component */ "./src/app/components/usereditor/usereditor.component.ts");
+/* harmony import */ var _components_comments_comments_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/comments/comments.component */ "./src/app/components/comments/comments.component.ts");
+
 
 
 
@@ -226,6 +239,9 @@ const routes = [
     },
     {
         path: 'articles', component: _components_articles_articles_component__WEBPACK_IMPORTED_MODULE_7__["ArticlesComponent"], canActivate: [_auth_guard__WEBPACK_IMPORTED_MODULE_6__["AuthGuard"]]
+    },
+    {
+        path: 'comments', component: _components_comments_comments_component__WEBPACK_IMPORTED_MODULE_14__["CommentsComponent"], canActivate: [_auth_guard__WEBPACK_IMPORTED_MODULE_6__["AuthGuard"]]
     },
     {
         path: 'editor', component: _components_editor_editor_component__WEBPACK_IMPORTED_MODULE_8__["EditorComponent"], canActivate: [_auth_guard__WEBPACK_IMPORTED_MODULE_6__["AuthGuard"]]
@@ -337,6 +353,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_post_post_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/post/post.component */ "./src/app/components/post/post.component.ts");
 /* harmony import */ var _components_aside_aside_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/aside/aside.component */ "./src/app/components/aside/aside.component.ts");
 /* harmony import */ var _components_usereditor_usereditor_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/usereditor/usereditor.component */ "./src/app/components/usereditor/usereditor.component.ts");
+/* harmony import */ var _components_comments_comments_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/comments/comments.component */ "./src/app/components/comments/comments.component.ts");
+
 
 
 
@@ -382,7 +400,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _components_users_users_component__WEBPACK_IMPORTED_MODULE_19__["UsersComponent"],
             _components_post_post_component__WEBPACK_IMPORTED_MODULE_20__["PostComponent"],
             _components_aside_aside_component__WEBPACK_IMPORTED_MODULE_21__["AsideComponent"],
-            _components_usereditor_usereditor_component__WEBPACK_IMPORTED_MODULE_22__["UsereditorComponent"]
+            _components_usereditor_usereditor_component__WEBPACK_IMPORTED_MODULE_22__["UsereditorComponent"],
+            _components_comments_comments_component__WEBPACK_IMPORTED_MODULE_23__["CommentsComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -526,6 +545,7 @@ let AdminComponent = class AdminComponent {
         this.articles = 0;
         this.topPosts = [];
         this.users = [];
+        this.recentComments = [];
     }
     ngOnInit() {
         this.articleService.countPost().subscribe(resp => {
@@ -533,6 +553,9 @@ let AdminComponent = class AdminComponent {
         });
         this.articleService.topPosts(10).subscribe(resp => {
             this.topPosts = resp;
+        });
+        this.articleService.recentComments(10).subscribe(resp => {
+            this.recentComments = resp;
         });
         this.userService.getUsers(0, 50).subscribe(resp => {
             this.users = resp.rows;
@@ -593,7 +616,6 @@ let ArticlesComponent = class ArticlesComponent {
     }
     ngOnInit() {
         this.articleService.getArticles(0, 10).subscribe(result => {
-            console.log(result);
             this.page = result;
         }, err => {
             console.log(err);
@@ -662,6 +684,65 @@ AsideComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [__webpack_require__(/*! ./aside.component.css */ "./src/app/components/aside/aside.component.css")]
     })
 ], AsideComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/comments/comments.component.css":
+/*!************************************************************!*\
+  !*** ./src/app/components/comments/comments.component.css ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvY29tbWVudHMvY29tbWVudHMuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/components/comments/comments.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/components/comments/comments.component.ts ***!
+  \***********************************************************/
+/*! exports provided: CommentsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommentsComponent", function() { return CommentsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_services_article_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/article.service */ "./src/app/services/article.service.ts");
+/* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
+
+
+
+
+let CommentsComponent = class CommentsComponent {
+    constructor(articleService, auth) {
+        this.articleService = articleService;
+        this.auth = auth;
+        this.page = {};
+    }
+    ngOnInit() {
+        this.articleService.getComments(0, 10).subscribe(result => {
+            this.page = result;
+        }, err => {
+            console.log(err);
+        });
+    }
+};
+CommentsComponent.ctorParameters = () => [
+    { type: src_app_services_article_service__WEBPACK_IMPORTED_MODULE_2__["ArticleService"] },
+    { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] }
+];
+CommentsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-comments',
+        template: __webpack_require__(/*! raw-loader!./comments.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/comments/comments.component.html"),
+        styles: [__webpack_require__(/*! ./comments.component.css */ "./src/app/components/comments/comments.component.css")]
+    })
+], CommentsComponent);
 
 
 
@@ -857,7 +938,7 @@ let HomeComponent = class HomeComponent {
         });
     }
     sanitizedContent(article) {
-        return this.sanitizer.bypassSecurityTrustHtml(article.content);
+        return this.sanitizer.bypassSecurityTrustHtml(this.digest(article));
     }
     prevPage() {
         const p = this.page.page - 1;
@@ -870,6 +951,18 @@ let HomeComponent = class HomeComponent {
         this.articleService.getPublishedArticles(p, 5, {}, []).subscribe(resp => {
             this.page = resp;
         });
+    }
+    digest(article) {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(article.content, 'text/html');
+        const body = doc.getElementsByTagName('body')[0];
+        if (body.children.length >= 1) {
+            const first = body.children.item(0);
+            return first.innerHTML;
+        }
+        else {
+            return article.content;
+        }
     }
 };
 HomeComponent.ctorParameters = () => [
@@ -1102,7 +1195,7 @@ let UsereditorComponent = class UsereditorComponent {
         });
     }
     deleteUser() {
-        this.userService.delete(this.user._id).subscribe(resp => {
+        this.userService.delete(this.user).subscribe(resp => {
             this.router.navigate(['/users']);
         }, err => {
             console.log(err);
@@ -1250,6 +1343,12 @@ let ArticleService = class ArticleService {
     }
     addComment(id, comment) {
         return this.http.post(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/post/${id}/comment`, comment);
+    }
+    getComments(page, limit, query, order) {
+        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/comments?page=${page}&limit=${limit}`);
+    }
+    recentComments(limit) {
+        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/comments/recent?limit=${limit}`);
     }
 };
 ArticleService.ctorParameters = () => [

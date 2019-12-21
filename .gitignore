@@ -50,3 +50,7 @@ Thumbs.db
 /server/uploaddata.txt
 
 /server/client
+server/client/main.js
+server/client/main.js.map
+server/client/styles.js
+server/client/styles.js.map

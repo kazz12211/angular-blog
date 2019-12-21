@@ -21,6 +21,7 @@ import { UsersComponent } from './components/users/users.component';
 import { PostComponent } from './components/post/post.component';
 import { AsideComponent } from './components/aside/aside.component';
 import { UsereditorComponent } from './components/usereditor/usereditor.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { UsereditorComponent } from './components/usereditor/usereditor.componen
     UsersComponent,
     PostComponent,
     AsideComponent,
-    UsereditorComponent
+    UsereditorComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { UsersComponent } from './components/users/users.component';
 import { PostComponent } from './components/post/post.component';
 import { UsereditorComponent } from './components/usereditor/usereditor.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,9 @@ const routes: Routes = [
   },
   {
     path: 'articles', component: ArticlesComponent, canActivate: [AuthGuard]
+  },
+  {
+    path: 'comments', component: CommentsComponent, canActivate: [AuthGuard]
   },
   {
     path: 'editor', component: EditorComponent, canActivate: [AuthGuard]

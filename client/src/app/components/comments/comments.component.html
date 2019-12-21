@@ -7,8 +7,8 @@
                 <div class="admin-heading">
                     <span class="subheading px-4">
                         <button class="btn btn-primary btn-sm" [routerLink]="['/admin']">Dashboard</button>
-                        <button class="btn btn-secondary btn-sm">Articles</button>
-                        <button class="btn btn-primary btn-sm" [routerLink]="['/comments']">Comments</button>
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/articles']">Articles</button>
+                        <button class="btn btn-secondary btn-sm">Comments</button>
                         <button class="btn btn-primary btn-sm" [routerLink]="['/users']">Users</button>
                         <button class="btn btn-dark btn-sm" (click)="auth.logout()">Logout</button>
                     </span>
@@ -20,28 +20,23 @@
 
 <!-- Main Content -->
 <div class="container">
-    <h3>Articles</h3>
-    <div class="clearfix">
-        <a class="btn btn-primary float-right" href="#" [routerLink]="['/editor']">New Article</a>
-    </div>
+    <h3>Comments</h3>
     <div class="py-4"></div>
     <table class="table">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Created</th>
-                <th>Draft</th>
-                <th></th>
+                <th>Writer</th>
+                <th>Email</th>
+                <th>Content</th>
+                <th>Date</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let article of page.rows">
-                <td>{{article.title}}</td>
-                <td>{{article.author.name}}</td>
-                <td>{{article.createdAt|date:'short'}}</td>
-                <td>{{article.draft}}</td>
-                <td><a [routerLink]="['/editor']" [queryParams]="{id: article._id}">Edit</a></td>
+            <tr *ngFor="let comment of page.rows">
+                <td>{{comment.writer}}</td>
+                <td>{{comment.email}}</td>
+                <td>{{comment.content}}</td>
+                <td>{{comment.postedAt|date:'short'}}</td>
             </tr>
         </tbody>
     </table>

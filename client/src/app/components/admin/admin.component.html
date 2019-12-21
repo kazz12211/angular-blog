@@ -6,8 +6,9 @@
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="admin-heading">
                     <span class="subheading px-4">
-                        <button class="btn btn-primary btn-sm">Dashboard</button>
+                        <button class="btn btn-secondary btn-sm">Dashboard</button>
                         <button class="btn btn-primary btn-sm" [routerLink]="['/articles']">Articles</button>
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/comments']">Comments</button>
                         <button class="btn btn-primary btn-sm" [routerLink]="['/users']">Users</button>
                         <button class="btn btn-dark btn-sm" (click)="auth.logout()">Logout</button>
                     </span>
@@ -20,16 +21,16 @@
 <!-- Main Content -->
 <div class="container">
     <div class="row">
-        <div class="col-md-4 col-sm-6">
-            <div class="card" style="width: 18rem;">
+        <div class="col-md-3 col-sm-6">
+            <div class="card" style="width: 14rem;">
                 <div class="card-body">
                     <h5 class="card-title text-center"># of Articles</h5>
                     <h1 class="text-center text-muted">{{articles}}</h1>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-sm-6">
-            <div class="card" style="width: 18rem;">
+        <div class="col-md-3 col-sm-6">
+            <div class="card" style="width: 14rem;">
                 <div class="card-body">
                     <h5 class="card-title text-center">Top Articles</h5>
                     <ul>
@@ -42,8 +43,19 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-sm-6">
-            <div class="card" style="width: 18rem;">
+        <div class="col-md-3 col-sm-6">
+            <div class="card" style="width: 14rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Comments</h5>
+                    <ul>
+                        <li *ngFor="let comment of recentComments">{{comment.content}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card" style="width: 14rem;">
                 <div class="card-body">
                     <h5 class="card-title text-center">Users</h5>
                     <ul>

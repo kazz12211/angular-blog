@@ -8,7 +8,8 @@
                     <span class="subheading px-4">
                         <button class="btn btn-primary btn-sm" [routerLink]="['/admin']">Dashboard</button>
                         <button class="btn btn-primary btn-sm" [routerLink]="['/articles']">Articles</button>
-                        <button class="btn btn-primary btn-sm">Users</button>
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/comments']">Comments</button>
+                        <button class="btn btn-secondary btn-sm">Users</button>
                         <button class="btn btn-dark btn-sm" (click)="auth.logout()">Logout</button>
                     </span>
                 </div>

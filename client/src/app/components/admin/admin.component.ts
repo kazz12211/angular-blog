@@ -13,6 +13,7 @@ export class AdminComponent implements OnInit {
   articles: number = 0;
   topPosts: any[] = [];
   users: any[] = [];
+  recentComments: any[] = [];
 
   constructor(
     private articleService: ArticleService, 
@@ -25,6 +26,9 @@ export class AdminComponent implements OnInit {
     });
     this.articleService.topPosts(10).subscribe(resp => {
       this.topPosts = resp;
+    });
+    this.articleService.recentComments(10).subscribe(resp => {
+      this.recentComments = resp;
     });
     this.userService.getUsers(0, 50).subscribe(resp => {
       this.users = resp.rows;

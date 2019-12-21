@@ -3,11 +3,11 @@ import { ArticleService } from 'src/app/services/article.service';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-articles',
-  templateUrl: './articles.component.html',
-  styleUrls: ['./articles.component.css']
+  selector: 'app-comments',
+  templateUrl: './comments.component.html',
+  styleUrls: ['./comments.component.css']
 })
-export class ArticlesComponent implements OnInit {
+export class CommentsComponent implements OnInit {
 
   page: any = {};
 
@@ -16,7 +16,7 @@ export class ArticlesComponent implements OnInit {
     private auth: AuthService) { }
 
   ngOnInit() {
-    this.articleService.getArticles(0, 10).subscribe(result => {
+    this.articleService.getComments(0, 10).subscribe(result => {
       this.page = result;
     }, err => {
       console.log(err);
