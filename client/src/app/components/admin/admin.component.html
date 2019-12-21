@@ -21,20 +21,19 @@
 <!-- Main Content -->
 <div class="container">
     <div class="row">
-        <div class="col-md-3 col-sm-6">
-            <div class="card" style="width: 14rem;">
+        <div class="card-grid">
+            <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title text-center"># of Articles</h5>
+                    <h5 class="card-title"># of Articles</h5>
                     <h1 class="text-center text-muted">{{articles}}</h1>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="card" style="width: 14rem;">
+            <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Top Articles</h5>
+                    <h5 class="card-title">Top Articles</h5>
                     <ul>
-                        <li *ngFor="let post of topPosts"><a [routerLink]="['/editor']" [queryParams]="{id: post._id}">{{post.title}}</a></li>
+                        <li *ngFor="let post of topPosts"><a [routerLink]="['/editor']"
+                                [queryParams]="{id: post._id}">{{post.title}}</a></li>
                     </ul>
                     <div class="clearfix">
                         <button class="btn btn-primary btn-sm float-right" [routerLink]="['/editor']">New
@@ -42,27 +41,24 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="card" style="width: 14rem;">
+            <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Comments</h5>
+                    <h5 class="card-title">Comments</h5>
                     <ul>
                         <li *ngFor="let comment of recentComments">{{comment.content}}</li>
                     </ul>
                 </div>
             </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6">
-            <div class="card" style="width: 14rem;">
+            <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Users</h5>
+                    <h5 class="card-title">Users</h5>
                     <ul>
-                        <li *ngFor="let user of users"><a [routerLink]="['/usereditor']" [queryParams]="{id: user._id}">{{user.name}}</a></li>
+                        <li *ngFor="let user of users"><a [routerLink]="['/usereditor']"
+                                [queryParams]="{id: user._id}">{{user.name}}</a></li>
                     </ul>
                     <div class="clearfix">
-                        <button class="btn btn-primary btn-sm float-right" [routerLink]="['/usereditor']">New User</button>
+                        <button class="btn btn-primary btn-sm float-right" [routerLink]="['/usereditor']">New
+                            User</button>
                     </div>
                 </div>
             </div>

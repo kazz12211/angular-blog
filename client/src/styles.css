@@ -444,20 +444,20 @@ footer .copyright {
 }
 
 .btn-sm {
-  font-size: 14px;.post-preview > p {
-    color: #212529;
-  }
-    
-  .post-preview > .post-meta {
-    font-size: 18px;
-    font-style: italic;
-    margin-top: 0;
-    color: #868e96;
-  }
-    
-  font-weight: 600;
-  padding: 10px 12px;
+  font-size: 14px;
 }
+
+.post-preview > p {
+    color: #212529;
+}
+    
+.post-preview > .post-meta {
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 0;
+  color: #868e96;
+}
+    
 .ck-editor__editable_inline {
   min-height: 400px;
 }
@@ -474,10 +474,6 @@ footer .copyright {
   color: #0085A1;
 }
 
-.comment {
-  padding: 1rem;
-}
-
 .post-comment > p {
   font-size: 16px;
   color: #212529;
@@ -490,3 +486,46 @@ footer .copyright {
   color: #868e96;
 }
   
+.post-comment {
+  padding: 1rem;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 1px 1px 4px #ccc;
+}
+
+
+.card-grid {
+  width: 100%;
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media only screen and (min-width: 768px) {
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+.articles th {
+  font-size: 80%;
+}
+.articles td {
+  font-size: 80%;
+}
+
+.users th {
+  font-size: 80%;
+}
+.users td {
+  font-size: 80%;
+}
+
+.comments th {
+  font-size: 80%;
+}
+.comments td {
+  font-size: 80%;
+}

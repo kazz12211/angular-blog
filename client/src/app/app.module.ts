@@ -57,7 +57,7 @@ import { CommentsComponent } from './components/comments/comments.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
   constructor(injector: Injector) {
     setAppInjector(injector);
   }

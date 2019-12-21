@@ -10,8 +10,8 @@ export class FileService {
 
   constructor(private http: HttpClient) { }
 
-  upload(file: File) : { [key: string]: {progress: Observable<number>} } {
-    const status: { [key: string] : {progress: Observable<number>}} = {};
+  upload(file: File): { [key: string]: {progress: Observable<number>} } {
+    const status: { [key: string]: {progress: Observable<number>}} = {};
 
     const formData: FormData = new FormData();
     formData.append('file', file, file.name);

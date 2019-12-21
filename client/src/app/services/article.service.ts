@@ -22,7 +22,7 @@ export class ArticleService {
     return this.http.get(`${SERVER_URL}/external/article/${id}`);
   }
 
-  getPost(id:string): Observable<any> {
+  getPost(id: string): Observable<any> {
     return this.http.get(`${SERVER_URL}/external/post/${id}`);
 
   }
@@ -30,7 +30,7 @@ export class ArticleService {
   post(article: any): Observable<any> {
     return this.http.post(`${SERVER_URL}/external/articles`, article);
   }
-  
+
   saveAsDraft(article: any): Observable<any> {
     return this.http.post(`${SERVER_URL}/external/articles/save`, article);
   }

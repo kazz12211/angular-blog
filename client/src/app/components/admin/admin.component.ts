@@ -8,15 +8,15 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
+
 export class AdminComponent implements OnInit {
-  
-  articles: number = 0;
+  articles = 0;
   topPosts: any[] = [];
   users: any[] = [];
   recentComments: any[] = [];
 
   constructor(
-    private articleService: ArticleService, 
+    private articleService: ArticleService,
     private userService: UserService,
     private auth: AuthService) { }
 
@@ -30,7 +30,7 @@ export class AdminComponent implements OnInit {
     this.articleService.recentComments(10).subscribe(resp => {
       this.recentComments = resp;
     });
-    this.userService.getUsers(0, 50).subscribe(resp => {
+    this.userService.getUsers(0, 10).subscribe(resp => {
       this.users = resp.rows;
     });
   }

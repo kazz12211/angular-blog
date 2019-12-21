@@ -25,12 +25,13 @@
         <a class="btn btn-primary float-right" href="#" [routerLink]="['/editor']">New Article</a>
     </div>
     <div class="py-4"></div>
-    <table class="table">
+    <table class="table articles">
         <thead>
             <tr>
                 <th>Title</th>
                 <th>Author</th>
                 <th>Created</th>
+                <th>Comments</th>
                 <th>Draft</th>
                 <th></th>
             </tr>
@@ -40,6 +41,7 @@
                 <td>{{article.title}}</td>
                 <td>{{article.author.name}}</td>
                 <td>{{article.createdAt|date:'short'}}</td>
+                <td>{{article.comments.length}}</td>
                 <td>{{article.draft}}</td>
                 <td><a [routerLink]="['/editor']" [queryParams]="{id: article._id}">Edit</a></td>
             </tr>
