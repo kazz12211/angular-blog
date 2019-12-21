@@ -19,6 +19,10 @@ const CommentSchema = new mongoose.Schema({
     },
     postedAt: {
         type: Date
+    },
+    articleId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Article'
     }
 });
 

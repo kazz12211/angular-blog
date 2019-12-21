@@ -20,15 +20,16 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 mx-auto">
           <div class="post-preview" *ngFor="let article of page.rows">
-            <a [routerLink]="['/post']" [queryParams]="{id: article._id}">
-              <h2 class="post-title">
+            <h2 class="post-title">
+              <a [routerLink]="['/post']" [queryParams]="{id: article._id}">
                 {{article.title}}
-              </h2>
-              <p [innerHTML]="sanitizedContent(article)"></p>
-            </a>
+              </a>
+            </h2>
+            <p class="content" [innerHTML]="sanitizedContent(article)"></p>
             <p class="post-meta">{{article.tags.join(', ')}}</p>
             <p class="post-meta">Posted by
               {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>
+            <p *ngIf="article.comments.length > 0">{{article.comments.length}} コメント</p>
           </div>
           <hr>
 

@@ -338,7 +338,9 @@ router.post('/post/:id/comment', getUserId, (req, res) => {
     const comment = new Comment({
         writer, 
         email, 
-        content});
+        content,
+        articleId
+    });
     comment.postedAt = new Date();
     Article.findById(articleId)
     .populate('author')

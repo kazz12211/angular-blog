@@ -1,4 +1,4 @@
 <h5>Top Posts</h5>
 <ul>
-    <li *ngFor="let post of topPosts"><a [routerLink]="['/post']" [queryParams]="{id: post._id}">{{post.title}}</a></li>
+    <li *ngFor="let post of topPosts"><a [routerLink]="['/post']" [queryParams]="{id: post._id}">{{post.title}} <span *ngIf="post.comments.length">({{post.comments.length}})</span></a></li>
 </ul>

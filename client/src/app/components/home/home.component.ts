@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from 'src/app/services/article.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { getLocaleFirstDayOfWeek } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   sanitizedContent(article): SafeHtml {
-    return this.sanitizer.bypassSecurityTrustHtml(article.content);
+    return this.sanitizer.bypassSecurityTrustHtml(this.digest(article));
   }
 
   prevPage() {
@@ -35,5 +36,17 @@ export class HomeComponent implements OnInit {
     this.articleService.getPublishedArticles(p, 5, {}, []).subscribe(resp => {
       this.page = resp;
     });
+  }
+
+  private digest(article: any): string {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(article.content, 'text/html');
+    const body = doc.getElementsByTagName('body')[0];
+    if (body.children.length >= 1) {
+      const first = body.children.item(0);
+      return first.innerHTML;
+    } else {
+      return article.content;
+    }
   }
 }
