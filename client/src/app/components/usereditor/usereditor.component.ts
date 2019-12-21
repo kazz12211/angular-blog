@@ -54,7 +54,7 @@ export class UsereditorComponent implements OnInit {
   }
 
   deleteUser() {
-    this.userService.delete(this.user._id).subscribe(resp => {
+    this.userService.delete(this.user).subscribe(resp => {
       this.router.navigate(['/users']);
     }, err => {
       console.log(err);

@@ -33,7 +33,7 @@
                 <div class="card-body">
                     <h5 class="card-title text-center">Top Articles</h5>
                     <ul>
-                        <li *ngFor="let post of topPosts">{{post.title}}</li>
+                        <li *ngFor="let post of topPosts"><a [routerLink]="['/editor']" [queryParams]="{id: post._id}">{{post.title}}</a></li>
                     </ul>
                     <div class="clearfix">
                         <button class="btn btn-primary btn-sm float-right" [routerLink]="['/editor']">New
@@ -47,10 +47,10 @@
                 <div class="card-body">
                     <h5 class="card-title text-center">Users</h5>
                     <ul>
-                        <li *ngFor="let user of users">{{user.name}}</li>
+                        <li *ngFor="let user of users"><a [routerLink]="['/usereditor']" [queryParams]="{id: user._id}">{{user.name}}</a></li>
                     </ul>
                     <div class="clearfix">
-                        <button class="btn btn-primary btn-sm float-right" [routerLink]="['/newUser']">New User</button>
+                        <button class="btn btn-primary btn-sm float-right" [routerLink]="['/usereditor']">New User</button>
                     </div>
                 </div>
             </div>
