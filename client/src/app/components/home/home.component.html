@@ -36,7 +36,7 @@
             <p class="post-meta">{{article.tags.join(', ')}}</p>
             <p class="post-meta">Posted by
               {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>
-            <p *ngIf="article.comments.length > 0">{{article.comments.length}} コメント</p>
+            <p>{{openedCommentCount(article)}} コメント</p>
           </div>
           <hr>
 

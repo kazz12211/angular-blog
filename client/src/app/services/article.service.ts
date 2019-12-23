@@ -63,6 +63,9 @@ export class ArticleService {
     return this.http.get<any[]>(`${SERVER_URL}/external/comments/recent?limit=${limit}`);
   }
 
+  showHideComment(id: string, hidden: boolean): Observable<any> {
+    return this.http.put(`${SERVER_URL}/external/comments/showhide/${id}`, {hidden: hidden});
+  }
 }
 
 

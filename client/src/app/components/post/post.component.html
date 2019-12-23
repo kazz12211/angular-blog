@@ -55,9 +55,13 @@
 
             </form>
             <div class="comment">
-                <div class="post-comment" *ngFor="let comment of article.comments">
-                    <p [innerHTML]="sanitizedContent(comment.content)"></p>
-                    <p class="post-comment-meta">by {{comment.writer}} on {{comment.postedAt|date:'short'}}</p>
+                <div *ngFor="let comment of article.comments">
+                    <div *ngIf="!comment.hidden">
+                        <div class="post-comment">
+                            <p [innerHTML]="sanitizedContent(comment.content)"></p>
+                            <p class="post-comment-meta">by {{comment.writer}} on {{comment.postedAt|date:'short'}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

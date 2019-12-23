@@ -49,4 +49,10 @@ export class HomeComponent implements OnInit {
       return article.content;
     }
   }
+
+  openedCommentCount(article: any): number {
+    const opened = article.comments.filter(comment => !comment.hidden);
+    console.log(opened);
+    return opened.length;
+  }
 }

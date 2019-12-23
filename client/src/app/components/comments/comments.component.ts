@@ -23,4 +23,9 @@ export class CommentsComponent implements OnInit {
     });
   }
 
+  showHide(comment: any) {
+    this.articleService.showHideComment(comment._id, !comment.hidden).subscribe(result => {
+      console.log(result);
+    });
+  }
 }

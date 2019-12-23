@@ -72,6 +72,7 @@ router.get('/posts', getUserId, (req, res) => {
             count = c;
             const query = Article.find(cond)
                 .populate('author')
+                .populate('comments')
                 .skip(page * limit)
                 .limit(limit)
                 .sort({'publishedAt': 'desc'});
@@ -400,5 +401,14 @@ router.get('/comments/recent', verifyToken, (req, res) => {
     });
 });
 
+router.put('/comments/showhide/:id', verifyToken, (req, res) => {
+    const {hidden} = req.body;
+    Comment.findByIdAndUpdate(req.params.id, {hidden: hidden}).exec().then(result => {
+        res.json(result);
+    }).catch(err => {
+        console.error(err);
+        res.status(500).send(err);
+    });
+});
 
 module.exports = router;

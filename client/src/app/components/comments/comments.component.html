@@ -38,7 +38,7 @@
                 <td>{{comment.email}}</td>
                 <td>{{comment.content}}</td>
                 <td>{{comment.postedAt|date:'short'}}</td>
-                <td>{{comment.hidden ? 'NO' : 'YES'}}</td>
+                <td><input type="checkbox" [checked]="!comment.hidden" (change)="showHide(comment)"/></td>
             </tr>
         </tbody>
     </table>
