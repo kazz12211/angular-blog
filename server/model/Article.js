@@ -23,6 +23,10 @@ const CommentSchema = new mongoose.Schema({
     articleId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Article'
+    },
+    hidden : {
+        type: Boolean,
+        default: false
     }
 });
 
