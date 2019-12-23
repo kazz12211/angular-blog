@@ -336,12 +336,13 @@ router.post('/post/:id/comment', getUserId, (req, res) => {
     const {writer, email, content} = req.body;
 
     const comment = new Comment({
-        writer, 
-        email, 
-        content,
-        articleId
+        writer: writer, 
+        email: email, 
+        content: content,
+        postedAt: new Date(),
+        articleId: articleId,
+        hidden: false
     });
-    comment.postedAt = new Date();
     Article.findById(articleId)
     .populate('author')
     .populate({path: 'comments', model: Comment})
