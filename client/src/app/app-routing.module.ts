@@ -12,6 +12,8 @@ import { UsersComponent } from './components/users/users.component';
 import { PostComponent } from './components/post/post.component';
 import { UsereditorComponent } from './components/usereditor/usereditor.component';
 import { CommentsComponent } from './components/comments/comments.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { FilesComponent } from './components/files/files.component';
 
 
 const routes: Routes = [
@@ -48,6 +50,12 @@ const routes: Routes = [
   {
     path: 'usereditor', component: UsereditorComponent, canActivate: [AuthGuard]
   },
+  {
+    path: 'gallery', component: GalleryComponent
+  },
+  {
+    path: 'files', component: FilesComponent
+  }
 ];
 
 @NgModule({

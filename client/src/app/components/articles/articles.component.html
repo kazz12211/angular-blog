@@ -3,11 +3,12 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="col-lg-10 col-md-10 mx-auto">
                 <div class="admin-heading">
                     <span class="subheading px-4">
                         <button class="btn btn-primary btn-sm" [routerLink]="['/admin']">Dashboard</button>
                         <button class="btn btn-secondary btn-sm">Articles</button>
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/files']">Files</button>
                         <button class="btn btn-primary btn-sm" [routerLink]="['/comments']">Comments</button>
                         <button class="btn btn-primary btn-sm" [routerLink]="['/users']">Users</button>
                         <button class="btn btn-dark btn-sm" (click)="auth.logout()">Logout</button>

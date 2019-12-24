@@ -1,0 +1,45 @@
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h2>ギャラリー</h2>
+                    <span class="subheading">ギター・革製品・帆布製品・木工・自転車</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-sm-12">
+            <div class="photo">
+                <img [src]="fileURL(selectedMedia)" alt="" #photo>
+                <div class="content">
+                    <h1>{{ selectedMedia.name }}</h1>
+                    <p>{{ selectedMedia.caption }}</p>    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-12">
+            <div class="gallery">
+                <div class="thumbnail" *ngFor="let media of page.rows">
+                    <div class="content">
+                        <img [src]="fileURL(media)" alt="" (click)="select(media)"/>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix">
+                <button id="prev" class="btn float-left" (click)="prevPage()" *ngIf="page.prev">Prev</button>
+                <button id="next" class="btn float-right" (click)="nextPage()" *ngIf="page.next">Next</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />

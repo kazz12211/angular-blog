@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Navigation -->\n<nav class=\"navbar navbar-expand-lg navbar-light fixed-top\" id=\"mainNav\">\n    <div class=\"container\">\n        <a class=\"navbar-brand\" [routerLink]=\"['/']\">tubakicraft.jp</a>\n        <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\"\n            data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\"\n            aria-label=\"Toggle navigation\">\n            Menu\n            <i class=\"fas fa-bars\"></i>\n        </button>\n        <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">\n            <ul class=\"navbar-nav ml-auto\">\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" [routerLink]=\"['/']\">ホーム</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" [routerLink]=\"['/about']\">椿工藝舎について</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" [routerLink]=\"['/contact']\">コンタクト</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" [routerLink]=\"['/admin']\">管理</a>\n                </li>\n            </ul>\n        </div>\n    </div>\n</nav>\n\n<router-outlet></router-outlet>\n\n<!-- Footer -->\n<footer>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <ul class=\"list-inline text-center\">\n                    <li class=\"list-inline-item\">\n                        <a href=\"#\">\n                            <span class=\"fa-stack fa-lg\">\n                                <i class=\"fas fa-circle fa-stack-2x\"></i>\n                                <i class=\"fab fa-twitter fa-stack-1x fa-inverse\"></i>\n                            </span>\n                        </a>\n                    </li>\n                    <li class=\"list-inline-item\">\n                        <a href=\"#\">\n                            <span class=\"fa-stack fa-lg\">\n                                <i class=\"fas fa-circle fa-stack-2x\"></i>\n                                <i class=\"fab fa-facebook-f fa-stack-1x fa-inverse\"></i>\n                            </span>\n                        </a>\n                    </li>\n                    <li class=\"list-inline-item\">\n                        <a href=\"#\">\n                            <span class=\"fa-stack fa-lg\">\n                                <i class=\"fas fa-circle fa-stack-2x\"></i>\n                                <i class=\"fab fa-github fa-stack-1x fa-inverse\"></i>\n                            </span>\n                        </a>\n                    </li>\n                </ul>\n                <p class=\"copyright text-muted\">Copyright &copy; tsubakicraft.jp 2019</p>\n            </div>\n        </div>\n    </div>\n</footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Navigation -->\n<nav class=\"navbar navbar-expand-lg navbar-light fixed-top\" id=\"mainNav\">\n    <div class=\"container\">\n        <a class=\"navbar-brand\" [routerLink]=\"['/']\">tubakicraft.jp</a>\n        <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\"\n            data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\"\n            aria-label=\"Toggle navigation\">\n            Menu\n            <i class=\"fas fa-bars\"></i>\n        </button>\n        <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">\n            <ul class=\"navbar-nav ml-auto\">\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" [routerLink]=\"['/']\">ホーム</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" [routerLink]=\"['/gallery']\">ギャラリー</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" [routerLink]=\"['/about']\">椿工藝舎について</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" [routerLink]=\"['/contact']\">コンタクト</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" [routerLink]=\"['/admin']\">管理</a>\n                </li>\n            </ul>\n        </div>\n    </div>\n</nav>\n\n<router-outlet></router-outlet>\n\n<!-- Footer -->\n<footer>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <ul class=\"list-inline text-center\">\n                    <li class=\"list-inline-item\">\n                        <a href=\"#\">\n                            <span class=\"fa-stack fa-lg\">\n                                <i class=\"fas fa-circle fa-stack-2x\"></i>\n                                <i class=\"fab fa-twitter fa-stack-1x fa-inverse\"></i>\n                            </span>\n                        </a>\n                    </li>\n                    <li class=\"list-inline-item\">\n                        <a href=\"#\">\n                            <span class=\"fa-stack fa-lg\">\n                                <i class=\"fas fa-circle fa-stack-2x\"></i>\n                                <i class=\"fab fa-facebook-f fa-stack-1x fa-inverse\"></i>\n                            </span>\n                        </a>\n                    </li>\n                    <li class=\"list-inline-item\">\n                        <a href=\"#\">\n                            <span class=\"fa-stack fa-lg\">\n                                <i class=\"fas fa-circle fa-stack-2x\"></i>\n                                <i class=\"fab fa-github fa-stack-1x fa-inverse\"></i>\n                            </span>\n                        </a>\n                    </li>\n                </ul>\n                <p class=\"copyright text-muted\">Copyright &copy; tsubakicraft.jp 2019</p>\n            </div>\n        </div>\n    </div>\n</footer>");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-secondary btn-sm\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/comments']\">Comments</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"card-grid\">\n            <div class=\"card\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\"># of Articles</h5>\n                    <h1 class=\"text-center text-muted\">{{articles}}</h1>\n                </div>\n            </div>\n            <div class=\"card\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Top Articles</h5>\n                    <ul>\n                        <li *ngFor=\"let post of topPosts\"><a [routerLink]=\"['/editor']\"\n                                [queryParams]=\"{id: post._id}\">{{post.title}}</a></li>\n                    </ul>\n                    <div class=\"clearfix\">\n                        <button class=\"btn btn-primary btn-sm float-right\" [routerLink]=\"['/editor']\">New\n                            Article</button>\n                    </div>\n                </div>\n            </div>\n            <div class=\"card\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Comments</h5>\n                    <ul>\n                        <li *ngFor=\"let comment of recentComments\">{{comment.content}}</li>\n                    </ul>\n                </div>\n            </div>\n            <div class=\"card\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Users</h5>\n                    <ul>\n                        <li *ngFor=\"let user of users\"><a [routerLink]=\"['/usereditor']\"\n                                [queryParams]=\"{id: user._id}\">{{user.name}}</a></li>\n                    </ul>\n                    <div class=\"clearfix\">\n                        <button class=\"btn btn-primary btn-sm float-right\" [routerLink]=\"['/usereditor']\">New\n                            User</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<hr>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-10 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-secondary btn-sm\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/files']\">Files</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/comments']\">Comments</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"card-grid\">\n            <div class=\"card\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\"># of Articles</h5>\n                    <h1 class=\"text-center text-muted\">{{articles}}</h1>\n                </div>\n            </div>\n            <div class=\"card\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Top Articles</h5>\n                    <ul>\n                        <li *ngFor=\"let post of topPosts\"><a [routerLink]=\"['/editor']\"\n                                [queryParams]=\"{id: post._id}\">{{post.title}}</a></li>\n                    </ul>\n                    <div class=\"clearfix\">\n                        <button class=\"btn btn-sm float-right\" [routerLink]=\"['/editor']\">New\n                            Article</button>\n                    </div>\n                </div>\n            </div>\n            <div class=\"card\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Comments</h5>\n                    <ul>\n                        <li *ngFor=\"let comment of recentComments\">{{comment.content}}</li>\n                    </ul>\n                </div>\n            </div>\n            <div class=\"card\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Users</h5>\n                    <ul>\n                        <li *ngFor=\"let user of users\"><a [routerLink]=\"['/usereditor']\"\n                                [queryParams]=\"{id: user._id}\">{{user.name}}</a></li>\n                    </ul>\n                    <div class=\"clearfix\">\n                        <button class=\"btn btn-sm float-right\" [routerLink]=\"['/usereditor']\">New\n                            User</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<hr>");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-secondary btn-sm\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/comments']\">Comments</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Articles</h3>\n    <div class=\"clearfix\">\n        <a class=\"btn btn-primary float-right\" href=\"#\" [routerLink]=\"['/editor']\">New Article</a>\n    </div>\n    <div class=\"py-4\"></div>\n    <table class=\"table articles\">\n        <thead>\n            <tr>\n                <th>Title</th>\n                <th>Author</th>\n                <th>Created</th>\n                <th>Comments</th>\n                <th>Draft</th>\n                <th></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor=\"let article of page.rows\">\n                <td>{{article.title}}</td>\n                <td>{{article.author.name}}</td>\n                <td>{{article.createdAt|date:'short'}}</td>\n                <td>{{article.comments.length}}</td>\n                <td>{{article.draft}}</td>\n                <td><a [routerLink]=\"['/editor']\" [queryParams]=\"{id: article._id}\">Edit</a></td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n<hr>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-10 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-secondary btn-sm\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/files']\">Files</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/comments']\">Comments</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Articles</h3>\n    <div class=\"clearfix\">\n        <a class=\"btn btn-primary float-right\" href=\"#\" [routerLink]=\"['/editor']\">New Article</a>\n    </div>\n    <div class=\"py-4\"></div>\n    <table class=\"table articles\">\n        <thead>\n            <tr>\n                <th>Title</th>\n                <th>Author</th>\n                <th>Created</th>\n                <th>Comments</th>\n                <th>Draft</th>\n                <th></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor=\"let article of page.rows\">\n                <td>{{article.title}}</td>\n                <td>{{article.author.name}}</td>\n                <td>{{article.createdAt|date:'short'}}</td>\n                <td>{{article.comments.length}}</td>\n                <td>{{article.draft}}</td>\n                <td><a [routerLink]=\"['/editor']\" [queryParams]=\"{id: article._id}\">Edit</a></td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n<hr>");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-secondary btn-sm\">Comments</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Comments</h3>\n    <div class=\"py-4\"></div>\n    <table class=\"table comments\">\n        <thead>\n            <tr>\n                <th>Writer</th>\n                <th>Email</th>\n                <th>Content</th>\n                <th>Date</th>\n                <th>Open</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor=\"let comment of page.rows\">\n                <td>{{comment.writer}}</td>\n                <td>{{comment.email}}</td>\n                <td>{{comment.content}}</td>\n                <td>{{comment.postedAt|date:'short'}}</td>\n                <td><input type=\"checkbox\" [checked]=\"!comment.hidden\" (change)=\"showHide(comment)\"/></td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n<hr>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-10 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/files']\">Files</button>\n                        <button class=\"btn btn-secondary btn-sm\">Comments</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Comments</h3>\n    <div class=\"py-4\"></div>\n    <table class=\"table comments\">\n        <thead>\n            <tr>\n                <th>Writer</th>\n                <th>Email</th>\n                <th>Content</th>\n                <th>Date</th>\n                <th>Open</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor=\"let comment of page.rows\">\n                <td>{{comment.writer}}</td>\n                <td>{{comment.email}}</td>\n                <td>{{comment.content}}</td>\n                <td>{{comment.postedAt|date:'short'}}</td>\n                <td><input type=\"checkbox\" [checked]=\"!comment.hidden\" (change)=\"showHide(comment)\"/></td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n<hr>");
 
 /***/ }),
 
@@ -127,6 +127,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/files/files.component.html":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/files/files.component.html ***!
+  \*********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-10 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-secondary btn-sm\">Files</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/comments']\">Comments</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-8 col-lg-8\">\n            <div class=\"files\">\n                <div class=\"media\" *ngFor=\"let media of page.rows\">\n                    <img [src]=\"fileURL(media)\" alt=\"\">\n                    <div class=\"fileDesc\">\n                        <h5>{{ media.name }}</h5>\n                        <p>{{ media.caption }}</p>\n                        <p>{{ media.mimetype }}</p>\n                        <p>{{ media.createdAt | date:'short' }} {{ media.size }} bytes</p>\n                    </div>\n                </div>\n            </div>\n            <!-- Pager -->\n            <div class=\"clearfix\">\n                <a class=\"btn btn-primary float-left\" (click)=\"prevPage()\" *ngIf=\"page.prev\">&larr; Newer\n                    Posts</a>\n                <a class=\"btn btn-primary float-right\" (click)=\"nextPage()\" *ngIf=\"page.next\">Older Posts\n                    &rarr;</a>\n            </div>\n        </div>\n        <div class=\"col-md-4 col-lg-4\">\n            <h5>Upload File</h5>\n\n            <div class=\"row\">\n                <div class=\"col\">\n                    <div *ngIf=\"error\">\n                        {{ error.message }}\n                    </div>\n                    <div *ngIf=\"uploadResponse.status === 'error'\">\n                        {{ uploadResponse.message }}\n                    </div>\n                    <div *ngIf=\"uploadResponse.status === 'progress'\"></div>\n                    <div role=\"progressbar\" [style.width.%]=\"uploadResponse.message\" aria-valuenow=\"25\"\n                        aria-valuemin=\"0\" aria-valuemax=\"100\">\n                        {{ uploadResponse.message }}%\n                    </div>\n                </div>\n            </div>\n\n            <form [formGroup]=\"form\" (ngSubmit)=\"uploadFile()\">\n                <div class=\"row\">\n                    <div class=\"form-group col\">\n                        <input type=\"text\" formControlName=\"name\" name=\"name\" id=\"name\" class=\"form-control\"\n                            placeholder=\"Name\" />\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"form-group col\">\n                        <textarea formControlName=\"caption\" name=\"caption\" id=\"caption\" class=\"form-control\"\n                            placeholder=\"Caption\"></textarea>\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"custom-file col\">\n                        <input type=\"file\" class=\"custom-file-input\" id=\"file\" name=\"file\"\n                            (change)=\"onFileChange($event)\" />\n                        <label for=\"file\" class=\"custom-file-label\" #fileLabel>Choose File</label>\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <button class=\"btn btn-primary btn-block\" type=\"submit\">Upload</button>\n                    </div>\n                </div>\n            </form>\n        </div>\n    </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/gallery/gallery.component.html":
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/gallery/gallery.component.html ***!
+  \*************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/home-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"page-heading\">\n                    <h2>ギャラリー</h2>\n                    <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n\n<!-- Main Content -->\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-6 col-lg-6 col-sm-12\">\n            <div class=\"photo\">\n                <img [src]=\"fileURL(selectedMedia)\" alt=\"\" #photo>\n                <div class=\"content\">\n                    <h1>{{ selectedMedia.name }}</h1>\n                    <p>{{ selectedMedia.caption }}</p>    \n                </div>\n            </div>\n        </div>\n        <div class=\"col-md-6 col-lg-6 col-sm-12\">\n            <div class=\"gallery\">\n                <div class=\"thumbnail\" *ngFor=\"let media of page.rows\">\n                    <div class=\"content\">\n                        <img [src]=\"fileURL(media)\" alt=\"\" (click)=\"select(media)\"/>\n                    </div>\n                </div>\n            </div>\n            <div class=\"clearfix\">\n                <button id=\"prev\" class=\"btn float-left\" (click)=\"prevPage()\" *ngIf=\"page.prev\">Prev</button>\n                <button id=\"next\" class=\"btn float-right\" (click)=\"nextPage()\" *ngIf=\"page.next\">Next</button>\n            </div>\n        </div>\n    </div>\n</div>\n\n<hr />");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/home/home.component.html":
 /*!*******************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/home/home.component.html ***!
@@ -136,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/home-bg.jpg')\">\n  <div class=\"overlay\"></div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 col-md-10 mx-auto\">\n        <div class=\"site-heading\">\n          <h1>椿工藝舎ブログ</h1>\n          <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n        </div>\n      </div>\n    </div>\n  </div>\n</header>\n\n<div class=\"row\">\n  <div class=\"col-lg-9 col-md-9 d-flex justify-content-end py-4\">\n    <input type=\"text\" name=\"search\" placeholder=\"Search Post...\"/>\n  </div>\n</div>\n\n\n<!-- Main Content -->\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-lg-9 col-md-9\">\n      <div class=\"row\">\n        <div class=\"col-lg-12 col-md-12 mx-auto\">\n          <div class=\"post-preview\" *ngFor=\"let article of page.rows\">\n            <h2 class=\"post-title\">\n              <a [routerLink]=\"['/post']\" [queryParams]=\"{id: article._id}\">\n                {{article.title}}\n              </a>\n            </h2>\n            <p class=\"content\" [innerHTML]=\"sanitizedContent(article)\"></p>\n            <p class=\"post-meta\">{{article.tags.join(', ')}}</p>\n            <p class=\"post-meta\">Posted by\n              {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>\n            <p>{{openedCommentCount(article)}} コメント</p>\n          </div>\n          <hr>\n\n          <!-- Pager -->\n          <div class=\"clearfix\">\n            <a class=\"btn btn-primary float-left\" href=\"#\" (click)=\"prevPage()\" *ngIf=\"page.prev\">&larr; Newer Posts</a>\n            <a class=\"btn btn-primary float-right\" href=\"#\" (click)=\"nextPage()\" *ngIf=\"page.next\">Older Posts\n              &rarr;</a>\n          </div>\n        </div>\n      </div>\n\n    </div>\n    <div class=\"col-lg-3 col-md-3\">\n      <div class=\"aside\">\n        <app-aside></app-aside>\n      </div>\n    </div>\n  </div>\n</div>\n\n<hr>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/home-bg.jpg')\">\n  <div class=\"overlay\"></div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 col-md-10 mx-auto\">\n        <div class=\"site-heading\">\n          <h1>椿工藝舎ブログ</h1>\n          <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n        </div>\n      </div>\n    </div>\n  </div>\n</header>\n\n<div class=\"row\">\n  <div class=\"col-lg-9 col-md-9 d-flex justify-content-end py-4\">\n    <input type=\"text\" name=\"search\" placeholder=\"Search Post...\"/>\n  </div>\n</div>\n\n\n<!-- Main Content -->\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-lg-9 col-md-9\">\n      <div class=\"row\">\n        <div class=\"col-lg-12 col-md-12 mx-auto\">\n          <div class=\"post-preview\" *ngFor=\"let article of page.rows\">\n            <h2 class=\"post-title\">\n              <a [routerLink]=\"['/post']\" [queryParams]=\"{id: article._id}\">\n                {{article.title}}\n              </a>\n            </h2>\n            <p class=\"content\" [innerHTML]=\"sanitizedContent(article)\"></p>\n            <p class=\"post-meta\">{{article.tags.join(', ')}}</p>\n            <p class=\"post-meta\">Posted by\n              {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>\n            <p>{{openedCommentCount(article)}} コメント</p>\n          </div>\n          <hr>\n\n          <!-- Pager -->\n          <div class=\"clearfix\">\n            <a class=\"btn btn-primary float-left\" (click)=\"prevPage()\" *ngIf=\"page.prev\">&larr; Newer Posts</a>\n            <a class=\"btn btn-primary float-right\" (click)=\"nextPage()\" *ngIf=\"page.next\">Older Posts\n              &rarr;</a>\n          </div>\n        </div>\n      </div>\n\n    </div>\n    <div class=\"col-lg-3 col-md-3\">\n      <div class=\"aside\">\n        <app-aside></app-aside>\n      </div>\n    </div>\n  </div>\n</div>\n\n<hr>");
 
 /***/ }),
 
@@ -162,7 +188,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"site-heading\">\n                    <h1>椿工藝舎ブログ</h1>\n                    <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10 d-flex justify-content-end\">\n            <a [routerLink]=\"['/']\">ホーム</a>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10\">\n            <div class=\"post-preview\">\n                <h2 class=\"post-title\">{{article.title}}</h2>\n                <p [innerHTML]=\"sanitizedContent(article.content)\"></p>\n                <p class=\"post-meta\">{{article.tags.join(', ')}}</p>\n                <p class=\"post-meta\">Posted by {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>\n                <span class=\"like\">\n                    <a (click)=\"like(article)\"><i class=\"far fa-thumbs-up\"></i></a>\n                </span>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10\">\n            <div class=\"py-4\">\n                <h5>Comments</h5>\n            </div>\n            <form class=\"form comment-form\">\n                <div class=\"form-group\">\n                    <input type=\"text\" name=\"name\" [(ngModel)]=\"comment.writer\" class=\"form-control\"\n                        placeholder=\"Your name\" required>\n                </div>\n                <div class=\"form-group\">\n                    <input type=\"email\" name=\"email\" [(ngModel)]=\"comment.email\" class=\"form-control\"\n                        placeholder=\"Your email\" required>\n                </div>\n                <div class=\"form-group\">\n                    <textarea name=\"comment\" id=\"comment\" [(ngModel)]=\"comment.content\" class=\"form-control\"\n                        placeholder=\"Your comment\" required></textarea>\n                </div>\n                <div class=\"clearfix\">\n                    <button class=\"btn btn-default btn-sm float-right\" (click)=\"postComment()\">Post</button>\n                </div>\n\n            </form>\n            <div class=\"comment\">\n                <div *ngFor=\"let comment of article.comments\">\n                    <div *ngIf=\"!comment.hidden\">\n                        <div class=\"post-comment\">\n                            <p [innerHTML]=\"sanitizedContent(comment.content)\"></p>\n                            <p class=\"post-comment-meta\">by {{comment.writer}} on {{comment.postedAt|date:'short'}}</p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"site-heading\">\n                    <h1>椿工藝舎ブログ</h1>\n                    <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10 d-flex justify-content-end\">\n            <button class=\"btn\" [routerLink]=\"['/']\">ホーム</button>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10\">\n            <div class=\"post-preview\">\n                <h2 class=\"post-title\">{{article.title}}</h2>\n                <p [innerHTML]=\"sanitizedContent(article.content)\"></p>\n                <p class=\"post-meta\">{{article.tags.join(', ')}}</p>\n                <p class=\"post-meta\">Posted by {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>\n                <span class=\"like\">\n                    <a (click)=\"like(article)\"><i class=\"far fa-thumbs-up\"></i></a>\n                </span>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-lg-8 col-md-10\">\n            <div class=\"py-4\">\n                <h5>Comments</h5>\n            </div>\n            <form class=\"form comment-form\">\n                <div class=\"form-group\">\n                    <input type=\"text\" name=\"name\" [(ngModel)]=\"comment.writer\" class=\"form-control\"\n                        placeholder=\"Your name\" required>\n                </div>\n                <div class=\"form-group\">\n                    <input type=\"email\" name=\"email\" [(ngModel)]=\"comment.email\" class=\"form-control\"\n                        placeholder=\"Your email\" required>\n                </div>\n                <div class=\"form-group\">\n                    <textarea name=\"comment\" id=\"comment\" [(ngModel)]=\"comment.content\" class=\"form-control\"\n                        placeholder=\"Your comment\" required></textarea>\n                </div>\n                <div class=\"clearfix\">\n                    <button class=\"btn btn-default btn-sm float-right\" (click)=\"postComment()\">Post</button>\n                </div>\n\n            </form>\n            <div class=\"comment\">\n                <div *ngFor=\"let comment of article.comments\">\n                    <div *ngIf=\"!comment.hidden\">\n                        <div class=\"post-comment\">\n                            <p [innerHTML]=\"sanitizedContent(comment.content)\"></p>\n                            <p class=\"post-comment-meta\">by {{comment.writer}} on {{comment.postedAt|date:'short'}}</p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -188,7 +214,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-8 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/comments']\">Comments</button>\n                        <button class=\"btn btn-secondary btn-sm\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Users</h3>\n    <div class=\"clearfix\">\n        <a class=\"btn btn-primary float-right\" href=\"#\" [routerLink]=\"['/usereditor']\">New User</a>\n    </div>\n    <div class=\"py-4\"></div>\n\n    <table class=\"table users\">\n        <thead>\n            <tr>\n                <th>Name</th>\n                <th>Email</th>\n                <th></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor=\"let user of page.rows\">\n                <td>{{user.name}}</td>\n                <td>{{user.email}}</td>\n                <td><a [routerLink]=\"['/usereditor']\" [queryParams]=\"{id: user._id}\">Edit</a></td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n<hr>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-10 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/files']\">Files</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/comments']\">Comments</button>\n                        <button class=\"btn btn-secondary btn-sm\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n<!-- Main Content -->\n<div class=\"container\">\n    <h3>Users</h3>\n    <div class=\"clearfix\">\n        <a class=\"btn btn-primary float-right\" href=\"#\" [routerLink]=\"['/usereditor']\">New User</a>\n    </div>\n    <div class=\"py-4\"></div>\n\n    <table class=\"table users\">\n        <thead>\n            <tr>\n                <th>Name</th>\n                <th>Email</th>\n                <th></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngFor=\"let user of page.rows\">\n                <td>{{user.name}}</td>\n                <td>{{user.email}}</td>\n                <td><a [routerLink]=\"['/usereditor']\" [queryParams]=\"{id: user._id}\">Edit</a></td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n<hr>");
 
 /***/ }),
 
@@ -472,6 +498,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_post_post_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/post/post.component */ "./src/app/components/post/post.component.ts");
 /* harmony import */ var _components_usereditor_usereditor_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/usereditor/usereditor.component */ "./src/app/components/usereditor/usereditor.component.ts");
 /* harmony import */ var _components_comments_comments_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/comments/comments.component */ "./src/app/components/comments/comments.component.ts");
+/* harmony import */ var _components_gallery_gallery_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/gallery/gallery.component */ "./src/app/components/gallery/gallery.component.ts");
+/* harmony import */ var _components_files_files_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/files/files.component */ "./src/app/components/files/files.component.ts");
+
+
 
 
 
@@ -521,6 +551,12 @@ const routes = [
     {
         path: 'usereditor', component: _components_usereditor_usereditor_component__WEBPACK_IMPORTED_MODULE_13__["UsereditorComponent"], canActivate: [_auth_guard__WEBPACK_IMPORTED_MODULE_6__["AuthGuard"]]
     },
+    {
+        path: 'gallery', component: _components_gallery_gallery_component__WEBPACK_IMPORTED_MODULE_15__["GalleryComponent"]
+    },
+    {
+        path: 'files', component: _components_files_files_component__WEBPACK_IMPORTED_MODULE_16__["FilesComponent"]
+    }
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -613,6 +649,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_aside_aside_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/aside/aside.component */ "./src/app/components/aside/aside.component.ts");
 /* harmony import */ var _components_usereditor_usereditor_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/usereditor/usereditor.component */ "./src/app/components/usereditor/usereditor.component.ts");
 /* harmony import */ var _components_comments_comments_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/comments/comments.component */ "./src/app/components/comments/comments.component.ts");
+/* harmony import */ var _components_gallery_gallery_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/gallery/gallery.component */ "./src/app/components/gallery/gallery.component.ts");
+/* harmony import */ var _components_files_files_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/files/files.component */ "./src/app/components/files/files.component.ts");
+
+
 
 
 
@@ -660,12 +700,15 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _components_post_post_component__WEBPACK_IMPORTED_MODULE_20__["PostComponent"],
             _components_aside_aside_component__WEBPACK_IMPORTED_MODULE_21__["AsideComponent"],
             _components_usereditor_usereditor_component__WEBPACK_IMPORTED_MODULE_22__["UsereditorComponent"],
-            _components_comments_comments_component__WEBPACK_IMPORTED_MODULE_23__["CommentsComponent"]
+            _components_comments_comments_component__WEBPACK_IMPORTED_MODULE_23__["CommentsComponent"],
+            _components_gallery_gallery_component__WEBPACK_IMPORTED_MODULE_24__["GalleryComponent"],
+            _components_files_files_component__WEBPACK_IMPORTED_MODULE_25__["FilesComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"],
             _ckeditor_ckeditor5_angular__WEBPACK_IMPORTED_MODULE_16__["CKEditorModule"]
         ],
@@ -1175,6 +1218,196 @@ EditorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/components/files/files.component.css":
+/*!******************************************************!*\
+  !*** ./src/app/components/files/files.component.css ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".files {\n    display: grid;\n    grid-template-columns: repeat(1, 1fr);\n    grid-gap: 10px;\n    margin-bottom: 10px;\n}\n.media {\n    border: 0;\n    border-radius: 4px;\n    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);\n    padding: 10px;\n    display: flex;\n    flex-direction: row;\n}\n.media p {\n    margin-bottom: 4px;\n    margin-top: 4px;\n}\n.media img {\n    padding: 10px;\n    width: 120px;\n    height: 120px;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.media .fileDesc {\n    padding: 10px;\n}\n.btn {\n    color: white;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9maWxlcy9maWxlcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksYUFBYTtJQUNiLHFDQUFxQztJQUNyQyxjQUFjO0lBQ2QsbUJBQW1CO0FBQ3ZCO0FBQ0E7SUFDSSxTQUFTO0lBQ1Qsa0JBQWtCO0lBQ2xCLDBDQUEwQztJQUMxQyxhQUFhO0lBQ2IsYUFBYTtJQUNiLG1CQUFtQjtBQUN2QjtBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLGVBQWU7QUFDbkI7QUFDQTtJQUNJLGFBQWE7SUFDYixZQUFZO0lBQ1osYUFBYTtJQUNiLG9CQUFpQjtPQUFqQixpQkFBaUI7QUFDckI7QUFFQTtJQUNJLGFBQWE7QUFDakI7QUFFQTtJQUNJLFlBQVk7QUFDaEIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2ZpbGVzL2ZpbGVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZmlsZXMge1xuICAgIGRpc3BsYXk6IGdyaWQ7XG4gICAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiByZXBlYXQoMSwgMWZyKTtcbiAgICBncmlkLWdhcDogMTBweDtcbiAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xufVxuLm1lZGlhIHtcbiAgICBib3JkZXI6IDA7XG4gICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgIGJveC1zaGFkb3c6IDVweCA1cHggNXB4IHJnYmEoMCwgMCwgMCwgMC41KTtcbiAgICBwYWRkaW5nOiAxMHB4O1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcbn1cblxuLm1lZGlhIHAge1xuICAgIG1hcmdpbi1ib3R0b206IDRweDtcbiAgICBtYXJnaW4tdG9wOiA0cHg7XG59XG4ubWVkaWEgaW1nIHtcbiAgICBwYWRkaW5nOiAxMHB4O1xuICAgIHdpZHRoOiAxMjBweDtcbiAgICBoZWlnaHQ6IDEyMHB4O1xuICAgIG9iamVjdC1maXQ6IGNvdmVyO1xufVxuXG4ubWVkaWEgLmZpbGVEZXNjIHtcbiAgICBwYWRkaW5nOiAxMHB4O1xufVxuXG4uYnRuIHtcbiAgICBjb2xvcjogd2hpdGU7XG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/components/files/files.component.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/components/files/files.component.ts ***!
+  \*****************************************************/
+/*! exports provided: FilesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilesComponent", function() { return FilesComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_services_file_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/file.service */ "./src/app/services/file.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+
+
+
+
+let FilesComponent = class FilesComponent {
+    constructor(formBuilder, fileService) {
+        this.formBuilder = formBuilder;
+        this.fileService = fileService;
+        this.uploadResponse = { status: '', message: '', filePath: '' };
+        this.page = {};
+        this.currentPage = 0;
+        this.limit = 5;
+    }
+    ngOnInit() {
+        this.form = this.formBuilder.group({
+            file: [''],
+            name: '',
+            caption: ''
+        });
+        this.fileService.getFiles(this.currentPage, this.limit).subscribe(page => {
+            this.page = page;
+        });
+    }
+    onFileChange(event) {
+        if (event.target.files.length > 0) {
+            const file = event.target.files[0];
+            this.form.get('file').setValue(file);
+            this.fileLabel.nativeElement.innerHTML = file.name;
+        }
+    }
+    uploadFile() {
+        console.log(this.form);
+        const formData = new FormData();
+        formData.append('file', this.form.get('file').value, this.form.get('file').value.name);
+        this.fileService.upload(formData, this.form.get('name').value, this.form.get('caption').value).subscribe(res => {
+            this.uploadResponse = res;
+            this.form.reset();
+        }, err => {
+            console.error(err);
+            this.error = err;
+        });
+    }
+    fileURL(media) {
+        return `/media/file/${media.filename}`;
+    }
+    prevPage() {
+        this.currentPage--;
+        this.fileService.getFiles(this.currentPage, this.limit).subscribe(page => {
+            this.page = page;
+        });
+    }
+    nextPage() {
+        this.currentPage++;
+        this.fileService.getFiles(this.currentPage, this.limit).subscribe(page => {
+            this.page = page;
+        });
+    }
+};
+FilesComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] },
+    { type: src_app_services_file_service__WEBPACK_IMPORTED_MODULE_2__["FileService"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('fileLabel', { static: false })
+], FilesComponent.prototype, "fileLabel", void 0);
+FilesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-files',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./files.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/files/files.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./files.component.css */ "./src/app/components/files/files.component.css")).default]
+    })
+], FilesComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/gallery/gallery.component.css":
+/*!**********************************************************!*\
+  !*** ./src/app/components/gallery/gallery.component.css ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".gallery {\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    grid-gap:16px;\n}\n\n.thumbnail {\n    display: block;\n    transition-duration: 0.3s;\n}\n\n.thumbnail img {\n    width: 120px;\n    height: 120px;\n    -o-object-fit: cover;\n       object-fit: cover;\n    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.8);\n    cursor: pointer;\n}\n\n.thumbnail img:hover {\n    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);\n    transform: translateY(-5px);\n    transition-duration: 0.3s;\n}\n\n.photo {\n    padding: 0\n}\n\n.photo img {\n    opacity: 0.3;\n    width: 100%;\n    transition:\tall 0.3s ease;\n}\n\n.photo .content {\n    border: 0;\n    background-color: rgba(0, 0, 0, 0.5);\n    margin-top: 0;\n    margin-bottom: 10px;\n    padding: 5px 10px;\n}\n\n.photo .content h1 {\n    font-size: 20px;\n    margin-top: 10px;\n    color: white;\n}\n\n.photo .content p {\n    font-size: 14px;\n    color: white;\n}\n\n@media(max-width: 768px) {\n    .gallery {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        grid-gap:16px;\n    }\n    \n    .thumbnail img {\n        width: 80px;\n        height: 80px;\n        -o-object-fit: cover;\n           object-fit: cover;\n        box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.8);\n        cursor: pointer;\n    }\n    \n    \n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9nYWxsZXJ5L2dhbGxlcnkuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGFBQWE7SUFDYixxQ0FBcUM7SUFDckMsYUFBYTtBQUNqQjs7QUFFQTtJQUNJLGNBQWM7SUFDZCx5QkFBeUI7QUFDN0I7O0FBRUE7SUFDSSxZQUFZO0lBQ1osYUFBYTtJQUNiLG9CQUFpQjtPQUFqQixpQkFBaUI7SUFDakIsZ0RBQWdEO0lBQ2hELGVBQWU7QUFDbkI7O0FBRUE7SUFDSSw2Q0FBNkM7SUFDN0MsMkJBQTJCO0lBQzNCLHlCQUF5QjtBQUM3Qjs7QUFFQTtJQUNJO0FBQ0o7O0FBRUE7SUFDSSxZQUFZO0lBQ1osV0FBVztJQUNYLHlCQUF5QjtBQUM3Qjs7QUFFQTtJQUNJLFNBQVM7SUFDVCxvQ0FBb0M7SUFDcEMsYUFBYTtJQUNiLG1CQUFtQjtJQUNuQixpQkFBaUI7QUFDckI7O0FBQ0E7SUFDSSxlQUFlO0lBQ2YsZ0JBQWdCO0lBQ2hCLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxlQUFlO0lBQ2YsWUFBWTtBQUNoQjs7QUFFQTtJQUNJO1FBQ0ksYUFBYTtRQUNiLHFDQUFxQztRQUNyQyxhQUFhO0lBQ2pCOztJQUVBO1FBQ0ksV0FBVztRQUNYLFlBQVk7UUFDWixvQkFBaUI7V0FBakIsaUJBQWlCO1FBQ2pCLGdEQUFnRDtRQUNoRCxlQUFlO0lBQ25COzs7QUFHSiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZ2FsbGVyeS9nYWxsZXJ5LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZ2FsbGVyeSB7XG4gICAgZGlzcGxheTogZ3JpZDtcbiAgICBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IHJlcGVhdCg0LCAxZnIpO1xuICAgIGdyaWQtZ2FwOjE2cHg7XG59XG5cbi50aHVtYm5haWwge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIHRyYW5zaXRpb24tZHVyYXRpb246IDAuM3M7XG59XG5cbi50aHVtYm5haWwgaW1nIHtcbiAgICB3aWR0aDogMTIwcHg7XG4gICAgaGVpZ2h0OiAxMjBweDtcbiAgICBvYmplY3QtZml0OiBjb3ZlcjtcbiAgICBib3gtc2hhZG93OiAwcHggMHB4IDEwcHggLTVweCByZ2JhKDAsIDAsIDAsIDAuOCk7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4udGh1bWJuYWlsIGltZzpob3ZlciB7XG4gICAgYm94LXNoYWRvdzogMTBweCAxMHB4IDEwcHggcmdiYSgwLCAwLCAwLCAwLjUpO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNXB4KTtcbiAgICB0cmFuc2l0aW9uLWR1cmF0aW9uOiAwLjNzO1xufVxuXG4ucGhvdG8ge1xuICAgIHBhZGRpbmc6IDBcbn1cblxuLnBob3RvIGltZyB7XG4gICAgb3BhY2l0eTogMC4zO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIHRyYW5zaXRpb246XHRhbGwgMC4zcyBlYXNlO1xufVxuXG4ucGhvdG8gLmNvbnRlbnQge1xuICAgIGJvcmRlcjogMDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG4gICAgbWFyZ2luLXRvcDogMDtcbiAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xuICAgIHBhZGRpbmc6IDVweCAxMHB4O1xufVxuLnBob3RvIC5jb250ZW50IGgxIHtcbiAgICBmb250LXNpemU6IDIwcHg7XG4gICAgbWFyZ2luLXRvcDogMTBweDtcbiAgICBjb2xvcjogd2hpdGU7XG59XG5cbi5waG90byAuY29udGVudCBwIHtcbiAgICBmb250LXNpemU6IDE0cHg7XG4gICAgY29sb3I6IHdoaXRlO1xufVxuXG5AbWVkaWEobWF4LXdpZHRoOiA3NjhweCkge1xuICAgIC5nYWxsZXJ5IHtcbiAgICAgICAgZGlzcGxheTogZ3JpZDtcbiAgICAgICAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiByZXBlYXQoMywgMWZyKTtcbiAgICAgICAgZ3JpZC1nYXA6MTZweDtcbiAgICB9XG4gICAgXG4gICAgLnRodW1ibmFpbCBpbWcge1xuICAgICAgICB3aWR0aDogODBweDtcbiAgICAgICAgaGVpZ2h0OiA4MHB4O1xuICAgICAgICBvYmplY3QtZml0OiBjb3ZlcjtcbiAgICAgICAgYm94LXNoYWRvdzogMHB4IDBweCAxMHB4IC01cHggcmdiYSgwLCAwLCAwLCAwLjgpO1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgfVxuICAgIFxuICAgIFxufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/components/gallery/gallery.component.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/components/gallery/gallery.component.ts ***!
+  \*********************************************************/
+/*! exports provided: GalleryComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GalleryComponent", function() { return GalleryComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_services_file_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/file.service */ "./src/app/services/file.service.ts");
+
+
+
+let GalleryComponent = class GalleryComponent {
+    constructor(fileService) {
+        this.fileService = fileService;
+        this.page = {};
+        this.currentPage = 0;
+        this.limit = 24;
+    }
+    ngOnInit() {
+        this.fileService.getFiles(this.currentPage, this.limit).subscribe(page => {
+            this.page = page;
+            this.selectedMedia = this.page.rows[0];
+        });
+    }
+    ngAfterViewInit() {
+        this.select(this.page.rows[0]);
+    }
+    fileURL(media) {
+        return `/media/file/${media.filename}`;
+    }
+    prevPage() {
+        this.currentPage--;
+        this.fileService.getFiles(this.currentPage, this.limit).subscribe(page => {
+            this.page = page;
+        });
+    }
+    nextPage() {
+        this.currentPage++;
+        this.fileService.getFiles(this.currentPage, this.limit).subscribe(page => {
+            this.page = page;
+        });
+    }
+    select(media) {
+        this.img.nativeElement.style.opacity = 0.3;
+        setTimeout(() => {
+            this.selectedMedia = media;
+            this.img.nativeElement.style.opacity = 1;
+        }, 500);
+    }
+};
+GalleryComponent.ctorParameters = () => [
+    { type: src_app_services_file_service__WEBPACK_IMPORTED_MODULE_2__["FileService"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('photo', { static: false })
+], GalleryComponent.prototype, "img", void 0);
+GalleryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-gallery',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./gallery.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/gallery/gallery.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./gallery.component.css */ "./src/app/components/gallery/gallery.component.css")).default]
+    })
+], GalleryComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/home/home.component.css":
 /*!****************************************************!*\
   !*** ./src/app/components/home/home.component.css ***!
@@ -1246,7 +1479,6 @@ let HomeComponent = class HomeComponent {
     }
     openedCommentCount(article) {
         const opened = article.comments.filter(comment => !comment.hidden);
-        console.log(opened);
         return opened.length;
     }
 };
@@ -1717,6 +1949,75 @@ AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providedIn: 'root'
     })
 ], AuthService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/file.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/file.service.ts ***!
+  \******************************************/
+/*! exports provided: FileService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileService", function() { return FileService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config */ "./src/app/config.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
+
+
+
+
+let FileService = class FileService {
+    constructor(http) {
+        this.http = http;
+    }
+    upload(data, name, caption) {
+        const uploadUrl = `${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/media/files`;
+        console.log(name);
+        console.log(caption);
+        data.append('name', name);
+        data.append('caption', caption);
+        return this.http.post(uploadUrl, data, {
+            reportProgress: true,
+            observe: 'events'
+        }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((event) => {
+            switch (event.type) {
+                case _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpEventType"].Sent:
+                    return { status: 'progress', message: 0 };
+                case _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpEventType"].UploadProgress:
+                    return { status: 'progress', message: Math.round(100 * event.loaded / event.total) };
+                case _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpEventType"].ResponseHeader:
+                    return { status: 'progress', message: 100 };
+                case _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpEventType"].DownloadProgress:
+                    return { status: 'progress', message: 100 };
+                case _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpEventType"].Response:
+                    console.log(event.body);
+                    return event.body;
+                default:
+                    return `Unhandled event: ${event.type}`;
+            }
+        }));
+    }
+    getFiles(page, limit) {
+        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/media/files?page=${page}&limit=${limit}`);
+    }
+    getFile(filename) { }
+};
+FileService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+FileService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], FileService);
 
 
 

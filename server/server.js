@@ -65,6 +65,7 @@ app.use( (req, res, next) => {
     if(
         path.startsWith('/auth') || 
         path.startsWith('/external') || 
+        path.startsWith('/media') ||
         path.startsWith('/img') || 
         path.startsWith('/upload') ||
         path.startsWith('/image')) {
@@ -75,14 +76,12 @@ app.use( (req, res, next) => {
 
 app.use('/auth', require('./api/auth'));
 app.use('/external', require('./api/external'));
-
-
+app.use('/media', require('./api/media'));
 
 app.post('/upload', upload.single('upload'), (req, res) => {
     const file = req.file;
     res.json({url: `/image/${file.filename}`});
 });
-
 
 /*
 app.post('/upload', (req, res) => {
@@ -107,14 +106,7 @@ app.post('/upload', (req, res) => {
 */
 
 app.get('/image/:filename', (req, res) => {
-    //gfs.find({
-        //filename: req.params.filename
-    //}, (err, f) => {
-        //if(!f) {
-            //return res.status(404).json({error: 'File not found'});
-        //}
-        gfs.openDownloadStreamByName(req.params.filename).pipe(res);
-    //});
+    gfs.openDownloadStreamByName(req.params.filename).pipe(res);
 });
 
 app.listen(port, () => {

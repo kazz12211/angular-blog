@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -22,6 +22,8 @@ import { PostComponent } from './components/post/post.component';
 import { AsideComponent } from './components/aside/aside.component';
 import { UsereditorComponent } from './components/usereditor/usereditor.component';
 import { CommentsComponent } from './components/comments/comments.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { FilesComponent } from './components/files/files.component';
 
 @NgModule({
   declarations: [
@@ -37,12 +39,15 @@ import { CommentsComponent } from './components/comments/comments.component';
     PostComponent,
     AsideComponent,
     UsereditorComponent,
-    CommentsComponent
+    CommentsComponent,
+    GalleryComponent,
+    FilesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     CKEditorModule
   ],

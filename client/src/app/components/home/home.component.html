@@ -42,8 +42,8 @@
 
           <!-- Pager -->
           <div class="clearfix">
-            <a class="btn btn-primary float-left" href="#" (click)="prevPage()" *ngIf="page.prev">&larr; Newer Posts</a>
-            <a class="btn btn-primary float-right" href="#" (click)="nextPage()" *ngIf="page.next">Older Posts
+            <a class="btn btn-primary float-left" (click)="prevPage()" *ngIf="page.prev">&larr; Newer Posts</a>
+            <a class="btn btn-primary float-right" (click)="nextPage()" *ngIf="page.next">Older Posts
               &rarr;</a>
           </div>
         </div>

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpRequest, HttpEventType, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpEventType } from '@angular/common/http';
 import { SERVER_URL } from '../config';
-import { Observable, Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,30 +11,39 @@ export class FileService {
 
   constructor(private http: HttpClient) { }
 
-  upload(file: File): { [key: string]: {progress: Observable<number>} } {
-    const status: { [key: string]: {progress: Observable<number>}} = {};
 
-    const formData: FormData = new FormData();
-    formData.append('file', file, file.name);
-    formData.set('enctype', 'multipart/form-data');
+  upload(data: FormData, name: string, caption: string) {
+    const uploadUrl = `${SERVER_URL}/media/files`;
 
-    const req = new HttpRequest('POST', `${SERVER_URL}/upload`, formData, {
-      reportProgress: true
-    });
+    console.log(name);
+    console.log(caption);
+    data.append('name', name);
+    data.append('caption', caption);
 
-    const progress = new Subject<number>();
-    this.http.request(req).subscribe(event => {
-      if (event.type === HttpEventType.UploadProgress) {
-        const percentDone = Math.round(100 * event.loaded / event.total);
-        progress.next();
-      } else if (event instanceof HttpResponse) {
-        progress.complete();
+    return this.http.post<any>(uploadUrl, data, {
+      reportProgress: true,
+      observe: 'events'
+    }).pipe(map( (event) => {
+      switch (event.type) {
+        case HttpEventType.Sent:
+          return {status: 'progress', message: 0};
+        case HttpEventType.UploadProgress:
+          return {status: 'progress', message: Math.round(100 * event.loaded / event.total)};
+        case HttpEventType.ResponseHeader:
+          return {status: 'progress', message: 100};
+        case HttpEventType.DownloadProgress:
+          return {status: 'progress', message: 100};
+        case HttpEventType.Response:
+          console.log(event.body);
+          return event.body;
+        default:
+          return `Unhandled event: ${event.type}`;
       }
-      status[file.name] = {
-        progress: progress.asObservable()
-      };
-    });
-    return status;
+    }));
+  }
+
+  getFiles(page: number, limit: number): Observable<any> {
+    return this.http.get(`${SERVER_URL}/media/files?page=${page}&limit=${limit}`);
   }
 
   getFile(filename: string) {}

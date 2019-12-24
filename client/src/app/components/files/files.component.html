@@ -1,0 +1,92 @@
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('assets/img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-md-10 mx-auto">
+                <div class="admin-heading">
+                    <span class="subheading px-4">
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/admin']">Dashboard</button>
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/articles']">Articles</button>
+                        <button class="btn btn-secondary btn-sm">Files</button>
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/comments']">Comments</button>
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/users']">Users</button>
+                        <button class="btn btn-dark btn-sm" (click)="auth.logout()">Logout</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-lg-8">
+            <div class="files">
+                <div class="media" *ngFor="let media of page.rows">
+                    <img [src]="fileURL(media)" alt="">
+                    <div class="fileDesc">
+                        <h5>{{ media.name }}</h5>
+                        <p>{{ media.caption }}</p>
+                        <p>{{ media.mimetype }}</p>
+                        <p>{{ media.createdAt | date:'short' }} {{ media.size }} bytes</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Pager -->
+            <div class="clearfix">
+                <a class="btn btn-primary float-left" (click)="prevPage()" *ngIf="page.prev">&larr; Newer
+                    Posts</a>
+                <a class="btn btn-primary float-right" (click)="nextPage()" *ngIf="page.next">Older Posts
+                    &rarr;</a>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+            <h5>Upload File</h5>
+
+            <div class="row">
+                <div class="col">
+                    <div *ngIf="error">
+                        {{ error.message }}
+                    </div>
+                    <div *ngIf="uploadResponse.status === 'error'">
+                        {{ uploadResponse.message }}
+                    </div>
+                    <div *ngIf="uploadResponse.status === 'progress'"></div>
+                    <div role="progressbar" [style.width.%]="uploadResponse.message" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">
+                        {{ uploadResponse.message }}%
+                    </div>
+                </div>
+            </div>
+
+            <form [formGroup]="form" (ngSubmit)="uploadFile()">
+                <div class="row">
+                    <div class="form-group col">
+                        <input type="text" formControlName="name" name="name" id="name" class="form-control"
+                            placeholder="Name" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <textarea formControlName="caption" name="caption" id="caption" class="form-control"
+                            placeholder="Caption"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="custom-file col">
+                        <input type="file" class="custom-file-input" id="file" name="file"
+                            (change)="onFileChange($event)" />
+                        <label for="file" class="custom-file-label" #fileLabel>Choose File</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-primary btn-block" type="submit">Upload</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
