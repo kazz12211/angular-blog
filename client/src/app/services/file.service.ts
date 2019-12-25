@@ -47,4 +47,9 @@ export class FileService {
   }
 
   getFile(filename: string) {}
+  
+
+  deleteFile(filename: string) {
+    return this.http.delete(`${SERVER_URL}/media/files/${filename}`);
+  }
 }

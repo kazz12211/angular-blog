@@ -28,7 +28,11 @@ export class GalleryComponent implements OnInit, AfterViewInit{
   }
 
   fileURL(media) {
-    return `/media/file/${media.filename}`;
+    if (media) {
+      return `/media/file/${media.filename}`;
+    } else {
+      return null;
+    }
   }
 
   prevPage() {

@@ -25,9 +25,13 @@ export class FilesComponent implements OnInit {
       name: '',
       caption: ''
     });
+    this.loadFiles();
+  }
+
+  private loadFiles() {
     this.fileService.getFiles(this.currentPage, this.limit).subscribe(page => {
       this.page = page;
-    })
+    });
   }
 
   onFileChange(event) {
@@ -58,17 +62,20 @@ export class FilesComponent implements OnInit {
 
   prevPage() {
     this.currentPage--;
-    this.fileService.getFiles(this.currentPage, this.limit).subscribe(page => {
-      this.page = page;
-    })
+    this.loadFiles();
   }
 
   nextPage() {
     this.currentPage++;
-    this.fileService.getFiles(this.currentPage, this.limit).subscribe(page => {
-      this.page = page;
-    });
+    this.loadFiles();
   }
 
-
+  deleteMedia(media) {
+    const filename = media.filename;
+    this.fileService.deleteFile(filename).subscribe(result => {
+      this.loadFiles();
+    }, err => {
+      console.log(err);
+    });
+  }
 }

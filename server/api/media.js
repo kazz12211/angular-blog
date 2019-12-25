@@ -106,4 +106,40 @@ router.post('/files', upload.single('file'), (req, res) => {
     });
 });
 
+
+router.delete('/files/:filename', verifyToken, (req, res) => {
+    db.collection('media.files').findOne({filename: req.params.filename}, (err, file) => {
+        if(err) {
+            return res.status(500).send(err);
+        }
+        res.json(file);
+        gfs.delete(file._id, (err, result) => {
+            if(err) {
+                return res.status(500).send(err);
+            }
+            Media.remove({filename: req.params.filename}).then(r => {
+                res.json(r);
+            }).catch(err => {
+                res.status(500).send(err);
+            });
+        });
+
+    });
+    /*
+    gfs.delete({filename: req.params.filename}, (err, result) => {
+        if(err) {
+            return res.status(500).send(err);
+        }
+        console.log(result);
+        Media.remove({filename: filename}).then(r => {
+            res.json(r);
+        }).catch(err => {
+            console.log(err);
+            res.status(500).send(err);
+        });
+    });
+    */
+    
+});
+
 module.exports = router;
