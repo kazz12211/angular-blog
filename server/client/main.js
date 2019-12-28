@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-10 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-secondary btn-sm\">Files</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/comments']\">Comments</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n\n<!-- Main Content -->\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-8 col-lg-8\">\n            <div class=\"files\">\n                <div class=\"media\" *ngFor=\"let media of page.rows\">\n                    <img [src]=\"fileURL(media)\" alt=\"\">\n                    <div class=\"fileDesc\">\n                        <h2>{{ media.name }}</h2>\n                        <p>{{ media.caption }}</p>\n                        <p>{{ media.mimetype }}</p>\n                        <p>{{ media.createdAt | date:'short' }} {{ media.size }} bytes</p>\n                        <button class=\"btn btn-light float-right\" (click)=\"deleteMedia(media)\">Delete</button>\n                    </div>\n                </div>\n            </div>\n            <!-- Pager -->\n            <div class=\"clearfix\">\n                <a class=\"btn btn-primary float-left\" (click)=\"prevPage()\" *ngIf=\"page.prev\">&larr; Newer\n                    Posts</a>\n                <a class=\"btn btn-primary float-right\" (click)=\"nextPage()\" *ngIf=\"page.next\">Older Posts\n                    &rarr;</a>\n            </div>\n        </div>\n        <div class=\"col-md-4 col-lg-4\">\n            <h5>Upload File</h5>\n\n            <div class=\"row\">\n                <div class=\"col\">\n                    <div *ngIf=\"error\">\n                        {{ error.message }}\n                    </div>\n                    <div *ngIf=\"uploadResponse.status === 'error'\">\n                        {{ uploadResponse.message }}\n                    </div>\n                    <div *ngIf=\"uploadResponse.status === 'progress'\">\n                        <div role=\"progressbar\" [style.width.%]=\"uploadResponse.message\" aria-valuenow=\"25\"\n                            aria-valuemin=\"0\" aria-valuemax=\"100\">\n                            {{ uploadResponse.message }}%\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n            <form [formGroup]=\"form\" (ngSubmit)=\"uploadFile()\">\n                <div class=\"row\">\n                    <div class=\"form-group col\">\n                        <input type=\"text\" formControlName=\"name\" name=\"name\" id=\"name\" class=\"form-control\"\n                            placeholder=\"Name\" />\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"form-group col\">\n                        <textarea formControlName=\"caption\" name=\"caption\" id=\"caption\" class=\"form-control\"\n                            placeholder=\"Caption\"></textarea>\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"custom-file col\">\n                        <input type=\"file\" class=\"custom-file-input\" id=\"file\" name=\"file\"\n                            (change)=\"onFileChange($event)\" />\n                        <label for=\"file\" class=\"custom-file-label\" #fileLabel>Choose File</label>\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"col py-4\">\n                        <button class=\"btn btn-primary btn-block\" type=\"submit\">Upload</button>\n                    </div>\n                </div>\n            </form>\n        </div>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/post-bg.jpg')\">\n    <div class=\"overlay\"></div>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-10 col-md-10 mx-auto\">\n                <div class=\"admin-heading\">\n                    <span class=\"subheading px-4\">\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/admin']\">Dashboard</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/articles']\">Articles</button>\n                        <button class=\"btn btn-secondary btn-sm\">Files</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/comments']\">Comments</button>\n                        <button class=\"btn btn-primary btn-sm\" [routerLink]=\"['/users']\">Users</button>\n                        <button class=\"btn btn-dark btn-sm\" (click)=\"auth.logout()\">Logout</button>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</header>\n\n\n<!-- Main Content -->\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-8 col-lg-8\">\n            <div class=\"files\">\n                <div class=\"media\" *ngFor=\"let media of page.rows\">\n                    <img [src]=\"fileURL(media)\" alt=\"\">\n                    <div class=\"fileDesc\">\n                        <h2>{{ media.name }}</h2>\n                        <p>{{ media.caption }}</p>\n                        <p>{{ media.mimetype }}</p>\n                        <p>{{ media.createdAt | date:'short' }} {{ media.size }} bytes</p>\n                        <button class=\"btn btn-light float-right\" (click)=\"deleteMedia(media)\">Delete</button>\n                    </div>\n                </div>\n            </div>\n            <!-- Pager -->\n            <div class=\"clearfix\">\n                <a class=\"btn btn-primary float-left\" (click)=\"prevPage()\" *ngIf=\"page.prev\">&larr; Newer\n                    Posts</a>\n                <a class=\"btn btn-primary float-right\" (click)=\"nextPage()\" *ngIf=\"page.next\">Older Posts\n                    &rarr;</a>\n            </div>\n        </div>\n        <div class=\"col-md-4 col-lg-4\">\n            <h5>Upload File</h5>\n\n            <div class=\"row\">\n                <div class=\"col\">\n                    <div *ngIf=\"error\">\n                        {{ error.message }}\n                    </div>\n                    <div *ngIf=\"uploadResponse.status === 'error'\">\n                        {{ uploadResponse.message }}\n                    </div>\n                    <div *ngIf=\"uploadResponse.status === 'progress'\">\n                        <div role=\"progressbar\" [style.width.%]=\"uploadResponse.message\" aria-valuenow=\"25\"\n                            aria-valuemin=\"0\" aria-valuemax=\"100\">\n                            {{ uploadResponse.message }}%\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n            <form [formGroup]=\"form\" (ngSubmit)=\"uploadFile()\">\n                <div class=\"row\">\n                    <div class=\"form-group col\">\n                        <input type=\"text\" formControlName=\"name\" name=\"name\" id=\"name\" class=\"form-control\"\n                            placeholder=\"Name\" />\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"form-group col\">\n                        <textarea formControlName=\"caption\" name=\"caption\" id=\"caption\" class=\"form-control\"\n                            placeholder=\"Caption\"></textarea>\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"custom-file col\">\n                        <input type=\"file\" class=\"custom-file-input\" id=\"file\" name=\"file\"\n                            (change)=\"onFileChange($event)\" />\n                        <label for=\"file\" class=\"custom-file-label\" #fileLabel>Choose File</label>\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"col py-4\">\n                        <button class=\"btn btn-primary btn-block\" type=\"submit\">Upload</button>\n                    </div>\n                </div>\n            </form>\n        </div>\n    </div>\n</div>\n");
 
 /***/ }),
 
@@ -176,6 +176,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\n    <div class=\"col-md-4 col-sm-8 m-auto text-center py-5\">\n        <h3 style=\"margin-top:40px\">Administrator Login</h3>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"col-md-4 col-sm-8 m-auto py-5\">\n        <form class=\"form login-form\">\n            <div class=\"form-group\">\n                <input type=\"email\" class=\"form-control\" name=\"email\" placeholder=\"Email\" [(ngModel)]=\"user.email\">\n            </div>\n            <div class=\"form-group\">\n                <input type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"Password\" [(ngModel)]=\"user.password\">\n            </div>\n\n            <div class=\"d-flex justify-content-center\">\n                <button class=\"btn btn-primary\" (click)=\"login()\">Login</button>\n                <button class=\"btn btn-default\" [routerLink]=\"['/']\">Cancel</button>\n            </div>\n        </form>\n        \n    </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/modal-confirm/modal-confirm.component.html":
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/modal-confirm/modal-confirm.component.html ***!
+  \*************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"modal-header\">\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('dismiss')\">\n        <span aria-hidden=\"true\">&times;</span>\n    </button>\n</div>\n<div class=\"modal-body\">\n    <p>{{message}}</p>\n</div>\n<div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-primary\" (click)=\"activeModal.close('ok')\">{{okCaption}}</button>\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.dismiss('dismiss')\">{{cancelCaption}}</button>\n</div>");
 
 /***/ }),
 
@@ -651,6 +664,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_comments_comments_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/comments/comments.component */ "./src/app/components/comments/comments.component.ts");
 /* harmony import */ var _components_gallery_gallery_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/gallery/gallery.component */ "./src/app/components/gallery/gallery.component.ts");
 /* harmony import */ var _components_files_files_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/files/files.component */ "./src/app/components/files/files.component.ts");
+/* harmony import */ var _components_modal_confirm_modal_confirm_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/modal-confirm/modal-confirm.component */ "./src/app/components/modal-confirm/modal-confirm.component.ts");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm2015/ng-bootstrap.js");
+
+
 
 
 
@@ -702,7 +719,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _components_usereditor_usereditor_component__WEBPACK_IMPORTED_MODULE_22__["UsereditorComponent"],
             _components_comments_comments_component__WEBPACK_IMPORTED_MODULE_23__["CommentsComponent"],
             _components_gallery_gallery_component__WEBPACK_IMPORTED_MODULE_24__["GalleryComponent"],
-            _components_files_files_component__WEBPACK_IMPORTED_MODULE_25__["FilesComponent"]
+            _components_files_files_component__WEBPACK_IMPORTED_MODULE_25__["FilesComponent"],
+            _components_modal_confirm_modal_confirm_component__WEBPACK_IMPORTED_MODULE_26__["ModalConfirmComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -710,7 +728,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"],
-            _ckeditor_ckeditor5_angular__WEBPACK_IMPORTED_MODULE_16__["CKEditorModule"]
+            _ckeditor_ckeditor5_angular__WEBPACK_IMPORTED_MODULE_16__["CKEditorModule"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_27__["NgbModalModule"]
         ],
         providers: [
             _services_auth_service__WEBPACK_IMPORTED_MODULE_8__["AuthService"],
@@ -720,6 +739,9 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 useClass: _services_token_interceptor_service__WEBPACK_IMPORTED_MODULE_10__["TokenInterceptorService"],
                 multi: true
             }
+        ],
+        entryComponents: [
+            _components_modal_confirm_modal_confirm_component__WEBPACK_IMPORTED_MODULE_26__["ModalConfirmComponent"]
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
     })
@@ -1148,6 +1170,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ckeditor/ckeditor5-build-classic */ "./node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js");
 /* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var src_app_config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/config */ "./src/app/config.ts");
+/* harmony import */ var src_app_services_modal_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/services/modal.service */ "./src/app/services/modal.service.ts");
+
 
 
 
@@ -1156,11 +1180,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let EditorComponent = class EditorComponent {
-    constructor(auth, articleService, router, route) {
+    constructor(auth, articleService, router, route, modalService) {
         this.auth = auth;
         this.articleService = articleService;
         this.router = router;
         this.route = route;
+        this.modalService = modalService;
         this.article = { title: '', content: '' };
         this.editor = _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_5__;
         this.editorConfig = {};
@@ -1195,8 +1220,14 @@ let EditorComponent = class EditorComponent {
         });
     }
     deletePost() {
-        this.articleService.deletePost(this.article._id).subscribe(resp => {
-            this.router.navigate(['/articles']);
+        this.modalService.confirm('Delete Confirmation', `Are you sure to delete post "${this.article.title}"`, 'Delete', 'Cancel').then(ok => {
+            if (ok) {
+                this.articleService.deletePost(this.article._id).subscribe(resp => {
+                    this.router.navigate(['/articles']);
+                });
+            }
+        }).catch(err => {
+            console.log(err);
         });
     }
 };
@@ -1204,7 +1235,8 @@ EditorComponent.ctorParameters = () => [
     { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] },
     { type: src_app_services_article_service__WEBPACK_IMPORTED_MODULE_3__["ArticleService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] },
+    { type: src_app_services_modal_service__WEBPACK_IMPORTED_MODULE_7__["ModalService"] }
 ];
 EditorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1245,14 +1277,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_services_file_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/file.service */ "./src/app/services/file.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var src_app_services_modal_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/modal.service */ "./src/app/services/modal.service.ts");
+
 
 
 
 
 let FilesComponent = class FilesComponent {
-    constructor(formBuilder, fileService) {
+    constructor(formBuilder, fileService, modalService) {
         this.formBuilder = formBuilder;
         this.fileService = fileService;
+        this.modalService = modalService;
         this.uploadResponse = { status: '', message: '', filePath: '' };
         this.page = {};
         this.currentPage = 0;
@@ -1302,17 +1337,24 @@ let FilesComponent = class FilesComponent {
         this.loadFiles();
     }
     deleteMedia(media) {
-        const filename = media.filename;
-        this.fileService.deleteFile(filename).subscribe(result => {
-            this.loadFiles();
-        }, err => {
-            console.log(err);
+        this.selectedMedia = media;
+        this.modalService.confirm('Delete Confirmation', `Are you sure to delete file "${media.name}"`, 'Delete', 'Cancel').then(ok => {
+            if (ok) {
+                const filename = this.selectedMedia.filename;
+                this.fileService.deleteFile(filename).subscribe(result => {
+                    this.loadFiles();
+                }, err => {
+                    console.log(err);
+                });
+            }
+        }).catch(err => {
         });
     }
 };
 FilesComponent.ctorParameters = () => [
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] },
-    { type: src_app_services_file_service__WEBPACK_IMPORTED_MODULE_2__["FileService"] }
+    { type: src_app_services_file_service__WEBPACK_IMPORTED_MODULE_2__["FileService"] },
+    { type: src_app_services_modal_service__WEBPACK_IMPORTED_MODULE_4__["ModalService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('fileLabel', { static: false })
@@ -1576,6 +1618,69 @@ LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/components/modal-confirm/modal-confirm.component.css":
+/*!**********************************************************************!*\
+  !*** ./src/app/components/modal-confirm/modal-confirm.component.css ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".modal-header .modal-title {\n    text-transform: uppercase;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9tb2RhbC1jb25maXJtL21vZGFsLWNvbmZpcm0uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtBQUM3QiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbW9kYWwtY29uZmlybS9tb2RhbC1jb25maXJtLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubW9kYWwtaGVhZGVyIC5tb2RhbC10aXRsZSB7XG4gICAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/components/modal-confirm/modal-confirm.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/modal-confirm/modal-confirm.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: ModalConfirmComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalConfirmComponent", function() { return ModalConfirmComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm2015/ng-bootstrap.js");
+
+
+
+let ModalConfirmComponent = class ModalConfirmComponent {
+    constructor(activeModal) {
+        this.activeModal = activeModal;
+        this.okCaption = 'OK';
+        this.cancelCaption = 'Cancel';
+    }
+};
+ModalConfirmComponent.ctorParameters = () => [
+    { type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbActiveModal"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ModalConfirmComponent.prototype, "title", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ModalConfirmComponent.prototype, "message", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ModalConfirmComponent.prototype, "okCaption", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ModalConfirmComponent.prototype, "cancelCaption", void 0);
+ModalConfirmComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-modal-confirm',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./modal-confirm.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/modal-confirm/modal-confirm.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./modal-confirm.component.css */ "./src/app/components/modal-confirm/modal-confirm.component.css")).default]
+    })
+], ModalConfirmComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/post/post.component.css":
 /*!****************************************************!*\
   !*** ./src/app/components/post/post.component.css ***!
@@ -1684,15 +1789,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_services_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/user.service */ "./src/app/services/user.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var src_app_services_modal_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/modal.service */ "./src/app/services/modal.service.ts");
+
 
 
 
 
 let UsereditorComponent = class UsereditorComponent {
-    constructor(userService, router, route) {
+    constructor(userService, router, route, modalService) {
         this.userService = userService;
         this.router = router;
         this.route = route;
+        this.modalService = modalService;
         this.user = { name: '', email: '', password: '', role: '' };
         this.roles = [{ name: 'admin', label: '管理者' }, { name: 'user', label: '一般ユーザー' }];
     }
@@ -1730,9 +1838,15 @@ let UsereditorComponent = class UsereditorComponent {
         });
     }
     deleteUser() {
-        this.userService.delete(this.user).subscribe(resp => {
-            this.router.navigate(['/users']);
-        }, err => {
+        this.modalService.confirm('Delete Confirmation', `Are you sure to delete user "${this.user.name}"`, 'Delete', 'Cancel').then(ok => {
+            if (ok) {
+                this.userService.delete(this.user).subscribe(resp => {
+                    this.router.navigate(['/users']);
+                }, err => {
+                    console.log(err);
+                });
+            }
+        }).catch(err => {
             console.log(err);
         });
     }
@@ -1740,7 +1854,8 @@ let UsereditorComponent = class UsereditorComponent {
 UsereditorComponent.ctorParameters = () => [
     { type: src_app_services_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
+    { type: src_app_services_modal_service__WEBPACK_IMPORTED_MODULE_4__["ModalService"] }
 ];
 UsereditorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2033,6 +2148,57 @@ FileService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providedIn: 'root'
     })
 ], FileService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/modal.service.ts":
+/*!*******************************************!*\
+  !*** ./src/app/services/modal.service.ts ***!
+  \*******************************************/
+/*! exports provided: ModalService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalService", function() { return ModalService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm2015/ng-bootstrap.js");
+/* harmony import */ var _components_modal_confirm_modal_confirm_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/modal-confirm/modal-confirm.component */ "./src/app/components/modal-confirm/modal-confirm.component.ts");
+
+
+
+
+let ModalService = class ModalService {
+    constructor(modalService) {
+        this.modalService = modalService;
+    }
+    confirm(title, message, okCaption, cancelCaption) {
+        const modalRef = this.modalService.open(_components_modal_confirm_modal_confirm_component__WEBPACK_IMPORTED_MODULE_3__["ModalConfirmComponent"]);
+        const component = modalRef.componentInstance;
+        if (component != null) {
+            component.title = title;
+            component.message = message;
+            component.okCaption = okCaption || 'OK';
+            component.cancelCaption = cancelCaption || 'Cancel';
+        }
+        return modalRef.result.then(result => {
+            return true;
+        }, err => {
+            return false;
+        });
+    }
+};
+ModalService.ctorParameters = () => [
+    { type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"] }
+];
+ModalService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], ModalService);
 
 
 

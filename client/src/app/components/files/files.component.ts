@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FileService } from 'src/app/services/file.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-files',
@@ -15,9 +16,13 @@ export class FilesComponent implements OnInit {
   page = {};
   currentPage = 0;
   limit = 5;
+  selectedMedia: any;
   @ViewChild('fileLabel', {static: false}) fileLabel: ElementRef;
 
-  constructor(private formBuilder: FormBuilder, private fileService: FileService) { }
+  constructor(
+    private formBuilder: FormBuilder, 
+    private fileService: FileService,
+    private modalService: ModalService) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -71,11 +76,19 @@ export class FilesComponent implements OnInit {
   }
 
   deleteMedia(media) {
-    const filename = media.filename;
-    this.fileService.deleteFile(filename).subscribe(result => {
-      this.loadFiles();
-    }, err => {
-      console.log(err);
+    this.selectedMedia = media;
+    this.modalService.confirm('Delete Confirmation', `Are you sure to delete file "${media.name}"`, 'Delete', 'Cancel').then(ok => {
+      if (ok) {
+        const filename = this.selectedMedia.filename;
+        this.fileService.deleteFile(filename).subscribe(result => {
+          this.loadFiles();
+        }, err => {
+          console.log(err);
+        });
+      }
+    }).catch(err => {
+
     });
   }
+
 }

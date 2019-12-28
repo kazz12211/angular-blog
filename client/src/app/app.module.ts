@@ -24,6 +24,9 @@ import { UsereditorComponent } from './components/usereditor/usereditor.componen
 import { CommentsComponent } from './components/comments/comments.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { FilesComponent } from './components/files/files.component';
+import { ModalConfirmComponent } from './components/modal-confirm/modal-confirm.component';
+import { NgbModalBackdrop } from '@ng-bootstrap/ng-bootstrap/modal/modal-backdrop';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { FilesComponent } from './components/files/files.component';
     UsereditorComponent,
     CommentsComponent,
     GalleryComponent,
-    FilesComponent
+    FilesComponent,
+    ModalConfirmComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,8 @@ import { FilesComponent } from './components/files/files.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CKEditorModule
+    CKEditorModule,
+    NgbModalModule
   ],
   providers: [
     AuthService,
@@ -59,6 +64,9 @@ import { FilesComponent } from './components/files/files.component';
       useClass: TokenInterceptorService,
       multi: true
     }
+  ],
+  entryComponents: [
+    ModalConfirmComponent
   ],
   bootstrap: [AppComponent]
 })

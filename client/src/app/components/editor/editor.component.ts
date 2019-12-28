@@ -4,6 +4,7 @@ import { ArticleService } from 'src/app/services/article.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { SERVER_URL } from 'src/app/config';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-editor',
@@ -20,7 +21,8 @@ export class EditorComponent implements OnInit {
     private auth: AuthService,
     private articleService: ArticleService,
     private router: Router,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private modalService: ModalService) {
 
     this.editorConfig = {
       simpleUpload: {
@@ -57,9 +59,18 @@ export class EditorComponent implements OnInit {
   }
 
   deletePost() {
-    this.articleService.deletePost(this.article._id).subscribe(resp => {
-      this.router.navigate(['/articles']);
-    });
+    this.modalService.confirm(
+      'Delete Confirmation', 
+      `Are you sure to delete post "${this.article.title}"`,
+      'Delete', 'Cancel').then(ok => {
+        if (ok) {
+          this.articleService.deletePost(this.article._id).subscribe(resp => {
+            this.router.navigate(['/articles']);
+          });
+        }
+      }).catch(err => {
+        console.log(err);
+      });
   }
 
 }

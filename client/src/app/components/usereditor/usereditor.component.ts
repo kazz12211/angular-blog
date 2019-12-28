@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-usereditor',
@@ -15,7 +16,8 @@ export class UsereditorComponent implements OnInit {
   constructor(
     private userService: UserService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private modalService: ModalService) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(p => {
@@ -54,9 +56,18 @@ export class UsereditorComponent implements OnInit {
   }
 
   deleteUser() {
-    this.userService.delete(this.user).subscribe(resp => {
-      this.router.navigate(['/users']);
-    }, err => {
+    this.modalService.confirm(
+      'Delete Confirmation',
+      `Are you sure to delete user "${this.user.name}"`,
+      'Delete', 'Cancel').then(ok => {
+      if (ok) {
+        this.userService.delete(this.user).subscribe(resp => {
+          this.router.navigate(['/users']);
+        }, err => {
+          console.log(err);
+        });
+      }
+    }).catch(err => {
       console.log(err);
     });
   }
