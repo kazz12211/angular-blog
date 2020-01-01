@@ -63,8 +63,25 @@ router.get('/articles/count', verifyToken, (req, res) => {
 router.get('/posts', getUserId, (req, res) => {
     const page = req.query.page ? parseInt(req.query.page) : 0;
     const limit = req.query.limit ? parseInt(req.query.limit) : 10;
+    const searchString = req.query.search || '';
+
     let count = 0;
-    const cond = { draft: false };
+    let cond = { draft: false };
+
+    if(searchString !== '') {
+        cond = {
+            $and: [ 
+                { draft: false },
+                { $or: [
+                    { title: { $regex: '.*' + searchString + '.*' } },
+                    { content: { $regex: '.*' + searchString + '.*' } },
+                    { tags: { $regex: '.*' + searchString + '.*' } }
+                ]}
+            ]
+        };
+        console.log(JSON.stringify(cond));
+    }
+
     Article.where(cond).countDocuments((err, c) => {
         if(err) {
             res.status(500).send(err);
@@ -80,6 +97,7 @@ router.get('/posts', getUserId, (req, res) => {
                 const result = new Page(page, count, limit, articles, {}, []);
                 res.json(result);
             }).catch(err => {
+                console.error(err);
                 res.status(500).send(err);
             });
         }

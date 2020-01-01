@@ -14,7 +14,7 @@ export class ArticleService {
     return this.http.get(`${SERVER_URL}/external/articles?page=${page}&limit=${limit}`);
   }
 
-  getPublishedArticles(page: number, limit: number, query?: any, order?: any): Observable<any> {
+  getPosts(page: number, limit: number, query?: any, order?: any): Observable<any> {
     return this.http.get(`${SERVER_URL}/external/posts?page=${page}&limit=${limit}`);
   }
 
@@ -65,6 +65,10 @@ export class ArticleService {
 
   showHideComment(id: string, hidden: boolean): Observable<any> {
     return this.http.put(`${SERVER_URL}/external/comments/showhide/${id}`, {hidden: hidden});
+  }
+
+  searchPosts(searchString: string, page: number, limit: number): Observable<any> {
+    return this.http.get(`${SERVER_URL}/external/posts?page=${page}&limit=${limit}&search=${searchString}`);
   }
 }
 

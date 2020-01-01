@@ -162,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/home-bg.jpg')\">\n  <div class=\"overlay\"></div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 col-md-10 mx-auto\">\n        <div class=\"site-heading\">\n          <h1>椿工藝舎ブログ</h1>\n          <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n        </div>\n      </div>\n    </div>\n  </div>\n</header>\n\n<div class=\"row\">\n  <div class=\"col-lg-9 col-md-9 d-flex justify-content-end py-4\">\n    <input type=\"text\" name=\"search\" placeholder=\"Search Post...\"/>\n  </div>\n</div>\n\n\n<!-- Main Content -->\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-lg-9 col-md-9\">\n      <div class=\"row\">\n        <div class=\"col-lg-12 col-md-12 mx-auto\">\n          <div class=\"post-preview\" *ngFor=\"let article of page.rows\">\n            <h2 class=\"post-title\">\n              <a [routerLink]=\"['/post']\" [queryParams]=\"{id: article._id}\">\n                {{article.title}}\n              </a>\n            </h2>\n            <p class=\"content\" [innerHTML]=\"sanitizedContent(article)\"></p>\n            <p class=\"post-meta\">{{article.tags.join(', ')}}</p>\n            <p class=\"post-meta\">Posted by\n              {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>\n            <p>{{openedCommentCount(article)}} コメント</p>\n          </div>\n          <hr>\n\n          <!-- Pager -->\n          <div class=\"clearfix\">\n            <a class=\"btn btn-primary float-left\" (click)=\"prevPage()\" *ngIf=\"page.prev\">&larr; Newer Posts</a>\n            <a class=\"btn btn-primary float-right\" (click)=\"nextPage()\" *ngIf=\"page.next\">Older Posts\n              &rarr;</a>\n          </div>\n        </div>\n      </div>\n\n    </div>\n    <div class=\"col-lg-3 col-md-3\">\n      <div class=\"aside\">\n        <app-aside></app-aside>\n      </div>\n    </div>\n  </div>\n</div>\n\n<hr>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Page Header -->\n<header class=\"masthead\" style=\"background-image: url('assets/img/home-bg.jpg')\">\n  <div class=\"overlay\"></div>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-8 col-md-10 mx-auto\">\n        <div class=\"site-heading\">\n          <h1>椿工藝舎ブログ</h1>\n          <span class=\"subheading\">ギター・革製品・帆布製品・木工・自転車</span>\n        </div>\n      </div>\n    </div>\n  </div>\n</header>\n\n<div class=\"row\">\n  <div class=\"col-lg-9 col-md-9 d-flex justify-content-end py-4\">\n    <input \n      type=\"text\"\n      name=\"search\"\n      class=\"search\"\n      placeholder=\"Search Post...\"\n      [(ngModel)]=\"searchString\"\n      (keyup)=\"onSearch($event)\"/>\n  </div>\n</div>\n\n\n<!-- Main Content -->\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-lg-9 col-md-9\">\n      <div class=\"row\">\n        <div class=\"col-lg-12 col-md-12 mx-auto\">\n          <div class=\"post-preview\" *ngFor=\"let article of page.rows\">\n            <h2 class=\"post-title\">\n              <a [routerLink]=\"['/post']\" [queryParams]=\"{id: article._id}\">\n                {{article.title}}\n              </a>\n            </h2>\n            <p class=\"content\" [innerHTML]=\"sanitizedContent(article)\"></p>\n            <p class=\"post-meta\">{{article.tags.join(', ')}}</p>\n            <p class=\"post-meta\">Posted by\n              {{article.author.name}} on {{article.publishedAt|date:'short'}}</p>\n            <p>{{openedCommentCount(article)}} コメント</p>\n          </div>\n          <hr>\n\n          <!-- Pager -->\n          <div class=\"clearfix\">\n            <a class=\"btn btn-primary float-left\" (click)=\"prevPage()\" *ngIf=\"page.prev\">&larr; Newer Posts</a>\n            <a class=\"btn btn-primary float-right\" (click)=\"nextPage()\" *ngIf=\"page.next\">Older Posts\n              &rarr;</a>\n          </div>\n        </div>\n      </div>\n\n    </div>\n    <div class=\"col-lg-3 col-md-3 px-4\">\n      <div class=\"aside\">\n        <app-aside></app-aside>\n      </div>\n    </div>\n  </div>\n</div>\n\n<hr>");
 
 /***/ }),
 
@@ -1487,7 +1487,7 @@ GalleryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MifQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".search {\n    padding: 4px;\n    border-radius: 4px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9ob21lL2hvbWUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFlBQVk7SUFDWixrQkFBa0I7QUFDdEIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2hvbWUvaG9tZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnNlYXJjaCB7XG4gICAgcGFkZGluZzogNHB4O1xuICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbn0iXX0= */");
 
 /***/ }),
 
@@ -1516,7 +1516,7 @@ let HomeComponent = class HomeComponent {
         this.page = {};
     }
     ngOnInit() {
-        this.articleService.getPublishedArticles(0, 5, {}, []).subscribe(resp => {
+        this.articleService.getPosts(0, 5, {}, []).subscribe(resp => {
             this.page = resp;
         });
     }
@@ -1525,13 +1525,13 @@ let HomeComponent = class HomeComponent {
     }
     prevPage() {
         const p = this.page.page - 1;
-        this.articleService.getPublishedArticles(p, 5, {}, []).subscribe(resp => {
+        this.articleService.getPosts(p, 5, {}, []).subscribe(resp => {
             this.page = resp;
         });
     }
     nextPage() {
         const p = this.page.page + 1;
-        this.articleService.getPublishedArticles(p, 5, {}, []).subscribe(resp => {
+        this.articleService.getPosts(p, 5, {}, []).subscribe(resp => {
             this.page = resp;
         });
     }
@@ -1550,6 +1550,13 @@ let HomeComponent = class HomeComponent {
     openedCommentCount(article) {
         const opened = article.comments.filter(comment => !comment.hidden);
         return opened.length;
+    }
+    onSearch(event) {
+        if (event.keyCode === 13) {
+            this.articleService.searchPosts(this.searchString, 0, 5).subscribe(page => {
+                this.page = page;
+            });
+        }
     }
 };
 HomeComponent.ctorParameters = () => [
@@ -2043,7 +2050,7 @@ let ArticleService = class ArticleService {
     getArticles(page, limit, query, order) {
         return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/articles?page=${page}&limit=${limit}`);
     }
-    getPublishedArticles(page, limit, query, order) {
+    getPosts(page, limit, query, order) {
         return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/posts?page=${page}&limit=${limit}`);
     }
     getArticle(id) {
@@ -2081,6 +2088,9 @@ let ArticleService = class ArticleService {
     }
     showHideComment(id, hidden) {
         return this.http.put(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/comments/showhide/${id}`, { hidden: hidden });
+    }
+    searchPosts(searchString, page, limit) {
+        return this.http.get(`${_config__WEBPACK_IMPORTED_MODULE_3__["SERVER_URL"]}/external/posts?page=${page}&limit=${limit}&search=${searchString}`);
     }
 };
 ArticleService.ctorParameters = () => [

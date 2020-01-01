@@ -11,11 +11,12 @@ import { getLocaleFirstDayOfWeek } from '@angular/common';
 export class HomeComponent implements OnInit {
 
   page: any = {};
+  searchString: string;
 
   constructor(private articleService: ArticleService, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
-    this.articleService.getPublishedArticles(0, 5, {}, []).subscribe(resp => {
+    this.articleService.getPosts(0, 5, {}, []).subscribe(resp => {
       this.page = resp;
     });
   }
@@ -26,14 +27,14 @@ export class HomeComponent implements OnInit {
 
   prevPage() {
     const p = this.page.page - 1;
-    this.articleService.getPublishedArticles(p, 5, {}, []).subscribe(resp => {
+    this.articleService.getPosts(p, 5, {}, []).subscribe(resp => {
       this.page = resp;
     });
   }
 
   nextPage() {
     const p = this.page.page + 1;
-    this.articleService.getPublishedArticles(p, 5, {}, []).subscribe(resp => {
+    this.articleService.getPosts(p, 5, {}, []).subscribe(resp => {
       this.page = resp;
     });
   }
@@ -53,5 +54,13 @@ export class HomeComponent implements OnInit {
   openedCommentCount(article: any): number {
     const opened = article.comments.filter(comment => !comment.hidden);
     return opened.length;
+  }
+
+  onSearch(event) {
+    if (event.keyCode === 13) {
+      this.articleService.searchPosts(this.searchString, 0, 5).subscribe(page => {
+        this.page = page;
+      });
+    }
   }
 }
