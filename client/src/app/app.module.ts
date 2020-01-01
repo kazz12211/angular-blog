@@ -27,6 +27,7 @@ import { FilesComponent } from './components/files/files.component';
 import { ModalConfirmComponent } from './components/modal-confirm/modal-confirm.component';
 import { NgbModalBackdrop } from '@ng-bootstrap/ng-bootstrap/modal/modal-backdrop';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalNotifyComponent } from './components/modal-notify/modal-notify.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     CommentsComponent,
     GalleryComponent,
     FilesComponent,
-    ModalConfirmComponent
+    ModalConfirmComponent,
+    ModalNotifyComponent
   ],
   imports: [
     BrowserModule,

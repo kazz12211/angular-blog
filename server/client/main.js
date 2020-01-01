@@ -192,6 +192,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/modal-notify/modal-notify.component.html":
+/*!***********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/modal-notify/modal-notify.component.html ***!
+  \***********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"modal-header\">\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('dismiss')\">\n        <span aria-hidden=\"true\">&times;</span>\n    </button>\n</div>\n<div class=\"modal-body\">\n    <p>{{message}}</p>\n</div>\n<div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-primary\" (click)=\"activeModal.close('ok')\">{{okCaption}}</button>\n</div>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/post/post.component.html":
 /*!*******************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/post/post.component.html ***!
@@ -666,6 +679,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_files_files_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/files/files.component */ "./src/app/components/files/files.component.ts");
 /* harmony import */ var _components_modal_confirm_modal_confirm_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/modal-confirm/modal-confirm.component */ "./src/app/components/modal-confirm/modal-confirm.component.ts");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm2015/ng-bootstrap.js");
+/* harmony import */ var _components_modal_notify_modal_notify_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/modal-notify/modal-notify.component */ "./src/app/components/modal-notify/modal-notify.component.ts");
+
 
 
 
@@ -720,7 +735,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _components_comments_comments_component__WEBPACK_IMPORTED_MODULE_23__["CommentsComponent"],
             _components_gallery_gallery_component__WEBPACK_IMPORTED_MODULE_24__["GalleryComponent"],
             _components_files_files_component__WEBPACK_IMPORTED_MODULE_25__["FilesComponent"],
-            _components_modal_confirm_modal_confirm_component__WEBPACK_IMPORTED_MODULE_26__["ModalConfirmComponent"]
+            _components_modal_confirm_modal_confirm_component__WEBPACK_IMPORTED_MODULE_26__["ModalConfirmComponent"],
+            _components_modal_notify_modal_notify_component__WEBPACK_IMPORTED_MODULE_28__["ModalNotifyComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -1681,6 +1697,65 @@ ModalConfirmComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/components/modal-notify/modal-notify.component.css":
+/*!********************************************************************!*\
+  !*** ./src/app/components/modal-notify/modal-notify.component.css ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbW9kYWwtbm90aWZ5L21vZGFsLW5vdGlmeS5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/components/modal-notify/modal-notify.component.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/modal-notify/modal-notify.component.ts ***!
+  \*******************************************************************/
+/*! exports provided: ModalNotifyComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalNotifyComponent", function() { return ModalNotifyComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm2015/ng-bootstrap.js");
+
+
+
+let ModalNotifyComponent = class ModalNotifyComponent {
+    constructor(activeModal) {
+        this.activeModal = activeModal;
+        this.okCaption = 'OK';
+    }
+};
+ModalNotifyComponent.ctorParameters = () => [
+    { type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbActiveModal"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ModalNotifyComponent.prototype, "title", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ModalNotifyComponent.prototype, "message", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ModalNotifyComponent.prototype, "okCaption", void 0);
+ModalNotifyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-modal-notify',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./modal-notify.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/modal-notify/modal-notify.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./modal-notify.component.css */ "./src/app/components/modal-notify/modal-notify.component.css")).default]
+    })
+], ModalNotifyComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/post/post.component.css":
 /*!****************************************************!*\
   !*** ./src/app/components/post/post.component.css ***!
@@ -2167,6 +2242,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm2015/ng-bootstrap.js");
 /* harmony import */ var _components_modal_confirm_modal_confirm_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/modal-confirm/modal-confirm.component */ "./src/app/components/modal-confirm/modal-confirm.component.ts");
+/* harmony import */ var _components_modal_notify_modal_notify_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/modal-notify/modal-notify.component */ "./src/app/components/modal-notify/modal-notify.component.ts");
+
 
 
 
@@ -2183,6 +2260,20 @@ let ModalService = class ModalService {
             component.message = message;
             component.okCaption = okCaption || 'OK';
             component.cancelCaption = cancelCaption || 'Cancel';
+        }
+        return modalRef.result.then(result => {
+            return true;
+        }, err => {
+            return false;
+        });
+    }
+    notify(title, message, okCaption) {
+        const modalRef = this.modalService.open(_components_modal_notify_modal_notify_component__WEBPACK_IMPORTED_MODULE_4__["ModalNotifyComponent"]);
+        const component = modalRef.componentInstance;
+        if (component != null) {
+            component.title = title;
+            component.message = message;
+            component.okCaption = okCaption || 'OK';
         }
         return modalRef.result.then(result => {
             return true;
