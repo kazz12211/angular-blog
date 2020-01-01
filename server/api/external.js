@@ -79,7 +79,6 @@ router.get('/posts', getUserId, (req, res) => {
                 ]}
             ]
         };
-        console.log(JSON.stringify(cond));
     }
 
     Article.where(cond).countDocuments((err, c) => {
